@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+:root {
+    --color-bg: #e8e7e5;
+    --color-text: #1f1f11;
+    --color-footer-bg: #1f1f11;
+    --color-white: #fff;
+    --color-hover: #9fcaff;
+    --color-social-hover: #bbb;
+    --font-main: 'Roboto Flex', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--color-bg);
+    font-family: var(--font-main);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    padding: 20px 0 0 10px;
+    font-weight: 100;
+    background: inherit;
+    z-index: 10;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.menu ul.show {
+    opacity: 1;
+}
+
+.menu li {
+    padding-top: 15px;
+}
+
+.menu a {
+    color: var(--color-text);
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: transparent;
+    display: inline-block;
+}
+
+.servicio-bloque {
+    max-width: 1200px;
+    margin: 80px auto;
+    margin-top: 20px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.imagen-servicio {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.imagen-servicio:hover {
+    transform: scale(1.02);
+}
+
+.descripcion-servicio {
+    flex: 1;
+    min-width: 300px;
+}
+
+.descripcion-servicio h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+.descripcion-servicio p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.descripcion-servicio ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.descripcion-servicio li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+
+footer {
+    width: 100%;
+    background-color: #192827;
+    color: #e3e5de;
+    padding: 40px 20px;
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: left;
+    }
+
+    .footer-content p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .mapa {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .info,
+    .info-mapa,
+    .contacto {
+        flex: 1 -10 300px;
+    }
+
+    .info h1,
+    .info-mapa h1,
+    .form-content h1 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .info p,
+    .info-mapa p,
+    .numeros {
+        font-size: 1rem;
+    }
+
+    .mapita iframe {
+        width: 100%;
+        max-width: 450px;
+        height: 300px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .redes-sociales {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        justify-content: flex-start;
+        margin: 15px 0;
+        padding: 0;
+    }
+
+    .redes-sociales i {
+        font-size: 2.5rem;
+        color: #e3e5de;
+        transition: color 0.3s ease;
+    }
+
+    .redes-sociales i:hover {
+        color: var(--color-social-hover);
+    }
+
+    .numeros {
+        list-style: none;
+        padding: 0;
+        line-height: 2;
+    }
+
+    .numeros i {
+        margin-right: 10px;
+        color: var(--color-white);
+    }
+
+    .form-content {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #192827;
+        border-radius: 10px;
+        color: #e3e5de;
+    }
+
+    .form-content h1 {
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+    }
+
+    .form-content input,
+    .form-content textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        font-size: 1rem;
+        background-color: #e3e5de;
+        border: none;
+    }
+
+    .form-content button {
+        padding: 12px 25px;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: #e3e5de;
+        color: var(--color-text);
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .form-content button:hover {
+        background-color: var(--color-hover);
+    }
+}
+
+@media (max-width: 768px) {
+    .mapa {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .redes-sociales {
+        justify-content: center;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo RM - Inicio</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="icon" href="imgs/logo-icono.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="logo">
+        <img src="imgs/logo1.png">
+    </div>
+    <div class="botones">
+        <a href="servicios.html">
+            <button>Servicios</button>
+        </a>
+        <a href="galeria.html">
+            <button>Galeria</button>
+        </a>
+        <a href="portafolio.html">
+            <button>Portafolio</button>
+        </a>
+    </div>
+    <script>
+        window.addEventListener("load", function () {
+            const buttons = document.querySelectorAll(".botones button");
+            buttons.forEach((button, index) => {
+                setTimeout(() => {
+                    button.classList.add("show");
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+
+</html>
