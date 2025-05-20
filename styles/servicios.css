@@ -1,6 +1,3 @@
-/*--------------------------------------------------------------
-  VARIABLES & RESET
---------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
 :root {
@@ -27,9 +24,6 @@ html {
     box-sizing: inherit;
 }
 
-/*--------------------------------------------------------------
-  BASE ESTILOS
---------------------------------------------------------------*/
 body {
     min-height: 100vh;
     background: var(--color-bg);
@@ -47,9 +41,6 @@ a {
     color: inherit;
 }
 
-/*--------------------------------------------------------------
-  HEADER & NAVEGACIÓN
---------------------------------------------------------------*/
 header {
     width: 100%;
     position: sticky;
@@ -85,13 +76,9 @@ header {
     display: inline-block;
 }
 
-/*--------------------------------------------------------------
-  SECCIÓN DE SERVICIOS
---------------------------------------------------------------*/
 .servicio-bloque {
     max-width: 1200px;
     margin: 80px auto 0;
-    /* Se mantiene margin-top: 20px; ajustándolo en el shorthand */
     padding: 15px 20px;
     display: flex;
     flex-direction: row;
@@ -141,9 +128,6 @@ header {
     color: #555;
 }
 
-/*--------------------------------------------------------------
-  FOOTER
---------------------------------------------------------------*/
 footer {
     width: 100%;
     background-color: #192827;
@@ -233,7 +217,6 @@ footer .numeros i {
 footer .form-content {
     max-width: 500px;
     margin: 0 auto;
-    padding: 20px;
     background-color: #192827;
     border-radius: 10px;
     color: #e3e5de;
@@ -279,9 +262,6 @@ footer .form-content button:hover {
     margin: -10px 0 10px;
 }
 
-/*--------------------------------------------------------------
-  MEDIA QUERIES
---------------------------------------------------------------*/
 @media (max-width: 768px) {
     .mapa {
         flex-direction: column;
