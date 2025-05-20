@@ -14,16 +14,67 @@
         <img src="imgs/logo1.png">
     </div>
     <div class="botones">
-        <a href="servicios.html">
-            <button>Servicios</button>
-        </a>
-        <a href="galeria.html">
-            <button>Galeria</button>
-        </a>
-        <a href="portafolio.html">
-            <button>Portafolio</button>
-        </a>
+        <a href="servicios.html"><button>Servicios</button></a>
+        <a href="galeria.html"><button>Galería</button></a>
+        <a href="portafolio.html"><button>Portafolio</button></a>
     </div>
+
+    <section class="contenido">
+        <!-- IZQUIERDA: ¿Quiénes somos? -->
+        <div class="izquierda">
+            <h1 class="title">¿Quiénes somos?</h1>
+            <div class="texto">
+                <p>Una sociedad de empresas líderes en arquitectura y construcción en Chiapas
+                    con más de 15 años de experiencia. Nos especializamos en la
+                    fabricación, diseño y ejecución de proyectos arquitectónicos.
+                    Nuestro objetivo es mejorar la calidad de vida de nuestros
+                    clientes y la comunidad en general, promoviendo prácticas novedosas y
+                    auténticas; orientadas a marcar la diferencia en el sector.</p>
+            </div>
+        </div>
+
+        <!-- DERECHA: Sobre nosotros -->
+        <div class="derecha">
+            <h1 class="title">Sobre nosotros</h1>
+            <div class="faq">
+                <div class="question">
+                    <h3>Misión</h3>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="#fff" stroke-width="5" />
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>La misión general de una empresa es el objetivo o propuesta que sirve a la sociedad y que se
+                        utiliza como base para el plan de negocios y las estrategias operativas.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <div class="question">
+                    <h3>Visión</h3>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="#fff" stroke-width="5" />
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>La visión es la imagen que se tiene del lugar a donde se quiere llegar, de cómo queremos vernos,
+                        como empresa, en un futuro definido.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <div class="question">
+                    <h3>Valores</h3>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="#fff" stroke-width="5" />
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>Los valores de una empresa son los principios fundamentales que definen a la empresa, su
+                        comportamiento y toma de decisiones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script>
         window.addEventListener("load", function () {
             const buttons = document.querySelectorAll(".botones button");
@@ -31,6 +82,22 @@
                 setTimeout(() => {
                     button.classList.add("show");
                 }, index * 200);
+            });
+        });
+
+        const faqs = document.querySelectorAll(".faq");
+
+        faqs.forEach(faq => {
+            const question = faq.querySelector(".question");
+
+            question.addEventListener("click", () => {
+                faq.classList.toggle("active");
+
+                faqs.forEach(otherFaq => {
+                    if (otherFaq !== faq && otherFaq.classList.contains("active")) {
+                        otherFaq.classList.remove("active");
+                    }
+                });
             });
         });
     </script>

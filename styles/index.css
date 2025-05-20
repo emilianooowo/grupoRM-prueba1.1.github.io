@@ -7,79 +7,150 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: #e3e4dd;
+    font-family: 'Roboto Flex', sans-serif;
     min-height: 100vh;
     padding: 2rem;
-    font-family: 'Roboto Flex', sans-serif;
-    background: #e3e5de url(../imgs/fondo1.png) right center no-repeat;
-    background-size: cover; /* ✅ Mejor comportamiento en móviles */
-    background-attachment: fixed;
-    transition: padding 0.3s ease;
-    text-align: center; /* ✅ Mejor alineación en móviles */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 3rem;
+}
+
+.centrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo {
-    width: 100%;
-    max-width: 350px; /* ✅ Limita el tamaño máximo */
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 250px;
+    width: 60%;
+    margin-bottom: 2rem;
 }
 
 .logo img {
     width: 100%;
-    height: auto; /* ✅ Escala automáticamente */
+    height: auto;
     display: block;
 }
 
 .botones {
-    color: #192827;
+    background-color: #172826;
     display: flex;
-    flex-direction: column;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
+    width: 100vw;
+    /* Fuerza que abarque todo el ancho de la pantalla */
+    position: relative;
+    /* Asegura que no se hereden restricciones extrañas */
+    left: 51.5%;
+    /* Centra compensando el cambio de width */
+    transform: translateX(-50%);
 }
+
 
 .botones button {
     font-family: inherit;
-    font-weight: 100;
-    font-size: clamp(1.5rem, 5vw, 2.3rem);
-    padding: 1.2rem 0.5rem;
+    font-weight: 300;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    padding: 1rem 1.5rem;
     background: none;
     border: none;
     cursor: pointer;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 2s ease, transform .5s ease;
-}
-
-.botones button.show {
+    color: #e3e4dd;
+    transition: transform .3s ease;
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
 .botones button:hover {
-    transform: scale(.95);
+    transform: scale(0.95);
+}
+
+.izquierda,
+.derecha {
+    width: 100%;
+    color: #172826;
+    text-align: left;
+}
+
+.izquierda .title,
+.derecha .title {
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+}
+
+.texto {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+.faq {
+    border-bottom: 1px solid #172826;
+    padding-bottom: 1rem;
+    margin-top: 1.6rem;
+    cursor: pointer;
+}
+
+.question {
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.answer {
+    padding-top: 10px;
+    font-size: 1.5rem;
+    font-style: italic;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.2s;
+}
+
+.faq.active .answer {
+    max-height: 100px;
+}
+
+.faq svg {
+    transition: transform .5s ease-in;
+}
+
+.faq.active svg {
+    transform: rotate(180deg);
 }
 
 @media (min-width: 768px) {
-    body {
+    .contenido {
         flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 3rem;
-        padding: 4rem 6rem;
-        text-align: left;
-        background-size: contain; /* ✅ Mantén el fondo fijo solo en desktop */
-    }
-
-    .logo {
-        width: clamp(350px, 50vw, 50px);
-    }
-
-    .botones {
+        justify-content: space-between;
         align-items: flex-start;
+    }
+
+    .izquierda,
+    .derecha {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .izquierda {
+        padding-right: 2rem;
+    }
+
+    .derecha {
+        padding-left: 2rem;
     }
 }
