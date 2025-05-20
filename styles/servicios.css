@@ -160,8 +160,10 @@ footer {
     .info,
     .info-mapa,
     .contacto {
-        flex: 1 -10 300px;
+        flex: 1 1 300px;
+        min-width: 250px;
     }
+
 
     .info h1,
     .info-mapa h1,
@@ -261,11 +263,21 @@ footer {
         gap: 20px;
     }
 
-    .redes-sociales {
-        justify-content: center;
+    .info,
+    .info-mapa,
+    .contacto {
+        flex: 1 1 300px;
+        min-width: 250px;
     }
 
-    .footer-content {
-        text-align: center;
+
+    .mapita iframe {
+        max-width: 100%;
+        height: 250px;
+    }
+
+    .form-content {
+        max-width: 100%;
+        padding: 15px;
     }
 }
