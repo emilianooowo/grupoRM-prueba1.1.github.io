@@ -42,12 +42,12 @@ a {
 }
 
 header {
+    background-color: #192827;
     width: 100%;
     position: sticky;
     top: 0;
-    padding: 20px 0 0 10px;
+    padding: 5px 0 0 10px;
     font-weight: 100;
-    background: inherit;
     z-index: 10;
 }
 
@@ -64,11 +64,11 @@ header {
 }
 
 .menu li {
-    padding-top: 15px;
+    padding-top: 20px;
 }
 
 .menu a {
-    color: var(--color-text);
+    color: #e3e5de;
     padding: 10px 20px;
     font-size: 1.5rem;
     cursor: pointer;
@@ -78,7 +78,7 @@ header {
 
 h2 {
     width: 70%;
-    margin: 2rem auto;
+    margin: 5rem auto;
     font-size: 2rem;
     font-weight: 100;
     color: #172826;
@@ -89,7 +89,6 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 2rem;
     padding: 10px;
@@ -105,7 +104,7 @@ h2 {
 .filter-btn,
 .subfilter-btn,
 .view-btn {
-    padding: 0.5rem 1rem;
+    padding: .5rem 2rem;
     background: #172826;
     color: #e3e5de;
     border: none;
