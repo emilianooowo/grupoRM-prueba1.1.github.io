@@ -105,15 +105,14 @@ body {
 
 .answer {
     padding-top: 10px;
-    font-size: 1.5rem;
-    font-style: italic;
+    font-size: 1.4rem;
     max-height: 0;
     overflow: hidden;
     transition: max-height 1.2s;
 }
 
 .faq.active .answer {
-    max-height: 100px;
+    max-height: 200px;
 }
 
 .faq svg {

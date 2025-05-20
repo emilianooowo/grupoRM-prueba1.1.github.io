@@ -131,8 +131,6 @@
     </div>
     
     <script>
-        /* JavaScript: agrega al final de tu <script> en portafolio.html */
-        // 1) Reemplaza .detail por <img class="detail" src="...">
         const images = Array.from(document.querySelectorAll('.detail img'));
         let currentIndex = 0;
 
@@ -178,14 +176,12 @@
             lightboxImg.src = images[currentIndex].src;
         }
 
-        // Event listeners
         images.forEach((img, idx) => {
             img.addEventListener('click', () => showLightbox(idx));
         });
         closeBtn.addEventListener('click', hideLightbox);
         nextBtn.addEventListener('click', showNext);
         prevBtn.addEventListener('click', showPrev);
-        // Cerrar al hacer clic fuera de la imagen
         lightbox.addEventListener('click', e => {
             if (e.target === lightbox) hideLightbox();
         });

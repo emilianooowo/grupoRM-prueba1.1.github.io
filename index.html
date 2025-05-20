@@ -45,8 +45,14 @@
                     </svg>
                 </div>
                 <div class="answer">
-                    <p>La misión general de una empresa es el objetivo o propuesta que sirve a la sociedad y que se
-                        utiliza como base para el plan de negocios y las estrategias operativas.</p>
+                    <p> En Constructora Grupo RM estamos comprometidos con transformar ideas en espacios que mejoren
+                        la calidad de vida. Cada proyecto lo
+                        desarrollamos
+                        con innovación, atención al detalle y adaptándonos a las características del terreno, presupuesto
+                        y
+                        necesidades específicas del cliente, asegurando que cada obra refleje nuestro compromiso por crear soluciones
+                        funcionales, modernas y que realmente imapacte en las vidas de quienes las habitan o utilizan.
+                    </p>
                 </div>
             </div>
             <div class="faq">
@@ -57,8 +63,11 @@
                     </svg>
                 </div>
                 <div class="answer">
-                    <p>La visión es la imagen que se tiene del lugar a donde se quiere llegar, de cómo queremos vernos,
-                        como empresa, en un futuro definido.</p>
+                    <p> Ser el referente lider en el mercado de desarrollo de proyectos en
+                        la región sur del estado de Chiapas, logrando presencia a nivel
+                        estatall, caracterizados por el “sellos constructivo” vanguardista y
+                        de calidad que ofrecemos.
+                    </p>
                 </div>
             </div>
             <div class="faq">
@@ -69,8 +78,9 @@
                     </svg>
                 </div>
                 <div class="answer">
-                    <p>Los valores de una empresa son los principios fundamentales que definen a la empresa, su
-                        comportamiento y toma de decisiones.</p>
+                    <p>Calidad, Responsabilidad, Innovacion, Honestidad y transparencia son nuestros valores al comprometernos
+                        y asumir el compromiso para adaptarnos a las últimas tendencias en todas las etapas de nuestros proyectos
+                        al ofrecer claridad y cumplir con los plazsos, presupuetos y expectativas acordadas.</p>
                 </div>
             </div>
         </div>
@@ -135,7 +145,6 @@
     </footer>
 
     <script>
-        // Limpia formularios al recargar la página
         window.onbeforeunload = () => {
             for (const form of document.getElementsByTagName('form-content')) {
                 form.reset();
@@ -148,7 +157,7 @@
             const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (!regexCorreo.test(email)) {
-                e.preventDefault(); // Evita el envío del formulario
+                e.preventDefault();
                 alert("Por favor ingresa un correo electrónico válido.");
                 emailInput.focus();
             }
@@ -156,7 +165,6 @@
 
 
         window.addEventListener("load", function () {
-            // Animación para los botones del menú
             const buttons = document.querySelectorAll(".botones button");
             buttons.forEach((button, index) => {
                 setTimeout(() => {
@@ -164,7 +172,6 @@
                 }, index * 200);
             });
 
-            // Animación para las secciones izquierda y derecha
             const secciones = document.querySelectorAll(".animar");
             secciones.forEach((seccion, index) => {
                 setTimeout(() => {
@@ -173,7 +180,6 @@
             });
         });
 
-        // Funcionalidad de preguntas frecuentes
         const faqs = document.querySelectorAll(".faq");
 
         faqs.forEach(faq => {

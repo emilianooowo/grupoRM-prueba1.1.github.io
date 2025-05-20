@@ -76,57 +76,6 @@ header {
     display: inline-block;
 }
 
-.servicio-bloque {
-    max-width: 1200px;
-    margin: 80px auto 0;
-    padding: 15px 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.imagen-servicio {
-    width: 100%;
-    max-width: 550px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.imagen-servicio:hover {
-    transform: scale(1.02);
-}
-
-.descripcion-servicio {
-    flex: 1;
-    min-width: 300px;
-}
-
-.descripcion-servicio h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    color: var(--color-text);
-}
-
-.descripcion-servicio p {
-    font-size: 1.1rem;
-    color: #333;
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.descripcion-servicio ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.descripcion-servicio li {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: #555;
-}
 
 footer {
     width: 100%;
