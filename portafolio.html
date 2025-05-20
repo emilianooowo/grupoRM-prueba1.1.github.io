@@ -56,11 +56,14 @@
                     <div class="caption">PROYECTO PARQUE INDUSTRIAL</div>
                 </div>
                 <div class="details">
-                    <div class="detail"><img src="imgs/Portafolio/parque/BODEGA_20INT-enhanced.webp" alt="Descripción 1"></div>
+                    <div class="detail"><img src="imgs/Portafolio/parque/BODEGA_20INT-enhanced.webp"
+                            alt="Descripción 1"></div>
                     <div class="detail"><img src="imgs/Portafolio/parque/FACHADA 3.webp" alt="Descripción 2"></div>
-                    <div class="detail"><img src="imgs/Portafolio/parque/FACHADA BODEGAS.webp" alt="Descripción 3"></div>
+                    <div class="detail"><img src="imgs/Portafolio/parque/FACHADA BODEGAS.webp" alt="Descripción 3">
+                    </div>
                     <div class="detail"><img src="imgs/Portafolio/parque/FACHADA.webp" alt="Descripción 4"></div>
-                    <div class="detail"><img src="imgs/Portafolio/parque/FACHADA_202-enhanced.webp" alt="Descripción 5"></div>
+                    <div class="detail"><img src="imgs/Portafolio/parque/FACHADA_202-enhanced.webp" alt="Descripción 5">
+                    </div>
                     <div class="detail"><img src="imgs/Portafolio/parque/OFICINA.webp" alt="Descripción 6"></div>
                     <div class="detail"><img src="imgs/Portafolio/parque/PLANTA.webp" alt="Descripción 7"></div>
                     <div class="detail"><img src="imgs/Portafolio/parque/RECEP 2.webp" alt="Descripción 8"></div>
@@ -108,6 +111,11 @@
                         <ul class="numeros">
                             <li><i class="bi bi-telephone-fill"></i> 962 XXX XXXX</li>
                             <li><i class="bi bi-telephone-fill"></i> 962 XXX XXXX</li>
+                            <li>
+                                <p>© 2025 Constructora Grupo RM. Todos los derechos reservados.
+
+                                    Sitio web desarrollado por Emiliano Leal.</p>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -115,24 +123,6 @@
         </div>
     </footer>
 
-
-    <script>
-        window.onbeforeunload = () => {
-            for (const form of document.getElementsByTagName('form')) {
-                form.reset();
-            }
-        };
-        window.onload = function () {
-            document.querySelector('.menu ul').classList.add('show');
-        };
-        document.querySelectorAll('.project-card').forEach(card => {
-            const thumb = card.querySelector('.thumb');
-            thumb.addEventListener('click', () => {
-                card.classList.toggle('active');
-            });
-        });
-
-    </script>
     <div id="lightbox" class="lightbox hidden">
         <span class="close-btn">&times;</span>
         <img class="lightbox-img" src="" alt="Foto ampliada">
@@ -150,6 +140,22 @@
         const closeBtn = lightbox.querySelector('.close-btn');
         const prevBtn = lightbox.querySelector('.prev-btn');
         const nextBtn = lightbox.querySelector('.next-btn');
+
+        window.onbeforeunload = () => {
+            for (const form of document.getElementsByTagName('form')) {
+                form.reset();
+            }
+        };
+        window.onload = function () {
+            document.querySelector('.menu ul').classList.add('show');
+        };
+        document.querySelectorAll('.project-card').forEach(card => {
+            const thumb = card.querySelector('.thumb');
+            thumb.addEventListener('click', () => {
+                card.classList.toggle('active');
+            });
+        });
+
 
         function showLightbox(index) {
             currentIndex = index;
