@@ -71,12 +71,21 @@ header {
 }
 
 .menu a {
-    color: var(--color-text);
+    color: #192827;
     padding: 10px 20px;
     font-size: 1.5rem;
     cursor: pointer;
     background: transparent;
     display: inline-block;
+}
+
+.menu a {
+    transition: transform .2s ease-in-out;
+    transform: none;
+}
+
+.menu a:hover {
+    transform: scale(0.98);
 }
 
 /* Portafolio */
@@ -117,44 +126,43 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(4px);
-    transition: backdrop-filter 0.4s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Low exposure effect (darkening) */
     z-index: 2;
 }
 
 .project-card.active .thumb::after {
-    backdrop-filter: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Lighter effect when active */
 }
+
 .caption {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
     padding: 8px 12px;
-    background: #e3e5de;
-    color: #192827;
-    font-size: 1.2rem;
-    line-height: 1.2;
+    color: #e3e5de;
+    font-size: 1.5rem;
+    text-align: center;
     box-sizing: border-box;
-    pointer-events: none;
-
     z-index: 3;
 }
 
 .details {
+    background-color: #e3e5de;
+    padding-top: 10px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     max-height: 0;
     overflow: hidden;
-    margin-top: 10px;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0;
+    transition: max-height 3s ease;
 }
 
 .project-card.active .details {
-    max-height: 2000px; /* Aumenta para dar espacio a 4 imágenes por fila */
-    padding: 10px;
+    max-height: 2000px;
 }
 
 .detail {
@@ -170,8 +178,6 @@ header {
     display: block;
     border-radius: 4px;
 }
-
-
 
 /* Lightbox */
 .lightbox {
@@ -194,7 +200,6 @@ header {
 .lightbox-img {
     max-width: 90%;
     max-height: 80%;
-    border-radius: 4px;
 }
 
 
@@ -227,131 +232,140 @@ header {
     right: 30px;
 }
 
+
 footer {
     width: 100%;
     background-color: #192827;
     color: #e3e5de;
     padding: 40px 20px;
+}
 
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding-bottom: 30px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        text-align: left;
-    }
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+}
 
-    .footer-content p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-    }
+footer .footer-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
 
-    .mapa {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 30px;
-        margin-top: 30px;
-    }
+footer .mapa {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 30px;
+}
 
-    .info,
-    .info-mapa,
-    .contacto {
-        flex: 1 1 300px;
-        min-width: 250px;
-    }
+footer .info,
+footer .info-mapa,
+footer .contacto {
+    flex: 1 1 300px;
+    min-width: 250px;
+}
 
+footer .info h1,
+footer .info-mapa h1,
+footer .form-content h1 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
 
-    .info h1,
-    .info-mapa h1,
-    .form-content h1 {
-        font-size: 1.4rem;
-        margin-bottom: 10px;
-    }
+footer .info p,
+footer .info-mapa p,
+footer .numeros {
+    font-size: 1rem;
+}
 
-    .info p,
-    .info-mapa p,
-    .numeros {
-        font-size: 1rem;
-    }
+footer .mapita iframe {
+    width: 100%;
+    max-width: 450px;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+}
 
-    .mapita iframe {
-        width: 100%;
-        max-width: 450px;
-        height: 300px;
-        border: none;
-        border-radius: 10px;
-    }
+footer .redes-sociales {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    margin: 15px 0;
+    padding: 0;
+}
 
-    .redes-sociales {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-        justify-content: flex-start;
-        margin: 15px 0;
-        padding: 0;
-    }
+footer .redes-sociales i {
+    font-size: 2.5rem;
+    color: #e3e5de;
+    transition: color 0.3s ease;
+}
 
-    .redes-sociales i {
-        font-size: 2.5rem;
-        color: #e3e5de;
-        transition: color 0.3s ease;
-    }
+footer .redes-sociales i:hover {
+    color: rgb(133, 137, 136);
+}
 
-    .redes-sociales i:hover {
-        color: var(--color-social-hover);
-    }
+footer .numeros {
+    list-style: none;
+    padding: 0;
+    line-height: 2;
+}
 
-    .numeros {
-        list-style: none;
-        padding: 0;
-        line-height: 2;
-    }
+footer .numeros i {
+    margin-right: 10px;
+    color: var(--color-white);
+}
 
-    .numeros i {
-        margin-right: 10px;
-        color: var(--color-white);
-    }
+footer .form-content {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #192827;
+    border-radius: 10px;
+    color: #e3e5de;
+}
 
-    .form-content {
-        max-width: 500px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #192827;
-        border-radius: 10px;
-        color: #e3e5de;
-    }
+footer .form-content h1 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
 
-    .form-content h1 {
-        margin-bottom: 20px;
-        font-size: 1.8rem;
-    }
+footer .form-content input,
+footer .form-content textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #e3e5de;
+    border: none;
+}
 
-    .form-content input,
-    .form-content textarea {
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 15px;
-        border-radius: 8px;
-        font-size: 1rem;
-        background-color: #e3e5de;
-        border: none;
-    }
+footer .form-content button {
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #172826;
+    color: #e3e5de;
+    border: 1px solid #e3e5de;
+    transition: background-color 0.3s ease;
+}
 
-    .form-content button {
-        padding: 12px 25px;
-        border-radius: 10px;
-        font-size: 1rem;
-        cursor: pointer;
-        background-color: #e3e5de;
-        color: var(--color-text);
-        border: none;
-        transition: background-color 0.3s ease;
-    }
+footer .form-content button:hover {
+    border: none;
+    color: #172826;
+    background-color: #e3e5de;
+}
 
-    .form-content button:hover {
-        background-color: var(--color-hover);
-    }
+.error {
+    color: red;
+    font-size: 0.9em;
+    display: block;
+    margin: -10px 0 10px;
 }
 
 @media (max-width: 768px) {
