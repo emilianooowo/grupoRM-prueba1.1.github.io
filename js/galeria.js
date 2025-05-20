@@ -11,13 +11,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdown = document.querySelector('.dropdown');
     const interioresBtn = document.getElementById('interioresBtn');
     const subfilterMenu = document.getElementById('subfilterMenu');
+    const loader = document.getElementById('loader');
 
     let currentFilter = 'all';
     let currentSubfilter = 'all';
     lucide.createIcons();
 
+    // Mostrar loader al inicio
+    loader.style.display = 'flex';
+
+    function checkImagesLoaded() {
+        // Solo cuenta las imágenes visibles
+        const visibles = Array.from(galleryItems).filter(item => item.style.display !== 'none');
+        if (visibles.length === 0) {
+            loader.style.display = 'none';
+            return;
+        }
+        let loadedCount = 0;
+        visibles.forEach(item => {
+            if (item.complete) loadedCount++;
+        });
+        if (loadedCount === visibles.length) {
+            loader.style.display = 'none';
+        } else {
+            loader.style.display = 'flex';
+        }
+    }
+
     interioresBtn.addEventListener('click', (e) => {
         e.stopPropagation();
+        loader.style.display = 'flex';
         dropdown.classList.toggle('show');
         currentFilter = 'interiores';
         currentSubfilter = 'all';
@@ -28,37 +51,25 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdown.classList.remove('show');
     });
 
-    
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            if (btn.dataset.filter !== 'interiores') {
-                currentFilter = btn.dataset.filter;
-                currentSubfilter = 'all';
-                dropdown.classList.remove('show');
-                filterGallery();
-            }
-        });
-    });
-
     subfilterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // evita que se cierre al hacer clic en submenú
+            loader.style.display = 'flex';
+            currentFilter = 'interiores'; // importante para que el filtro funcione bien
             currentSubfilter = btn.dataset.subfilter;
             filterGallery();
             dropdown.classList.remove('show');
         });
     });
 
-    viewButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            viewButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const view = btn.dataset.view;
-            if (view === 'original') {
-                document.querySelector('.gallery').classList.remove('agrupada');
-            } else {
-                document.querySelector('.gallery').classList.add('agrupada');
-                // Vista agrupada se implementará después
-            }
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            loader.style.display = 'flex';
+            currentFilter = btn.dataset.filter;
+            currentSubfilter = 'all'; // Reinicia el subfiltro al cambiar de filtro principal
+            filterGallery();
+            dropdown.classList.remove('show');
         });
     });
 
@@ -71,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const show = matchesMain && (currentFilter !== 'interiores' || matchesSub);
             item.style.display = show ? 'block' : 'none';
         });
+        checkImagesLoaded();
     }
 
     filterGallery();
@@ -81,11 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (item.complete) {
             // Imagen ya cargada, se añade la clase
             item.classList.add('loaded');
+            checkImagesLoaded();
         } else {
             // Si no, se añade el listener load
             item.addEventListener('load', () => {
                 item.classList.add('loaded');
+                checkImagesLoaded();
             });
+            item.addEventListener('error', checkImagesLoaded);
         }
 
         item.addEventListener('click', () => {
@@ -93,6 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.classList.add('show');
             currentIndex = Array.from(galleryItems).indexOf(item);
         });
+    });
+
+    document.addEventListener('keydown', e => {
+        if (!lightbox.classList.contains('show')) return;
+        if (e.key === 'ArrowRight') nextBtn.click();
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'Escape') closeBtn.click();
     });
 
 

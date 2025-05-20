@@ -1,11 +1,36 @@
 const images = Array.from(document.querySelectorAll('.detail img'));
 let currentIndex = 0;
 
+const loader = document.getElementById('loader'); // <-- Agregado
+
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('.lightbox-img');
 const closeBtn = lightbox.querySelector('.close-btn');
 const prevBtn = lightbox.querySelector('.prev-btn');
 const nextBtn = lightbox.querySelector('.next-btn');
+
+// Mostrar loader al inicio
+loader.style.display = 'flex';
+
+function checkImagesLoaded() {
+    let loadedCount = 0;
+    images.forEach(img => {
+        if (img.complete) loadedCount++;
+    });
+    if (loadedCount === images.length) {
+        loader.style.display = 'none';
+    }
+}
+
+// Revisar carga inicial
+images.forEach(img => {
+    if (img.complete) {
+        checkImagesLoaded();
+    } else {
+        img.addEventListener('load', checkImagesLoaded);
+        img.addEventListener('error', checkImagesLoaded);
+    }
+});
 
 window.onbeforeunload = () => {
     for (const form of document.getElementsByTagName('form')) {
@@ -21,7 +46,6 @@ document.querySelectorAll('.project-card').forEach(card => {
         card.classList.toggle('active');
     });
 });
-
 
 function showLightbox(index) {
     currentIndex = index;
