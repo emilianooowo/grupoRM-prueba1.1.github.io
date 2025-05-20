@@ -95,13 +95,20 @@
                     <div class="contacto">
                         <div class="form-content">
                             <h1>Tienes dudas y quieres recibir atención personal, envíanos un correo</h1>
-                            <form action="https://formspree.io/f/mzzrwvkl" method="post" novalidate>
+                            <form id="contact-form" action="https://formspree.io/f/mzzrwvkl" method="post" novalidate>
                                 <input type="text" name="Nombre" placeholder="Nombre" required>
+                                <small class="error" id="error-nombre"></small>
+
                                 <input type="email" name="Correo" placeholder="Correo electrónico" required>
+                                <small class="error" id="error-correo"></small>
+
                                 <textarea name="Mensaje" placeholder="Ingrese su mensaje aquí" rows="5"
                                     style="resize: none;" required></textarea>
+                                <small class="error" id="error-mensaje"></small>
+
                                 <button type="submit">Enviar</button>
                             </form>
+
                         </div>
                     </div>
                     <div class="info">
@@ -128,6 +135,26 @@
     </footer>
 
     <script>
+        // Limpia formularios al recargar la página
+        window.onbeforeunload = () => {
+            for (const form of document.getElementsByTagName('form-content')) {
+                form.reset();
+            }
+        };
+
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            const emailInput = this.querySelector('input[name="Correo"]');
+            const email = emailInput.value.trim();
+            const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!regexCorreo.test(email)) {
+                e.preventDefault(); // Evita el envío del formulario
+                alert("Por favor ingresa un correo electrónico válido.");
+                emailInput.focus();
+            }
+        });
+
+
         window.addEventListener("load", function () {
             // Animación para los botones del menú
             const buttons = document.querySelectorAll(".botones button");
@@ -162,13 +189,6 @@
                 });
             });
         });
-
-        // Limpia formularios al recargar la página
-        window.onbeforeunload = () => {
-            for (const form of document.getElementsByTagName('form')) {
-                form.reset();
-            }
-        };
     </script>
 
 </body>

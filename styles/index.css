@@ -2,7 +2,7 @@
 
 * {
     margin: 0;
-    padding: ;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -23,7 +23,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin-top: 3rem;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .centrado {
@@ -33,6 +33,7 @@ body {
 }
 
 .logo {
+    margin-top: 10px;
     max-width: 250px;
     width: 60%;
     margin-bottom: 2rem;
@@ -284,16 +285,26 @@ footer {
         border-radius: 10px;
         font-size: 1rem;
         cursor: pointer;
-        background-color: #e3e5de;
+        background-color: #172826;
         color: var(--color-text);
         border: none;
         transition: background-color 0.3s ease;
     }
 
     .form-content button:hover {
-        background-color: var(--color-hover);
+        color: #172826;
+        background-color: #e3e5de
     }
 }
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
 
 @media (min-width: 768px) {
     .contenido {
