@@ -39,27 +39,28 @@ main {
     width: 100%;
 }
 
+
 a {
     text-decoration: none;
     color: inherit;
 }
 
 header {
+    background-color: #21211f;
     width: 100%;
     position: sticky;
     top: 0;
-    padding: 20px 0 0 10px;
+    padding: 10px 0 0 10px;
     font-weight: 100;
-    background: inherit;
     z-index: 10;
 }
 
 .menu ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 30px;
     opacity: 0;
-    transition: opacity .5s;
+    transition: opacity 0.5s;
 }
 
 .menu ul.show {
@@ -67,31 +68,37 @@ header {
 }
 
 .menu li {
-    padding-top: 15px;
+    padding-top: 25px;
 }
 
 .menu a {
-    color: #192827;
-    padding: 10px 20px;
+    color: #e3e5de;
+    padding: 10px 10px;
     font-size: 1.5rem;
     cursor: pointer;
     background: transparent;
     display: inline-block;
+    border: transparent;
+    transition: transform 0.3s ease-in-out;
 }
 
-.menu a {
-    transition: transform .2s ease-in-out;
+.menu a:active {
+    transition: transform 1s ease-in-out;
     transform: none;
 }
 
 .menu a:hover {
-    transform: scale(0.98);
+    font-weight: 90;
+    transform: scale(.95);
+    border: 1px solid #e3e5de;
+    border-radius: 10px;
 }
 
 .portfolio {
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding-top: 20px;
 }
 
 .project-card {
@@ -99,13 +106,12 @@ header {
     width: 100%;
     margin: 0;
     box-shadow: none;
-    padding-bottom: 5px;
 }
 
 .thumb {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 150px;
     background-size: cover;
     cursor: pointer;
 }
@@ -146,7 +152,7 @@ header {
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s ease;
-    padding: 10px;
+    padding: 5px;
 }
 
 .project-card.active .details {

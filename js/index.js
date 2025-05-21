@@ -1,22 +1,3 @@
-window.onbeforeunload = () => {
-    for (const form of document.getElementsByTagName('form-content')) {
-        form.reset();
-    }
-};
-
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-    const emailInput = this.querySelector('input[name="Correo"]');
-    const email = emailInput.value.trim();
-    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!regexCorreo.test(email)) {
-        e.preventDefault();
-        alert("Por favor ingresa un correo electrónico válido.");
-        emailInput.focus();
-    }
-});
-
-
 window.addEventListener("load", function () {
     const buttons = document.querySelectorAll(".botones button");
     buttons.forEach((button, index) => {

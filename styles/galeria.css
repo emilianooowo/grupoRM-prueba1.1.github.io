@@ -46,7 +46,7 @@ header {
     width: 100%;
     position: sticky;
     top: 0;
-    padding: 5px 0 0 10px;
+    padding: 10px 0 0 10px;
     font-weight: 100;
     z-index: 10;
 }
@@ -54,7 +54,7 @@ header {
 .menu ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 30px;
     opacity: 0;
     transition: opacity 0.5s;
 }
@@ -69,16 +69,31 @@ header {
 
 .menu a {
     color: #e3e5de;
-    padding: 10px 20px;
+    padding: 10px 10px;
     font-size: 1.5rem;
     cursor: pointer;
     background: transparent;
     display: inline-block;
+    border: transparent;
+    transition: transform 0.3s ease-in-out;
 }
+
+.menu a:active {
+    transition: transform 1s ease-in-out;
+    transform: none;
+}
+
+.menu a:hover {
+    font-weight: 90;
+    transform: scale(.95);
+    border: 1px solid #e3e5de;
+    border-radius: 10px;
+}
+
 
 h2 {
     width: 70%;
-    margin: 5rem auto;
+    margin: 2.5rem auto;
     font-size: 2rem;
     font-weight: 100;
     color: #172826;
@@ -265,9 +280,10 @@ lightbox .nav-btn {
     color: var(--color-hover);
 }
 
+
 footer {
     width: 100%;
-    background-color: #192827;
+    background-color: #21211f;
     color: #e3e5de;
     padding: 40px 20px;
 }
@@ -296,7 +312,7 @@ footer .mapa {
 footer .info,
 footer .info-mapa,
 footer .contacto {
-    flex: 1 1 300px;
+    flex: 1 1 250px;
     min-width: 250px;
 }
 
@@ -354,7 +370,6 @@ footer .numeros i {
 footer .form-content {
     max-width: 500px;
     margin: 0 auto;
-    background-color: #192827;
     border-radius: 10px;
     color: #e3e5de;
 }
@@ -380,7 +395,7 @@ footer .form-content button {
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
-    background-color: #172826;
+    background-color: #21211f;
     color: #e3e5de;
     border: 1px solid #e3e5de;
     transition: background-color 0.3s ease;
