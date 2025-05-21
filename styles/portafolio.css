@@ -226,10 +226,9 @@ header {
     right: 30px;
 }
 
-
 footer {
     width: 100%;
-    background-color: #192827;
+    background-color: #21211f;
     color: #e3e5de;
     padding: 40px 20px;
 }
@@ -258,7 +257,7 @@ footer .mapa {
 footer .info,
 footer .info-mapa,
 footer .contacto {
-    flex: 1 1 300px;
+    flex: 1 1 250px;
     min-width: 250px;
 }
 
@@ -316,7 +315,6 @@ footer .numeros i {
 footer .form-content {
     max-width: 500px;
     margin: 0 auto;
-    background-color: #192827;
     border-radius: 10px;
     color: #e3e5de;
 }
@@ -342,7 +340,7 @@ footer .form-content button {
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
-    background-color: #172826;
+    background-color: #21211f;
     color: #e3e5de;
     border: 1px solid #e3e5de;
     transition: background-color 0.3s ease;
