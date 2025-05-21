@@ -42,7 +42,7 @@ a {
 }
 
 header {
-    background-color: #192827;
+    background-color: #21211f;
     width: 100%;
     position: sticky;
     top: 0;
@@ -64,7 +64,7 @@ header {
 }
 
 .menu li {
-    padding-top: 20px;
+    padding-top: 25px;
 }
 
 .menu a {
@@ -99,14 +99,15 @@ h2 {
     align-items: center;
     gap: 0.5rem;
     position: relative;
+    margin-top: 20px;
 }
 
 .filter-btn,
 .subfilter-btn,
 .view-btn {
     padding: .5rem 2rem;
-    background: #172826;
-    color: #e3e5de;
+    background: #e3e5de;
+    color: #1f1f11;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -119,12 +120,13 @@ h2 {
 .filter-btn:hover,
 .subfilter-btn:hover,
 .view-btn:hover {
-    background: #bbb;
+    background: #1f1f11;
+    color: #e3e5de;
 }
 
 .view-btn.active {
-    background: #e3e5de;
-    color: #172826;
+    background: #1f1f11;
+    color: #e3e5de;
     border: #172826 1px solid;
 }
 
@@ -138,7 +140,7 @@ h2 {
     position: absolute;
     top: 100%;
     left: 0;
-    background: #747e7d;
+    background: #1f1f11;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     z-index: 10;
@@ -150,11 +152,12 @@ h2 {
     width: 100%;
     text-align: left;
     border-radius: 0;
-    background: #747e7d;
+    background: #1f1f11;
+    color: #e3e5de;
 }
 
 .dropdown-menu button:hover {
-    background: #747e7d;
+    background: #21211f;
 }
 
 .dropdown:hover .dropdown-menu {
