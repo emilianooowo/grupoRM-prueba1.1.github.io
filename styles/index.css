@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #e3e4dd;
+    background: #e8e7e5;
     font-family: 'Roboto Flex', sans-serif;
     display: flex;
     flex-direction: column;
@@ -108,16 +108,15 @@ body {
     background: none;
     border: 1px solid transparent;
     cursor: pointer;
-    color: #e3e5de;
+    color: #e8e7e5;
     transition: all 0.2s;
     text-decoration: none;
     display: inline-block;
 }
 
 .boton:hover {
-    background: #e3e5de;
+    background: #e8e7e5;
     color: #21211f;
-    border: 1px solid #e3e4dd;
     border-radius: 10px;
 }
 
@@ -145,7 +144,7 @@ body {
 }
 
 .servicio-card {
-    background: #e3e5de;
+    background: #e8e7e5;
     border-radius: 20px;
     padding: 20px;
     position: relative;
@@ -410,7 +409,7 @@ body {
 }
 
 .more .boton {
-    color: #e3e4dd;
+    color: #e8e7e5;
     background-color: #21211f;
     padding: 10px 15px;
     font-size: 1.8rem;
@@ -425,163 +424,7 @@ body {
 
 .more .boton:hover {
     transform: scale(1.05);
-    background-color: #e3e4dd;
+    background-color: #e8e7e5;
     color: #21211f;
     border-color: transparent;
-}
-
-/* Footer */
-footer {
-    width: 100%;
-    color: #21211f;
-    padding: 50px 20px;
-}
-
-footer .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-bottom: 30px;
-    border-bottom: 1.5px solid #21211f;
-    text-align: left;
-}
-
-footer .footer-content p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-footer .mapa {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-footer .info,
-footer .info-mapa,
-footer .contacto {
-    flex: 1 1 250px;
-    min-width: 250px;
-}
-
-footer .info h1,
-footer .info-mapa h1,
-footer .form-content h1 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-}
-
-footer .info p,
-footer .info-mapa p,
-footer .numeros {
-    font-size: 1rem;
-}
-
-footer .mapita iframe {
-    width: 100%;
-    max-width: 450px;
-    height: 300px;
-    border: none;
-    border-radius: 10px;
-}
-
-footer .redes-sociales {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    justify-content: flex-start;
-    margin: 15px 0;
-    padding: 0;
-}
-
-footer .redes-sociales i {
-    font-size: 2.5rem;
-    color: #21211f;
-    transition: color 0.3s;
-}
-
-footer .redes-sociales i:hover {
-    color: #9d9e9a
-}
-
-footer .numeros {
-    list-style: none;
-    padding: 0;
-    line-height: 2;
-}
-
-footer .numeros i {
-    margin-right: 10px;
-    color: #21211f;
-}
-
-footer .form-content {
-    max-width: 500px;
-    margin: 0 auto;
-    border-radius: 10px;
-    color: #21211f;
-}
-
-footer .form-content h1 {
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
-
-footer .form-content input,
-footer .form-content textarea {
-    font-family: inherit;
-    font-size: 1.2rem;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    background: #e3e4dd;
-    border: 1px solid #21211f;
-}
-
-footer .form-content button {
-    padding: 12px 25px;
-    border-radius: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    background: #e3e5de;
-    color: #21211f;
-    border: 1px solid #21211f;
-    transition: background 0.3s, color 0.3s;
-}
-
-footer .form-content button:hover {
-    color: #e3e5de;
-    background: #21211f;
-}
-
-.error {
-    color: red;
-    font-size: 0.9em;
-    display: block;
-    margin: -10px 0 10px;
-}
-
-/* Responsive footer */
-@media (min-width: 768px) {
-    .contenido {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .izquierda,
-    .derecha {
-        flex: 1;
-        max-width: 50%;
-    }
-
-    .izquierda {
-        padding-right: 2rem;
-    }
-
-    .derecha {
-        padding-left: 2rem;
-    }
 }

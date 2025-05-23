@@ -1,0 +1,72 @@
+<footer>
+    <div class="footer">
+        <div class="footer-content">
+            <div class="mapa">
+                <div class="info-mapa">
+                    <h1>Visita nuestras oficinas</h1>
+                    <p>
+                        Fraccionamiento Tulipanes - Calle Del Mango, entre De La Soya y Tulipanes sur
+                    </p>
+                    <div class="mapita">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1716.5590235485074!2d-92.28795378517907!3d14.874975267014415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2smx!4v1725143639187!5m2!1ses!2smx"
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="contacto">
+                    <div class="form-content">
+                        <h1>Tienes dudas y quieres recibir atención personal, envíanos un correo</h1>
+                        <form action="https://formspree.io/f/mzzrwvkl" method="POST">
+                            <label>
+                                Correo:
+                                <input type="email" name="email" placeholder="Correo electrónico" required>
+                            </label>
+                            <label>
+                                Nombre:
+                                <input type="text" name="name" placeholder="Nombre" required>
+                            </label>
+                            <label>
+                                Mensaje:
+                                <textarea name="message" placeholder="Mensaje" required rows="4"
+                                    style="resize: none; overflow: hidden;"></textarea>
+                            </label>
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="info">
+                    <h1>Contáctanos</h1>
+                    <ul class="redes-sociales">
+                        <li><a href="https://www.facebook.com/TapgroupRM/"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/gruporm.mx/"><i class="bi bi-instagram"></i></a></li>
+                        <li><a href="https://wa.me/"><i class="bi bi-whatsapp"></i></a></li>
+                    </ul>
+
+                    <ul class="numeros">
+                        <li><i class="bi bi-telephone-fill"></i>No disponible por el momento</li>
+                        <li><i class="bi bi-telephone-fill"></i>No disponible por el momento</li>
+                        <li>
+                            <p>© 2025 Constructora Grupo RM. Todos los derechos reservados.
+
+                                Sitio web desarrollado por Emiliano Leal.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    window.onbeforeunload = () => {
+        for (const form of document.getElementsByTagName('form')) {
+            form.reset();
+        }
+    }
+
+    document.addEventListener('input', function (event) {
+        if (event.target.tagName.toLowerCase() !== 'textarea') return;
+        event.target.style.height = 'auto';
+        event.target.style.height = event.target.scrollHeight + 'px';
+    });
+</script>

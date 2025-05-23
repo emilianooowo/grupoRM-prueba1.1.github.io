@@ -2,8 +2,8 @@
 
 :root {
     --color-bg: #e8e7e5;
-    --color-text: #1f1f11;
-    --color-footer-bg: #1f1f11;
+    --color-text: #1d1d1d;
+    --color-footer-bg: #1d1d1d;
     --color-hover: #9fcaff;
     --color-social-hover: #bbb;
     --font-main: 'Roboto Flex', sans-serif;
@@ -159,12 +159,178 @@ header {
     }
 
     .menu a {
-        font-size: 1.2rem;
-        padding: 8px 12px;
+        font-size: 1.3rem;
+        /* aumentamos un poco */
+        padding: 12px 18px;
+        /* más espacio táctil */
+        min-height: 48px;
+        /* mínimo recomendado para accesibilidad */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .logo img {
         width: 150px;
         height: auto;
+    }
+}
+
+/* Footer */
+#footer-placeholder {
+    width: 100%;
+}
+
+
+footer {
+    background-color: #1f1f11;
+    color: #e8e7e5;
+    padding: 50px 20px;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    border-bottom: 1.5px solid #e8e7e5;
+    text-align: left;
+}
+
+footer .footer-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+footer .mapa {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+footer .info,
+footer .info-mapa,
+footer .contacto {
+    flex: 1 1 250px;
+    min-width: 250px;
+}
+
+footer .info h1,
+footer .info-mapa h1,
+footer .form-content h1 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+footer .info p,
+footer .info-mapa p,
+footer .numeros {
+    font-size: 1rem;
+}
+
+footer .mapita iframe {
+    width: 100%;
+    max-width: 450px;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+}
+
+footer .redes-sociales {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    margin: 15px 0;
+    padding: 0;
+}
+
+footer .redes-sociales i {
+    font-size: 2.5rem;
+    color: #e8e7e5;
+    transition: color 0.3s;
+}
+
+footer .redes-sociales i:hover {
+    color: #9d9e9a
+}
+
+footer .numeros {
+    font-size: 1.2rem;
+    color: #e8e7e5;
+    list-style: none;
+    padding: 0;
+    line-height: 2;
+}
+
+footer .numeros i {
+    margin-right: 10px;
+    color: #e8e5e5;
+    ;
+}
+
+footer .form-content {
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    color: #21211f;
+}
+
+footer .form-content h1 {
+    color: #e8e7e5;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+footer .form-content input,
+footer .form-content textarea {
+    font-family: inherit;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background: #e8e7e5;
+    border: 1px solid #e8e7e5;
+}
+
+footer .form-content button {
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: #e8e7e5;
+    color: #1d1d1d;
+    border: 1px solid #e8e7e5;
+    transition: background 0.3s, color 0.3s;
+}
+
+footer .form-content button:hover {
+    color: #e8e7e5;
+    border: 1px solid #1d1d1d;
+    background: #1d1d1d;
+}
+
+/* Responsive footer */
+@media (min-width: 768px) {
+    .contenido {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .izquierda,
+    .derecha {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .izquierda {
+        padding-right: 2rem;
+    }
+
+    .derecha {
+        padding-left: 2rem;
     }
 }
