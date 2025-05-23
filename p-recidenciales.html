@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo RM - Galeria</title>
-    <link rel="stylesheet" href="styles/galeria.css">
+    <title>Grupo RM - Recidencias</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/p-recidenciales.css">
     <link rel="icon" href="imgs/logos/logo-icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://unpkg.com/lucide@latest" defer></script>
-    <script src="js/galeria.js" defer></script>
+    <script src="js/p-recidenciales.js" defer></script>
     <style>
         @keyframes spin {
             100% {
@@ -21,7 +22,7 @@
 
 <body>
     <div id="loader"
-        style="display:flex;justify-content:center;align-items:center;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(255,255,255,0.7);z-index:9999;">
+        style="display:flex;justify-content:center;align-items:center;position:fixed;top:0;left:0;width:100vw;height:100vh;background: rgba(0, 0, 0, 0.1);z-index:9999;">
         <div
             style="width:40px;height:40px;border:5px solid #ccc;border-top:5px solid #333;border-radius:50%;animation:spin 1s linear infinite;">
         </div>
@@ -30,25 +31,13 @@
     <header>
         <nav class="menu">
             <ul>
-                <a href="index.html"><img src="imgs/logos/logo-largo.png" alt="Inicio" width="190px" height="65px"></a>
-                <li><a href="servicios.html">Servicios</a></li>
+                <a href="index.html" class="logo">
+                    <img src="imgs/logos/logo-header.png" alt="Inicio" width="80px" height="80px">
+                </a>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
                 <li><a href="portafolio.html">Portafolio</a></li>
-
-                <div class="filter-bar">
-                    <div class="filter-group">
-                        <button class="filter-btn" data-filter="all">Todos</button>
-                        <div class="dropdown">
-                            <button class="filter-btn" data-filter="interiores" id="interioresBtn">Interiores ▾</button>
-                            <div class="dropdown-menu" id="subfilterMenu">
-                                <button class="subfilter-btn" data-subfilter="all">Todos los interiores</button>
-                                <button class="subfilter-btn" data-subfilter="cocinas">Cocinas</button>
-                                <button class="subfilter-btn" data-subfilter="salas">Salas</button>
-                                <button class="subfilter-btn" data-subfilter="comedores">Comedores</button>
-                            </div>
-                        </div>
-                        <button class="filter-btn" data-filter="exteriores">Exteriores</button>
-                    </div>
-                </div>
+                <li><a href="p-comerciales.html">Proyectos Comerciales</a></li>
             </ul>
         </nav>
     </header>
@@ -60,23 +49,38 @@
                 necesitas.</h2>
         </div>
 
+        <div class="filter-bar">
+            <div class="filter-group">
+                <button class="filter-btn" data-filter="all">Todos</button>
+                <div class="dropdown">
+                    <button class="filter-btn" data-filter="interiores" id="interioresBtn">Interiores ▾</button>
+                    <div class="dropdown-menu" id="subfilterMenu">
+                        <button class="subfilter-btn" data-subfilter="all">Todos los interiores</button>
+                        <button class="subfilter-btn" data-subfilter="cocinas">Cocinas</button>
+                        <button class="subfilter-btn" data-subfilter="salas">Salas</button>
+                        <button class="subfilter-btn" data-subfilter="comedores">Comedores</button>
+                    </div>
+                </div>
+                <button class="filter-btn" data-filter="exteriores">Exteriores</button>
+            </div>
+        </div>
+
         <section class="gallery">
-            <img src="imgs/galeria/foto-(12).webp" class="item interiores comedores" style="height:180px"
+            <img src="imgs/recidencias/foto-(12).webp" class="item interiores comedores" style="height:180px"
                 loading="lazy">
-            <img src="imgs/galeria/foto-(1).webp" class="item interiores" style="height:240px" loading="lazy">
-            <img src="imgs/galeria/foto-(2).webp" class="item interiores" style="height:120px" loading="lazy">
-            <img src="imgs/galeria/foto-(8).webp" class="item exteriores" style="height:300px" <img
-                src="imgs/galeria/foto-(4).webp" class="item interiores salas" style="height:200px" loading="lazy">
-            <img src="imgs/galeria/foto-(5).webp" class="item interiores salas" style="height:160px" loading="lazy">
-            <img src="imgs/galeria/foto-(3).webp" class="item interiores" style="height:140px" loading="lazy">
-            <img src="imgs/galeria/foto-(9).webp" class="item exteriores" style="height:220px" loading="lazy">
-            <img src="imgs/galeria/foto-(10).webp" class="item exteriores" style="height:180px" loading="lazy">
-            <img src="imgs/galeria/foto-(0).webp" class="item interiores" style="height:240px" loading="lazy">
-            <img src="imgs/galeria/foto-(15).webp" class="item interiores" style="height:120px" loading="lazy">
-            <img src="imgs/galeria/foto-(13).webp" class="item interiores salas comedores" style="height:300px"
-                loading="lazy">
-            <img src="imgs/galeria/foto-(14).webp" class="item interiores cocinas" style="height:200px" loading="lazy">
-            <img src="imgs/galeria/foto-(11).webp" class="item interiores salas" style="height:160px" loading="lazy">
+            <img src="imgs/recidencias/foto-(1).webp" class="item interiores" style="height:240px" loading="lazy">
+            <img src="imgs/recidencias/foto-(2).webp" class="item interiores" style="height:120px" loading="lazy">
+            <img src="imgs/recidencias/foto-(8).webp" class="item exteriores" style="height:300px" loading="lazy">
+            <img src="imgs/recidencias/foto-(4).webp" class="item interiores salas" style="height:200px" loading="lazy">
+            <img src="imgs/recidencias/foto-(5).webp" class="item interiores salas" style="height:160px" loading="lazy">
+            <img src="imgs/recidencias/foto-(3).webp" class="item interiores" style="height:140px" loading="lazy">
+            <img src="imgs/recidencias/foto-(9).webp" class="item exteriores" style="height:220px" loading="lazy">
+            <img src="imgs/recidencias/foto-(10).webp" class="item exteriores" style="height:180px" loading="lazy">
+            <img src="imgs/recidencias/foto-(0).webp" class="item interiores" style="height:240px" loading="lazy">
+            <img src="imgs/recidencias/foto-(15).webp" class="item interiores" style="height:120px" loading="lazy">
+            <img src="imgs/recidencias/foto-(13).webp" class="item interiores salas comedores" style="height:300px" loading="lazy">
+            <img src="imgs/recidencias/foto-(14).webp" class="item interiores cocinas" style="height:200px" loading="lazy">
+            <img src="imgs/recidencias/foto-(11).webp" class="item interiores salas" style="height:160px" loading="lazy">
         </section>
 
     </main>
@@ -121,7 +125,7 @@
                         <ul class="redes-sociales">
                             <li><a href="https://www.facebook.com/TapgroupRM/"><i class="bi bi-facebook"></i></a></li>
                             <li><a href="https://www.instagram.com/gruporm.mx/"><i class="bi bi-instagram"></i></a></li>
-                            <li><a href="https://wa.me/9621843007"><i class="bi bi-whatsapp"></i></a></li>
+                            <li><a href="https://wa.me/"><i class="bi bi-whatsapp"></i></a></li>
                         </ul>
 
                         <ul class="numeros">

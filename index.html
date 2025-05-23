@@ -15,69 +15,159 @@
     <div class="banner">
         <img src="imgs/logos/logo2.png" class="logo" alt="Grupo RM Logo">
         <div class="botones">
-            <a href="servicios.html"><button>Servicios</button></a>
-            <a href="galeria.html"><button>Galería</button></a>
-            <a href="portafolio.html"><button>Portafolio</button></a>
+            <a href="index.html#servicios" class="boton">Servicios</a>
+            <a href="portafolio.html" class="boton">Portafolio</a>
+            <a href="p-recidenciales.html" class="boton">Proyectos Residenciales</a>
+            <a href="p-comerciales.html" class="boton">Proyectos Comerciales</a>
         </div>
+
     </div>
 
-    <section class="contenido">
-        <div class="izquierda animar">
-            <h1 class="title">¿Quiénes somos?</h1>
-            <div class="texto">
-                <p>Una sociedad de empresas líderes en arquitectura y construcción en Chiapas
-                    con más de 15 años de experiencia. Nos especializamos en la
-                    fabricación, diseño y ejecución de proyectos arquitectónicos.
-                    Nuestro objetivo es mejorar la calidad de vida de nuestros
-                    clientes y la comunidad en general, promoviendo prácticas novedosas y
-                    auténticas; orientadas a marcar la diferencia en el sector.</p>
+    <section id="servicios">
+        <h1 class="title">Conoce nuestros servicios</h1>
+
+        <div class="servicios-grid">
+            <div class="servicio-card-importantes">
+                <i class="bi bi-house-door-fill" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                <p class="servicio-text-importantes">Diseño y construcción de vivienda residencial</p>
+            </div>
+
+            <div class="servicio-card-importantes">
+                <i class="bi bi-house-heart-fill" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                <p class="servicio-text-importantes">Diseño y construcción de vivienda de interés social</p>
+            </div>
+
+            <div class="servicio-card">
+                <i class="bi bi-diagram-3-fill" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                <p class="servicio-text">Gestión integral de obra</p>
+            </div>
+
+            <div class="servicio-card">
+                <i class="bi bi-pencil-square" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                <p class="servicio-text">Proyecto ejecutivo</p>
+            </div>
+
+            <div class="servicio-card">
+                <i class="bi bi-cash-stack" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                <p class="servicio-text">Presupuesto y supervisión de obra</p>
+            </div>
+
+            <div class="servicio-card">
+                <i class="bi bi-geo-alt-fill" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                <p class="servicio-text">Levantamiento arquitectónico</p>
+            </div>
+
+            <div class="servicio-card">
+                <i class="bi bi-files" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                <p class="servicio-text">Digitalización de planos</p>
+            </div>
+
+            <div class="servicio-card">
+                <i class="bi bi-boxes" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                <p class="servicio-text">Conceptualización arquitectónica y diseño 3D</p>
+            </div>
+
+            <div class="servicio-card">
+                <i class="bi bi-journal-text" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                <p class="servicio-text">Gestión de trámites</p>
+            </div>
+
+            <div class="servicio-card">
+                <i class="bi bi-hammer" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                <p class="servicio-text">Remodelación</p>
             </div>
         </div>
 
-        <div class="derecha animar">
-            <h1 class="title">Sobre nosotros</h1>
-            <div class="faq">
-                <div class="question">
-                    <h3>Misión</h3>
-                    <svg width="15" height="10" viewBox="0 0 42 25">
-                        <path d="M3 3L21 21L39 3" stroke="#fff" stroke-width="5" />
-                    </svg>
-                </div>
-                <div class="answer">
-                    <p> En Constructora Grupo RM transformamos ideas en espacios que mejoran la calidad de vida.
-                        Desarrollamos cada proyecto con innovación, atención al detalle y adaptándonos al terreno,
-                        presupuesto y necesidades del cliente, garantizando soluciones funcionales, modernas y con
-                        impacto real.
-                    </p>
+
+    </section>
+
+    <section id="quienes-somos">
+        <h1 class="section-title">Quiénes Somos</h1>
+
+        <!-- Fila 1: TEXTO - IMAGEN -->
+        <div class="content-row">
+            <div class="text-content">
+                <h3>
+                    <span class="highlight-number">15+</span>
+                    Años de Experiencia
+                </h3>
+                <p>Más de 15 años de experiencia en arquitectura y construcción en Tapachula, Chiapas, respaldando cada
+                    proyecto
+                    con conocimiento sólido y expertise local.</p>
+            </div>
+            <div class="image-content">
+                <div class="image-placeholder">
+                    <img src="/imgs/recidencias/foto-(10).webp">
                 </div>
             </div>
-            <div class="faq">
-                <div class="question">
-                    <h3>Visión</h3>
-                    <svg width="15" height="10" viewBox="0 0 42 25">
-                        <path d="M3 3L21 21L39 3" stroke="#fff" stroke-width="5" />
-                    </svg>
-                </div>
-                <div class="answer">
-                    <p> Ser el referente líder en el mercado de desarrollo de proyectos en la región sur del estado de
-                        Chiapas, logrando presencia a nivel estatal y destacándonos por nuestro sello constructivo
-                        vanguardista y de alta calidad.
-                    </p>
+        </div>
+
+        <!-- Fila 2: IMAGEN - TEXTO -->
+        <div class="content-row reverse">
+            <div class="text-content">
+                <h3>
+                    <span class="highlight-number">★</span>
+                    Líderes del Sector
+                </h3>
+                <p>Sociedad de empresas líderes en el sector, uniendo fuerzas para ofrecer soluciones integrales y de la
+                    más alta calidad.</p>
+            </div>
+            <div class="image-content">
+                <div class="image-placeholder">
+                    <img src="/imgs/recidencias/foto-(8).webp">
                 </div>
             </div>
-            <div class="faq">
-                <div class="question">
-                    <h3>Valores</h3>
-                    <svg width="15" height="10" viewBox="0 0 42 25">
-                        <path d="M3 3L21 21L39 3" stroke="#fff" stroke-width="5" />
-                    </svg>
-                </div>
-                <div class="answer">
-                    <p>Calidad, responsabilidad, innovación, honestidad y transparencia son nuestros valores. Nos
-                        comprometemos a adaptarnos a las tendencias, garantizando claridad y cumplimiento de plazos,
-                        presupuestos y expectativas.</p>
+        </div>
+
+        <div class="content-row">
+            <div class="text-content">
+                <h3>
+                    <span class="highlight-number">🏗️</span>
+                    Especialistas Integrales
+                </h3>
+                <p>Especialistas en diseño, fabricación y ejecución de proyectos arquitectónicos, cubriendo cada etapa
+                    del proceso constructivo.</p>
+            </div>
+            <div class="image-content">
+                <div class="image-placeholder">
+                    <img src="/imgs/recidencias/foto-(14).webp">
                 </div>
             </div>
+        </div>
+
+        <div class="content-row reverse">
+            <div class="text-content">
+                <h3>
+                    <span class="highlight-number">💙</span>
+                    Compromiso Social
+                </h3>
+                <p>Comprometidos con mejorar la calidad de vida de nuestros clientes y comunidad, creando espacios que
+                    transforman vidas.</p>
+            </div>
+            <div class="image-content">
+                <div class="image-placeholder">
+                    <img src="/imgs/recidencias/foto-(4).webp">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-row">
+            <div class="text-content">
+                <h3>
+                    <span class="highlight-number">🚀</span>
+                    Innovación Constante
+                </h3>
+                <p>Promovemos prácticas auténticas y novedosas para marcar la diferencia, manteniéndonos a la vanguardia
+                    de la industria.</p>
+            </div>
+            <div class="image-content">
+                <div class="image-placeholder">
+                    <img src="/imgs/recidencias/foto-(0).webp">
+                </div>
+            </div>
+        </div>
+        <div class="more">
+            <a href="portafolio.html" class="boton">Ver más</a>
         </div>
     </section>
 
@@ -120,7 +210,7 @@
                         <ul class="redes-sociales">
                             <li><a href="https://www.facebook.com/TapgroupRM/"><i class="bi bi-facebook"></i></a></li>
                             <li><a href="https://www.instagram.com/gruporm.mx/"><i class="bi bi-instagram"></i></a></li>
-                            <li><a href="https://wa.me/9621843007"><i class="bi bi-whatsapp"></i></a></li>
+                            <li><a href="https://wa.me/"><i class="bi bi-whatsapp"></i></a></li>
                         </ul>
 
                         <ul class="numeros">
@@ -138,26 +228,6 @@
         </div>
     </footer>
 
-    <script>
-        window.onbeforeunload = () => {
-            for (const form of document.getElementsByTagName('form-content')) {
-                form.reset();
-            }
-        };
-
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            const emailInput = this.querySelector('input[name="Correo"]');
-            const email = emailInput.value.trim();
-            const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (!regexCorreo.test(email)) {
-                e.preventDefault();
-                alert("Por favor ingresa un correo electrónico válido.");
-                emailInput.focus();
-            }
-        });
-
-    </script>
 </body>
 
 </html>

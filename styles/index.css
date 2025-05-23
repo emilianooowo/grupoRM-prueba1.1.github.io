@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #21211f;
+    background: #e3e4dd;
     font-family: 'Roboto Flex', sans-serif;
     display: flex;
     flex-direction: column;
@@ -15,6 +15,7 @@ body {
     text-align: center;
 }
 
+/* Animaciones */
 @keyframes fadeInSlide {
     0% {
         opacity: 0;
@@ -25,34 +26,6 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.banner {
-    position: relative; /* <- esto es crucial */
-    background-image: url('../imgs/banner3.jpg');
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    padding: 6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    animation: fadeInSlide 1s ease-out;
-    overflow: hidden; /* <- para que el ::after no se desborde */
-    z-index: 0;
-}
-
-.banner::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 20%; /* Ajusta según cuánto fade quieras */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #21211f 100%);
-    z-index: 1;
-    pointer-events: none;
 }
 
 @keyframes logoPop {
@@ -67,15 +40,6 @@ body {
     }
 }
 
-.logo {
-    max-width: 250px;
-    width: 90%;
-    height: auto;
-    margin-bottom: 2rem;
-    animation: logoPop 1s ease-out 0.5s forwards;
-    opacity: 0;
-}
-
 @keyframes buttonAppear {
     0% {
         opacity: 0;
@@ -86,101 +50,6 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.botones {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    opacity: 0;
-    animation: buttonAppear 1s ease-out 1s forwards;
-}
-
-.botones button {
-    font-family: inherit;
-    font-weight: 300;
-    font-size: clamp(1.2rem, 2vw, 2rem);
-    padding: 1rem 1.5rem;
-    background: none;
-    border: 1px solid transparent;
-    cursor: pointer;
-    color: #e3e4dd;
-    transition: all 0.2s ease-in;
-}
-
-.botones button:hover {
-    background-color: #ffffff;
-    color: #000000;
-    border: 1px solid #000000;
-    border-radius: 10px;
-}
-
-.contenido {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-    width: 100%;
-    max-width: 1200px;
-    margin: 3rem auto 50px;
-}
-
-.izquierda,
-.derecha {
-    width: 100%;
-    color: #e3e5de;
-    text-align: left;
-}
-
-.izquierda .title,
-.derecha .title {
-    font-size: 2.7rem;
-    margin-bottom: 1rem;
-}
-
-.texto {
-    font-weight: 100;
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    line-height: 1.5;
-}
-
-.faq {
-    border-bottom: 1px solid #e3e5de;
-    padding-bottom: 1rem;
-    margin-top: 1.6rem;
-    cursor: pointer;
-}
-
-.question {
-    font-size: 1.4rem;
-    display: flex;
-    justify-content: space-between;
-}
-
-.answer {
-    font-weight: 100;
-    line-height: 1.5;
-    padding-top: 10px;
-    font-size: 1.4rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 1.2s;
-}
-
-.faq.active .answer {
-    max-height: 250px;
-}
-
-.faq svg {
-    transition: transform 0.5s ease-in;
-}
-
-.faq.active svg {
-    transform: rotate(180deg);
 }
 
 @keyframes fadeInUp {
@@ -195,27 +64,386 @@ body {
     }
 }
 
-.animar {
+/* Banner */
+.banner {
+    position: relative;
+    background: url('../imgs/banner.webp') center/cover;
+    width: 100%;
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInSlide 1s ease-out;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Logo */
+.logo {
+    max-width: 250px;
+    width: 90%;
+    height: auto;
+    margin-bottom: 4rem;
+    animation: logoPop 1s ease-out 0.5s forwards;
+    opacity: 0;
+}
+
+/* Botones */
+.botones {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    opacity: 0;
+    animation: buttonAppear 1s ease-out 1s forwards;
+}
+
+.boton {
+    font-family: inherit;
+    font-weight: 300;
+    font-size: clamp(.2rem, 2vw, 1.8rem);
+    padding: 1rem 1.5rem;
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: #e3e5de;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.boton:hover {
+    background: #e3e5de;
+    color: #21211f;
+    border: 1px solid #e3e4dd;
+    border-radius: 10px;
+}
+
+#servicios {
+    max-width: 1200px;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.title {
+    color: #21211f;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-weight: bold;
+    position: relative;
+}
+
+.servicios-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: calc(6 * 180px + 5 * 20px);
+    margin: 0 auto;
+}
+
+.servicio-card {
+    background: #e3e5de;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 5px solid transparent;
+    border-color: #21211f;
+}
+
+.servicio-card-importantes {
+    background: #21211f;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    width: 250px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.servicio-card-importantes {
+    color: #e3e5de;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+}
+
+.servicio-text {
+    color: #21211f;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+}
+
+/* Responsive servicios */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .servicios-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 160px));
+        gap: 15px;
+    }
+
+    .servicio-card {
+        padding: 15px;
+        width: 160px;
+        height: 160px;
+    }
+
+    .servicio-text {
+        font-size: 0.95rem;
+    }
+
+    .servicio-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+}
+
+/* Quienes somos */
+#quienes-somos {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    color: #21211f;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    position: relative;
+}
+
+.content-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 300px;
     opacity: 0;
     transform: translateY(50px);
+    transition: all 0.8s;
 }
 
-.animar.mostrar {
-    animation: fadeInUp 1s ease forwards;
+.content-row.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
+.content-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.text-content h3 {
+    color: #21211f;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.text-content p {
+    color: #21211f;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-placeholder {
+    width: 400px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.image-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: left 0.6s;
+}
+
+.image-placeholder:hover::before {
+    left: 100%;
+}
+
+.image-placeholder:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(33, 33, 31, 0.3);
+}
+
+.highlight-number {
+    display: inline-block;
+    background: #21211f;
+    color: #e3e5de;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+/* Animaciones de entrada escalonadas */
+.content-row:nth-child(2) {
+    transition-delay: 0s;
+}
+
+.content-row:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.content-row:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.content-row:nth-child(5) {
+    transition-delay: 0s;
+}
+
+.content-row:nth-child(6) {
+    transition-delay: 0.2s;
+}
+
+.content-row:nth-child(7) {
+    transition-delay: 0.4s;
+}
+
+/* Responsive quienes somos */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+
+    .content-row,
+    .content-row.reverse {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .text-content {
+        padding: 20px;
+    }
+
+    .text-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .text-content p {
+        font-size: 1.1rem;
+    }
+
+    .image-placeholder {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-placeholder {
+        width: 280px;
+        height: 180px;
+    }
+
+    .text-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .text-content p {
+        font-size: 1rem;
+    }
+}
+
+.more {
+    text-decoration: none;
+    color: inherit;
+    margin: 2rem auto;
+}
+
+.more .boton {
+    color: #e3e4dd;
+    background-color: #21211f;
+    padding: 10px 15px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    white-space: nowrap;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #21211f;
+}
+
+.more .boton:hover {
+    transform: scale(1.05);
+    background-color: #e3e4dd;
+    color: #21211f;
+    border-color: transparent;
+}
+
+/* Footer */
 footer {
     width: 100%;
-    background-color: #21211f;
-    color: #e3e5de;
-    padding: 40px 20px;
+    color: #21211f;
+    padding: 50px 20px;
 }
 
 footer .footer-content {
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 30px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1.5px solid #21211f;
     text-align: left;
 }
 
@@ -271,12 +499,12 @@ footer .redes-sociales {
 
 footer .redes-sociales i {
     font-size: 2.5rem;
-    color: #e3e5de;
-    transition: color 0.3s ease;
+    color: #21211f;
+    transition: color 0.3s;
 }
 
 footer .redes-sociales i:hover {
-    color: rgb(133, 137, 136);
+    color: #9d9e9a
 }
 
 footer .numeros {
@@ -287,14 +515,14 @@ footer .numeros {
 
 footer .numeros i {
     margin-right: 10px;
-    color: var(--color-white);
+    color: #21211f;
 }
 
 footer .form-content {
     max-width: 500px;
     margin: 0 auto;
     border-radius: 10px;
-    color: #e3e5de;
+    color: #21211f;
 }
 
 footer .form-content h1 {
@@ -304,13 +532,14 @@ footer .form-content h1 {
 
 footer .form-content input,
 footer .form-content textarea {
+    font-family: inherit;
+    font-size: 1.2rem;
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin-bottom: 15px;
     border-radius: 5px;
-    font-size: 1rem;
-    background-color: #e3e5de;
-    border: none;
+    background: #e3e4dd;
+    border: 1px solid #21211f;
 }
 
 footer .form-content button {
@@ -318,16 +547,15 @@ footer .form-content button {
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
-    background-color: #21211f;
-    color: var(--color-text);
-    border: 1px solid #e3e5de;
-    transition: background-color 0.3s ease;
+    background: #e3e5de;
+    color: #21211f;
+    border: 1px solid #21211f;
+    transition: background 0.3s, color 0.3s;
 }
 
 footer .form-content button:hover {
-    border: none;
-    color: #172826;
-    background-color: #e3e5de;
+    color: #e3e5de;
+    background: #21211f;
 }
 
 .error {
@@ -337,6 +565,7 @@ footer .form-content button:hover {
     margin: -10px 0 10px;
 }
 
+/* Responsive footer */
 @media (min-width: 768px) {
     .contenido {
         flex-direction: row;

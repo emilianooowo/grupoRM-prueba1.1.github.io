@@ -1,118 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
-
-:root {
-    --color-bg: #e8e7e5;
-    --color-text: #1f1f11;
-    --color-footer-bg: #1f1f11;
-    --color-white: #fff;
-    --color-hover: #9fcaff;
-    --color-social-hover: #bbb;
-    --font-main: 'Roboto Flex', sans-serif;
-}
-
-html {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: inherit;
-}
-
-body {
-    min-height: 100vh;
-    background: var(--color-bg);
-    font-family: var(--font-main);
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-header {
-    background-color: #21211f;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    padding: 10px 0 0 10px;
-    font-weight: 100;
-    z-index: 10;
-}
-
-.menu ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-.menu ul.show {
-    opacity: 1;
-}
-
-.menu li {
-    padding-top: 25px;
-}
-
-.menu a {
-    color: #e3e5de;
-    padding: 10px 10px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    background: transparent;
-    display: inline-block;
-    border: transparent;
-    transition: transform 0.3s ease-in-out;
-}
-
-.menu a:active {
-    transition: transform 1s ease-in-out;
-    transform: none;
-}
-
-.menu a:hover {
-    font-weight: 90;
-    transform: scale(.95);
-    border: 1px solid #e3e5de;
-    border-radius: 10px;
-}
-
 .portfolio {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
+    gap: 20px;
+    max-width: 95%;
+    margin: 0 auto;
 }
 
 .project-card {
     background-color: #e3e5de;
     width: 100%;
     margin: 0;
-    box-shadow: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 .thumb {
     position: relative;
     width: 100%;
-    height: 150px;
+    height: 250px;
     background-size: cover;
+    background-position: center;
     cursor: pointer;
 }
 
@@ -125,6 +40,7 @@ header {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .project-card.active .thumb::after {
@@ -146,17 +62,19 @@ header {
 }
 
 .details {
+    background-color: #e3e5de;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 2fr);
     gap: 10px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 1s ease;
-    padding: 5px;
+    transition: max-height 1.5s ease;
+    margin: 0 10px 0 10px;
 }
 
 .project-card.active .details {
-    max-height: 2000px;
+    max-height: 800px;
+    transition: max-height 1.5s ease;
 }
 
 .detail {
@@ -169,7 +87,7 @@ header {
     aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
-    border-radius: 20px;
+    border-radius: 5px;
     padding-bottom: 10px;
     padding-top: 10px;
 }
@@ -195,7 +113,6 @@ header {
     max-width: 90%;
     max-height: 80%;
 }
-
 
 .close-btn {
     position: absolute;
@@ -228,9 +145,9 @@ header {
 
 footer {
     width: 100%;
-    background-color: #21211f;
-    color: #e3e5de;
-    padding: 40px 20px;
+    background-color: #e3e5de;
+    color: #1f1f11;
+    margin: 1rem auto;
 }
 
 footer .footer-content {
@@ -293,7 +210,7 @@ footer .redes-sociales {
 
 footer .redes-sociales i {
     font-size: 2.5rem;
-    color: #e3e5de;
+    color: #1f1f11;
     transition: color 0.3s ease;
 }
 
@@ -309,14 +226,14 @@ footer .numeros {
 
 footer .numeros i {
     margin-right: 10px;
-    color: var(--color-white);
+    color: #1f1f11;
 }
 
 footer .form-content {
     max-width: 500px;
     margin: 0 auto;
     border-radius: 10px;
-    color: #e3e5de;
+    color: #1f1f11;
 }
 
 footer .form-content h1 {
@@ -331,7 +248,7 @@ footer .form-content textarea {
     margin-bottom: 15px;
     border-radius: 5px;
     font-size: 1rem;
-    background-color: #e3e5de;
+    background-color: #ffffff;
     border: none;
 }
 
@@ -340,7 +257,7 @@ footer .form-content button {
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
-    background-color: #21211f;
+    background-color: #1f1f11;
     color: #e3e5de;
     border: 1px solid #e3e5de;
     transition: background-color 0.3s ease;
@@ -371,7 +288,6 @@ footer .form-content button:hover {
         flex: 1 1 300px;
         min-width: 250px;
     }
-
 
     .mapita iframe {
         max-width: 100%;

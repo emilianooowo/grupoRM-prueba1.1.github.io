@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+:root {
+    --color-bg: #e8e7e5;
+    --color-text: #1f1f11;
+    --color-footer-bg: #1f1f11;
+    --color-hover: #9fcaff;
+    --color-social-hover: #bbb;
+    --font-main: 'Roboto Flex', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--color-bg);
+    font-family: var(--font-main);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background-color: #e8e7e5;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    padding: 10px 20px;
+    font-weight: 100;
+    z-index: 10;
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu ul.show {
+    opacity: 1;
+}
+
+.menu li,
+.logo {
+    animation: fadeInScale 0.6s ease-out forwards;
+}
+
+.menu li:first-of-type {
+    animation-delay: 0.6s;
+}
+
+.logo {
+    animation-delay: 0.8s;
+}
+
+.menu li:last-of-type {
+    animation-delay: 1s;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+}
+
+.logo {
+    opacity: 0;
+}
+
+.menu a {
+    color: #1f1f11;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: transparent;
+    display: inline-block;
+    border: transparent;
+    transition: transform 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.menu a:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .menu ul {
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 1.2rem;
+        padding: 8px 12px;
+    }
+
+    .logo img {
+        width: 150px;
+        height: auto;
+    }
+}

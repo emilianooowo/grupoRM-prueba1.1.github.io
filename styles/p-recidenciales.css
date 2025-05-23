@@ -1,99 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
-
-:root {
-    --color-bg: #e8e7e5;
-    --color-text: #1f1f11;
-    --color-footer-bg: #1f1f11;
-    --color-white: #fff;
-    --color-hover: #9fcaff;
-    --color-social-hover: #bbb;
-    --font-main: 'Roboto Flex', sans-serif;
-}
-
-html {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: inherit;
-}
-
-body {
-    min-height: 100vh;
-    background: var(--color-bg);
-    font-family: var(--font-main);
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-header {
-    background-color: #21211f;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    padding: 10px 0 0 10px;
-    font-weight: 100;
-    z-index: 10;
-}
-
-.menu ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-.menu ul.show {
-    opacity: 1;
-}
-
-.menu li {
-    padding-top: 25px;
-}
-
-.menu a {
-    color: #e3e5de;
-    padding: 10px 10px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    background: transparent;
-    display: inline-block;
-    border: transparent;
-    transition: transform 0.3s ease-in-out;
-}
-
-.menu a:active {
-    transition: transform 1s ease-in-out;
-    transform: none;
-}
-
-.menu a:hover {
-    font-weight: 90;
-    transform: scale(.95);
-    border: 1px solid #e3e5de;
-    border-radius: 10px;
-}
-
-
 h2 {
     width: 70%;
-    margin: 2.5rem auto;
+    margin: 1rem auto 1rem;
     font-size: 2rem;
     font-weight: 100;
     color: #172826;
@@ -121,7 +28,7 @@ h2 {
 .subfilter-btn,
 .view-btn {
     padding: .5rem 2rem;
-    background: #e3e5de;
+    background: #e8e7e5;
     color: #1f1f11;
     border: none;
     cursor: pointer;
@@ -226,8 +133,8 @@ h2 {
     background: rgba(0, 0, 0, 0.8);
 }
 
-.lightbox.show {
-    display: flex;
+.lightbox:not(.show) {
+    display: none !important;
 }
 
 .lightbox .overlay {
@@ -246,38 +153,66 @@ h2 {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-lightbox .nav-btn {
+.lightbox .nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     font-size: 2rem;
     background: none;
     border: none;
-    color: var(--color-white);
+    color: #e8e7e5;
     cursor: pointer;
 }
 
-.lightbox .prev-btn {
-    left: 5%;
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
 }
 
-.lightbox .next-btn {
-    right: 5%;
+.lightbox.hidden {
+    display: none;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 80%;
 }
 
 .close-btn {
     position: absolute;
-    top: 30px;
-    right: 40px;
-    font-size: 3rem;
-    color: var(--color-white);
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: #fff;
     cursor: pointer;
-    z-index: 10002;
-    transition: color 0.3s;
 }
 
-.close-btn:hover {
-    color: var(--color-hover);
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev-btn {
+    left: 30px;
+}
+
+.next-btn {
+    right: 30px;
 }
 
 footer {
@@ -411,6 +346,14 @@ footer .form-content button:hover {
     font-size: 0.9em;
     display: block;
     margin: -10px 0 10px;
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        column-width: 150px;
+        column-gap: 0.5rem;
+        padding: 10px;
+    }
 }
 
 @media (max-width: 768px) {
