@@ -77,9 +77,12 @@
             <img src="imgs/recidencias/foto-(10).webp" class="item exteriores" style="height:180px" loading="lazy">
             <img src="imgs/recidencias/foto-(0).webp" class="item interiores" style="height:240px" loading="lazy">
             <img src="imgs/recidencias/foto-(15).webp" class="item interiores" style="height:120px" loading="lazy">
-            <img src="imgs/recidencias/foto-(13).webp" class="item interiores salas comedores" style="height:300px" loading="lazy">
-            <img src="imgs/recidencias/foto-(14).webp" class="item interiores cocinas" style="height:200px" loading="lazy">
-            <img src="imgs/recidencias/foto-(11).webp" class="item interiores salas" style="height:160px" loading="lazy">
+            <img src="imgs/recidencias/foto-(13).webp" class="item interiores salas comedores" style="height:300px"
+                loading="lazy">
+            <img src="imgs/recidencias/foto-(14).webp" class="item interiores cocinas" style="height:200px"
+                loading="lazy">
+            <img src="imgs/recidencias/foto-(11).webp" class="item interiores salas" style="height:160px"
+                loading="lazy">
         </section>
 
     </main>
@@ -110,11 +113,20 @@
                     <div class="contacto">
                         <div class="form-content">
                             <h1>Tienes dudas y quieres recibir atención personal, envíanos un correo</h1>
-                            <form action="https://formspree.io/f/mzzrwvkl" method="post" novalidate>
-                                <input type="text" name="Nombre" placeholder="Nombre" required>
-                                <input type="email" name="Correo" placeholder="Correo electrónico" required>
-                                <textarea name="Mensaje" placeholder="Ingrese su mensaje aquí" rows="5"
-                                    style="resize: none;" required></textarea>
+                            <form action="https://formspree.io/f/mzzrwvkl" method="POST">
+                                <label>
+                                    Correo:
+                                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                                </label>
+                                <label>
+                                    Nombre:
+                                    <input type="text" name="name" placeholder="Nombre" required>
+                                </label>
+                                <label>
+                                    Mensaje:
+                                    <textarea name="message" placeholder="Mensaje" required rows="4"
+                                        style="resize: none; overflow: hidden;"></textarea>
+                                </label>
                                 <button type="submit">Enviar</button>
                             </form>
                         </div>
@@ -144,23 +156,16 @@
 
     <script>
         window.onbeforeunload = () => {
-            for (const form of document.getElementsByTagName('form-content')) {
+            for (const form of document.getElementsByTagName('form')) {
                 form.reset();
             }
-        };
+        }
 
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            const emailInput = this.querySelector('input[name="Correo"]');
-            const email = emailInput.value.trim();
-            const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (!regexCorreo.test(email)) {
-                e.preventDefault();
-                alert("Por favor ingresa un correo electrónico válido.");
-                emailInput.focus();
-            }
+        document.addEventListener('input', function (event) {
+            if (event.target.tagName.toLowerCase() !== 'textarea') return;
+            event.target.style.height = 'auto';
+            event.target.style.height = event.target.scrollHeight + 'px';
         });
-
     </script>
 </body>
 

@@ -34,12 +34,6 @@ images.forEach(img => {
     }
 });
 
-window.onbeforeunload = () => {
-    for (const form of document.getElementsByTagName('form')) {
-        form.reset();
-    }
-};
-
 window.onload = function () {
     document.querySelector('.menu ul').classList.add('show');
 };

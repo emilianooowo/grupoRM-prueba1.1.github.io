@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     subfilterButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // evita que se cierre al hacer clic en submenú
+            e.stopPropagation();
             loader.style.display = 'flex';
-            currentFilter = 'interiores'; // importante para que el filtro funcione bien
+            currentFilter = 'interiores';
             currentSubfilter = btn.dataset.subfilter;
             filterGallery();
             dropdown.classList.remove('show');
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
             loader.style.display = 'flex';
             currentFilter = btn.dataset.filter;
-            currentSubfilter = 'all'; // Reinicia el subfiltro al cambiar de filtro principal
+            currentSubfilter = 'all';
             filterGallery();
             dropdown.classList.remove('show');
         });
@@ -91,11 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     galleryItems.forEach((item) => {
         if (item.complete) {
-            // Imagen ya cargada, se añade la clase
             item.classList.add('loaded');
             checkImagesLoaded();
         } else {
-            // Si no, se añade el listener load
             item.addEventListener('load', () => {
                 item.classList.add('loaded');
                 checkImagesLoaded();
@@ -140,11 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.classList.remove('show');
     });
 
-    window.onbeforeunload = () => {
-        for (const form of document.getElementsByTagName('form')) {
-            form.reset();
-        }
-    }
 
     window.onload = function () {
         document.querySelector('.menu ul').classList.add('show');

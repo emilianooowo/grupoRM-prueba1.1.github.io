@@ -111,11 +111,20 @@
                     <div class="contacto">
                         <div class="form-content">
                             <h1>Tienes dudas y quieres recibir atención personal, envíanos un correo</h1>
-                            <form action="https://formspree.io/f/mzzrwvkl" method="post" novalidate>
-                                <input type="text" name="Nombre" placeholder="Nombre" required>
-                                <input type="email" name="Correo" placeholder="Correo electrónico" required>
-                                <textarea name="Mensaje" placeholder="Ingrese su mensaje aquí" rows="5"
-                                    style="resize: none;" required></textarea>
+                            <form action="https://formspree.io/f/mzzrwvkl" method="POST">
+                                <label>
+                                    Correo:
+                                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                                </label>
+                                <label>
+                                    Nombre:
+                                    <input type="text" name="name" placeholder="Nombre" required>
+                                </label>
+                                <label>
+                                    Mensaje:
+                                    <textarea name="message" placeholder="Mensaje" required rows="4"
+                                        style="resize: none; overflow: hidden;"></textarea>
+                                </label>
                                 <button type="submit">Enviar</button>
                             </form>
                         </div>
@@ -151,22 +160,16 @@
     </div>
 
     <script>
-        for (const form of document.getElementsByClassName('form-content')) {
-            const formElement = form.querySelector('form');
-            if (formElement) formElement.reset();
+        window.onbeforeunload = () => {
+            for (const form of document.getElementsByTagName('form')) {
+                form.reset();
+            }
         }
 
-
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            const emailInput = this.querySelector('input[name="Correo"]');
-            const email = emailInput.value.trim();
-            const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (!regexCorreo.test(email)) {
-                e.preventDefault();
-                alert("Por favor ingresa un correo electrónico válido.");
-                emailInput.focus();
-            }
+        document.addEventListener('input', function (event) {
+            if (event.target.tagName.toLowerCase() !== 'textarea') return;
+            event.target.style.height = 'auto';
+            event.target.style.height = event.target.scrollHeight + 'px';
         });
     </script>
 </body>
