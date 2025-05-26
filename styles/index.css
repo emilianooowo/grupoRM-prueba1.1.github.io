@@ -79,7 +79,6 @@ body {
     z-index: 0;
 }
 
-/* Logo */
 .logo {
     max-width: 250px;
     width: 90%;
@@ -89,7 +88,6 @@ body {
     opacity: 0;
 }
 
-/* Botones */
 .botones {
     display: flex;
     gap: 1.2rem;
@@ -102,33 +100,49 @@ body {
 
 .boton {
     font-family: inherit;
-    font-weight: 300;
-    font-size: clamp(.2rem, 2vw, 1.8rem);
-    padding: 1rem 1.5rem;
-    background: none;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    padding: 0.8rem 1.8rem;
     border: 1px solid transparent;
+    border-radius: 15px;
     cursor: pointer;
     color: #e8e7e5;
-    transition: all 0.2s;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
     text-decoration: none;
     display: inline-block;
+    position: relative;
+    overflow: hidden;
 }
 
 .boton:hover {
     background: #e8e7e5;
     color: #21211f;
-    border-radius: 10px;
+    border-radius: 15px;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e8e7e5;
+}
+
+.boton:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .boton {
+        padding: 1rem 2rem;
+        min-width: 120px;
+    }
 }
 
 #servicios {
     max-width: 1200px;
-    margin: 8rem auto;
+    margin: 2rem auto;
     text-align: center;
 }
 
 .title {
     color: #21211f;
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 50px;
     font-weight: bold;
     position: relative;
@@ -148,7 +162,7 @@ body {
     border-radius: 20px;
     padding: 20px;
     position: relative;
-    width: 180px;
+    width: 300px;
     height: 180px;
     display: flex;
     flex-direction: column;
@@ -162,7 +176,7 @@ body {
     border-radius: 20px;
     padding: 20px;
     position: relative;
-    width: 250px;
+    width: 950px;
     height: 180px;
     display: flex;
     flex-direction: column;
@@ -170,9 +184,10 @@ body {
     align-items: center;
     text-align: center;
 }
+
 .servicio-card-importantes {
     color: #e3e5de;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     line-height: 1.3;
     font-weight: 600;
     margin: 0;
@@ -181,14 +196,13 @@ body {
 
 .servicio-text {
     color: #21211f;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1.3;
     font-weight: 600;
     margin: 0;
     text-align: center;
 }
 
-/* Responsive servicios */
 @media (max-width: 768px) {
     .title {
         font-size: 2rem;
@@ -221,16 +235,7 @@ body {
 /* Quienes somos */
 #quienes-somos {
     max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-title {
-    color: #21211f;
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 10px;
-    font-weight: bold;
-    position: relative;
+    margin: 3rem auto;
 }
 
 .content-row {
@@ -259,15 +264,14 @@ body {
 
 .text-content h3 {
     color: #21211f;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
-    font-weight: bold;
     line-height: 1.3;
 }
 
 .text-content p {
     color: #21211f;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.6;
     font-weight: 500;
 }
@@ -329,7 +333,6 @@ body {
     margin-right: 15px;
 }
 
-/* Animaciones de entrada escalonadas */
 .content-row:nth-child(2) {
     transition-delay: 0s;
 }
@@ -354,7 +357,6 @@ body {
     transition-delay: 0.4s;
 }
 
-/* Responsive quienes somos */
 @media (max-width: 768px) {
     .section-title {
         font-size: 2.2rem;
@@ -427,4 +429,49 @@ body {
     background-color: #e8e7e5;
     color: #21211f;
     border-color: transparent;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #21211f;
+    color: #e8e7e5;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    transition: all .1s ease;
+    z-index: 99;
+}
+
+.back-to-top.hidden {
+    display: none;
+}
+
+.back-to-top::after {
+    content: "Regresar al inicio";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.back-to-top:hover::after {
+    opacity: 1;
+    visibility: visible;
+    margin-bottom: 10px;
 }
