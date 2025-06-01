@@ -2,8 +2,7 @@
 
 :root {
     --color-bg: #e8e7e5;
-    --color-text: #1d1d1d;
-    --color-footer-bg: #1d1d1d;
+    --color-text: #21211f;
     --color-hover: #9fcaff;
     --color-social-hover: #bbb;
     --font-main: 'Roboto Flex', sans-serif;
@@ -176,160 +175,90 @@ header {
     }
 }
 
-/* Footer */
-#footer-placeholder {
+.footer {
     width: 100%;
+    padding: 4rem 0;
+    color: var(--color-text);
 }
 
-
-footer {
-    background-color: #1f1f11;
-    color: #e8e7e5;
-    padding: 50px 20px;
-}
-
-footer .footer-content {
+.footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 30px;
-    border-bottom: 1.5px solid #e8e7e5;
-    text-align: left;
-}
-
-footer .footer-content p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-footer .mapa {
+    padding: 0 2rem;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 30px;
-    margin-top: 30px;
+    gap: 20px;
+    flex-wrap: nowrap;
 }
 
-footer .info,
-footer .info-mapa,
-footer .contacto {
-    flex: 1 1 250px;
-    min-width: 250px;
+.footer-col {
+    flex: 1 1 18%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-footer .info h1,
-footer .info-mapa h1,
-footer .form-content h1 {
-    font-size: 2rem;
+.footer-col iframe {
+    width: 300px;
+    height: 200px;
     margin-bottom: 10px;
 }
 
-footer .info p,
-footer .info-mapa p,
-footer .numeros {
-    font-size: 1.5rem;
+.footer-col h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--color-text);
 }
 
-footer .mapita iframe {
-    width: 100%;
-    max-width: 450px;
-    height: 410px;
-    border: none;
-    border-radius: 10px;
-}
-
-footer .redes-sociales {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    justify-content: flex-start;
-    margin: 15px 0;
-    padding: 0;
-}
-
-footer .redes-sociales i {
-    font-size: 3rem;
-    color: #e8e7e5;
-    transition: color 0.3s;
-}
-
-footer .redes-sociales i:hover {
-    color: #9d9e9a
-}
-
-footer .numeros {
-    font-size: 1.5rem;
-    color: #e8e7e5;
+.footer-col ul {
     list-style: none;
     padding: 0;
-    line-height: 2;
+    margin: 0;
 }
 
-footer .numeros i {
-    margin-right: 10px;
-    color: #e8e5e5;
-    ;
+.footer-col ul li {
+    margin-bottom: 6px;
 }
 
-footer .form-content {
-    max-width: 500px;
-    margin: 0 auto;
-    border-radius: 10px;
-    color: #21211f;
+.footer-col ul li a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
 }
 
-footer .form-content h1 {
-    color: #e8e7e5;
-    margin-bottom: 20px;
+.footer-col ul li a:hover {
+    color: var(--color-hover);
 }
 
-footer .form-content input,
-footer .form-content textarea {
-    font-family: inherit;
-    font-size: 1.5rem;
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    background: #e8e7e5;
+.social-list li a i {
+    font-size: 18px;
+    color: var(--color-text);
+    transition: color 0.3s ease;
 }
 
-footer .form-content button {
-    padding: 12px 25px;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    background: #e8e7e5;
-    color: #1d1d1d;
-    border: 1px solid #e8e7e5;
-    transition: background 0.3s, color 0.3s;
+.social-list li a:hover i {
+    color: var(--color-hover);
 }
 
-footer .form-content button:hover {
-    color: #e8e7e5;
-    border: 1px solid #1d1d1d;
-    background: #1d1d1d;
-    border: 1px solid #e8e7e5;
+.social-list li a:hover {
+    color: var(--color-hover);
 }
 
-/* Responsive footer */
-@media (min-width: 768px) {
-    .contenido {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
+.footer-col p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+}
 
-    .izquierda,
-    .derecha {
-        flex: 1;
-        max-width: 50%;
-    }
-
-    .izquierda {
-        padding-right: 2rem;
-    }
-
-    .derecha {
-        padding-left: 2rem;
-    }
+.footer .copyright {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--color-text);
 }

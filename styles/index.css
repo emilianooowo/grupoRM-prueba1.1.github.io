@@ -15,6 +15,214 @@ body {
     text-align: center;
 }
 
+/* Banner principal */
+.banner {
+    position: relative;
+    background: url('../imgs/banner.webp') center/cover;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInSlide 1s ease-out;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+.logo {
+    max-width: 300px;
+    width: 90%;
+    height: auto;
+    margin-bottom: 3rem;
+    animation: logoPop 1s ease-out 0.5s forwards;
+    opacity: 0;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Barra estilo buscador */
+.search-bar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+    opacity: 0;
+    animation: buttonAppear 1s ease-out 1s forwards;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.search-bar:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+    background: rgba(33, 33, 31, 0.1);
+    color: #21211f;
+    transform: translateY(-1px);
+}
+
+.nav-link:hover i {
+    transform: scale(1.1);
+}
+
+.nav-link:active {
+    transform: translateY(0);
+}
+
+/* Separadores */
+.separator {
+    width: 1px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 0 0.5rem;
+}
+
+/* Contenido adicional */
+.content-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-section h2 {
+    margin-bottom: 2rem;
+    color: #21211f;
+    text-align: center;
+}
+
+.content-section p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .banner {
+        padding: 2rem 1rem;
+    }
+
+    .logo {
+        max-width: 220px;
+        margin-bottom: 2rem;
+    }
+
+    .search-bar {
+        padding: 0.6rem 1rem;
+        border-radius: 40px;
+        max-width: 95%;
+    }
+
+    .nav-links {
+        gap: 0.3rem;
+        justify-content: center;
+    }
+
+    .nav-link {
+        padding: 0.6rem;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        justify-content: center;
+        min-width: auto;
+    }
+
+    .nav-link .link-text {
+        display: none;
+    }
+
+    .nav-link i {
+        font-size: 1.2rem;
+    }
+
+    .separator {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        max-width: 180px;
+    }
+
+    .search-bar {
+        padding: 0.5rem 0.8rem;
+    }
+
+    .nav-link {
+        width: 40px;
+        height: 40px;
+        padding: 0.5rem;
+    }
+
+    .nav-link i {
+        font-size: 1.1rem;
+    }
+
+    .nav-links {
+        gap: 0.2rem;
+    }
+}
+
 /* Animaciones */
 @keyframes fadeInSlide {
     0% {
@@ -64,74 +272,13 @@ body {
     }
 }
 
-/* Banner */
-.banner {
-    position: relative;
-    background: url('../imgs/banner.webp') center/cover;
-    width: 100%;
-    padding: 6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    animation: fadeInSlide 1s ease-out;
-    overflow: hidden;
-    z-index: 0;
+/* Efecto de pulso sutil en hover del search bar */
+.search-bar:hover .nav-link:not(:hover) {
+    opacity: 0.7;
 }
 
-.logo {
-    max-width: 250px;
-    width: 90%;
-    height: auto;
-    margin-bottom: 4rem;
-    animation: logoPop 1s ease-out 0.5s forwards;
-    opacity: 0;
-}
-
-.botones {
-    display: flex;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    opacity: 0;
-    animation: buttonAppear 1s ease-out 1s forwards;
-}
-
-.boton {
-    font-family: inherit;
-    font-size: clamp(1.4rem, 4vw, 2rem);
-    padding: 0.8rem 1.8rem;
-    border: 1px solid transparent;
-    border-radius: 15px;
-    cursor: pointer;
-    color: #e8e7e5;
-    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-}
-
-.boton:hover {
-    background: #e8e7e5;
-    color: #21211f;
-    border-radius: 15px;
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    border: 1px solid #e8e7e5;
-}
-
-.boton:active {
-    transform: translateY(1px);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-    .boton {
-        padding: 1rem 2rem;
-        min-width: 120px;
-    }
+.search-bar:hover .nav-link:hover {
+    opacity: 1;
 }
 
 #servicios {

@@ -11,6 +11,27 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// Efecto parallax sutil en el banner
+window.addEventListener('scroll', function () {
+  const banner = document.querySelector('.banner');
+  const scrolled = window.pageYOffset;
+  const rate = scrolled * -0.5;
+  banner.style.transform = `translateY(${rate}px)`;
+});
+
 // Función para animar en grupos de 3
 function setupAnimation() {
   const rows = document.querySelectorAll('.content-row');
@@ -30,7 +51,6 @@ function setupAnimation() {
     observer.observe(row);
   });
 }
-
 
 // Inicializar cuando se carga la página
 document.addEventListener('DOMContentLoaded', setupAnimation);
