@@ -1,0 +1,217 @@
+body {
+    background: var(--color-azul-oscuro);
+}
+
+.header {
+    position: sticky;
+    top: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 15px 30px;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    width: auto;
+    height: 60px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-dorado-opaco);
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        gap: 25px;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 1.3rem;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-section {
+    margin-bottom: 80px;
+}
+
+.contact-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.triangle-right {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%);
+    background-image: url('../imgs/recidencias/foto-\(8\).webp');
+    background-size: cover;
+    position: relative;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto, 1fr);
+    gap: 5px;
+    width: 100%;
+}
+
+.contact-column {
+    text-align: center;
+}
+
+.contact-column h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.contact-column p {
+    color: white;
+    text-decoration: underline;
+}
+
+.contact-column a {
+    color: var(--color-hueso);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-column a:hover {
+    color: var(--color-dorado-opaco);
+}
+
+.contact-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.address-section {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    align-items: center;
+}
+
+.triangle-left {
+    width: 250px;
+    height: 300px;
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+    background-image: url('../imgs/recidencias/foto-\(4\).webp');
+    background-size: cover;
+}
+
+.address-info h3 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.address-info p {
+    font-size: 16px;
+    color: var(--color-hueso);
+    margin-bottom: 8px;
+}
+
+@media (max-width: 992px) {
+    .contact-top,
+    .contact-bottom {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .triangle-right,
+    .triangle-left {
+        display: none;
+    }
+
+    .address-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .triangle-left {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .contact-column h3 {
+        font-size: 18px;
+    }
+
+    .contact-column p,
+    .address-info p {
+        font-size: 14px;
+    }
+
+    .address-info h3 {
+        font-size: 18px;
+    }
+
+    .map-container iframe {
+        height: 200px;
+    }
+}

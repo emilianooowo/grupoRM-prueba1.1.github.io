@@ -1,0 +1,112 @@
+/* === VARIABLES === */
+:root {
+    /* Colores */
+    --color-dorado-opaco: #c4b387;
+    --color-hueso: #d5d5c6;
+    --color-verde-gris: #6c7c71;
+    --color-turquesa-oscuro: #292f1e;
+    --color-azul-oscuro: #273b51;
+
+    --font-primary: 'Barlow Condensed', sans-serif;
+    --font-secondary: 'Anek Bangla', sans-serif;
+
+    --font-size-h1: 3rem;
+    --font-size-h2: 2.25rem;
+    --font-size-h3: 1.75rem;
+    --font-size-p: 1.05rem;
+    --font-size-small: 1rem;
+
+    /* Otros */
+    --glass-blur: 15px;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Barlow Condensed';
+    src: url('./fonts/barlow-condensed.regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Barlow Condensed';
+    src: url('./fonts/AnekBangla-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-p);
+    line-height: 1.6;
+    letter-spacing: 2px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 1rem 0;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    color: var(--color-dorado-opaco);
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+p {
+    margin: 0 0 1rem 0;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-p);
+    color: var(--color-hueso);
+}
+
+.button-glass {
+    padding: 0.75rem 1.5rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: var(--color-turquesa-oscuro);
+    font-family: var(--font-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+    font-size: 1.2rem;
+}
+
+.button-glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px);
+}
+
+.button-glass:active {
+    transform: translateY(2px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
