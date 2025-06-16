@@ -47,6 +47,7 @@ body {
     font-size: var(--font-size-p);
     line-height: 1.6;
     letter-spacing: 2px;
+    overscroll-behavior: none;
 }
 
 h1,
