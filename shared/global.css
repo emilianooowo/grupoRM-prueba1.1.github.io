@@ -1,10 +1,5 @@
-/* === VARIABLES === */
 :root {
     /* Colores */
-    --color-dorado-opaco: #c4b387;
-    --color-hueso: #d5d5c6;
-    --color-verde-gris: #6c7c71;
-    --color-turquesa-oscuro: #292f1e;
     --color-azul-oscuro: #273b51;
 
     --font-primary: 'Barlow Condensed', sans-serif;
@@ -15,11 +10,6 @@
     --font-size-h3: 1.75rem;
     --font-size-p: 1.05rem;
     --font-size-small: 1rem;
-
-    /* Otros */
-    --glass-blur: 15px;
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.25);
 }
 
 * {
@@ -56,54 +46,63 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 1rem 0;
     font-family: var(--font-primary);
-    font-weight: 700;
-    color: var(--color-dorado-opaco);
 }
 
 h1 {
     font-size: var(--font-size-h1);
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* centramos horizontalmente el contenido */
+    margin: 50px auto;
+    max-width: 1200px;
+    gap: 20px;
+    white-space: nowrap;
+
+}
+
+h1::before,
+h1::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #000000;
 }
 
 h2 {
     font-size: var(--font-size-h2);
+    font-weight: 100;
 }
 
 h3 {
     font-size: var(--font-size-h3);
+    font-weight: 100;
 }
 
 p {
     margin: 0 0 1rem 0;
     font-family: var(--font-secondary);
     font-size: var(--font-size-p);
-    color: var(--color-hueso);
+    color: var(--color-azul-oscuro);
 }
 
 .button-glass {
-    padding: 0.75rem 1.5rem;
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    color: var(--color-turquesa-oscuro);
-    font-family: var(--font-primary);
+    background: var(--color-azul-oscuro);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: .95rem;
     cursor: pointer;
-    transition: all 0.3s ease;
     width: fit-content;
-    font-size: 1.2rem;
+    gap: 12px;
+    transition: all 0.3s ease;
 }
 
 .button-glass:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-5px);
-}
-
-.button-glass:active {
-    transform: translateY(2px);
+    transform: translateY(-2px);
 }
 
 .container {

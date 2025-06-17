@@ -1,14 +1,12 @@
 const hamburgerBtn = document.getElementById('hamburgerBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 
-// Control del menú hamburguesa
 hamburgerBtn.addEventListener('click', () => {
     hamburgerBtn.classList.toggle('active');
     mobileMenu.classList.toggle('active');
     document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
 });
 
-// Cerrar menú al hacer click en un enlace
 document.querySelectorAll('.mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
         hamburgerBtn.classList.remove('active');
@@ -17,7 +15,6 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
     });
 });
 
-// Smooth scroll para enlaces internos
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -33,18 +30,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 const albumsData = {
     'residencial-los-pinos': {
-        title: 'Residencial Los Pinos',
+        title: 'Residencial Terranova',
         description: 'Complejo residencial de lujo con 45 viviendas, áreas verdes y amenidades exclusivas. Diseño moderno con acabados de primera calidad.',
         location: 'Zona Norte',
         year: '2024',
-        photos: 15,
-        coverImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        photos: 6,
+        coverImage: 'imgs/residencias/ab/residencia_ab_5.webp',
         images: [
-            'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1600607688960-e095c075303a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1600607688020-c080f6e55fcf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
+            '../imgs/residencias/ab/residencia_ab_2.webp',
+            '../imgs/residencias/ab/residencia_ab_3.webp',
+            '../imgs/residencias/ab/residencia_ab_4.webp',
+            '../imgs/residencias/ab/residencia_ab_5.webp',
+            '../imgs/residencias/ab/residencia_ab_7.webp',
+            '../imgs/residencias/ab/residencia_ab_8.webp',
         ]
     },
     'torre-comercial-centro': {

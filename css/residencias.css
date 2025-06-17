@@ -1,81 +1,6 @@
-body {
-    background: var(--color-verde-gris);
-}
-
-.header {
-    position: fixed;
-    top: .8%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 15px;
-    max-width: 1200px;
-    padding: 5px 10px;
-    z-index: 1000;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.logo-header img {
-    width: auto;
-    height: 60px;
-    padding-right: 10px;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: black;
-    transition: all 0.3s ease;
-    padding: 8px 12px;
-    border-radius: 8px;
-}
-
-.nav-links a:hover {
-    color: var(--color-azul-oscuro);
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-}
-
-.social-separator {
-    width: 1px;
-    height: 30px;
-    background: rgba(0, 0, 0, 0.3);
-    margin: 0 15px;
-}
-
-.social-links {
-    display: flex;
-    gap: 10px;
-}
-
-.social-links a {
-    color: black;
-    font-size: 20px;
-    padding: 5px;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--color-azul-oscuro);
-    transform: translateY(-2px);
-}
-
 .hamburger-btn {
     display: none;
-    background: white;
+    background: black;
     border: none;
     width: 50px;
     height: 50px;
@@ -96,7 +21,7 @@ body {
 .hamburger-btn span {
     width: 20px;
     height: 2px;
-    background: black;
+    background: white;
     transition: all 0.3s ease;
 }
 
@@ -138,9 +63,8 @@ body {
 .mobile-menu a {
     color: black;
     text-decoration: none;
-    font-size: 18px;
     padding: 15px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #000000;
     transition: color 0.3s ease;
 }
 
@@ -150,23 +74,19 @@ body {
 
 .mobile-social-links {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
     padding: 20px 0;
 }
 
 .mobile-social-links a {
     color: black;
-    font-size: 24px;
+    font-size: 2rem;
     border: none;
-    padding: 10px;
+    padding: 5px;
 }
 
 @media (max-width: 768px) {
-    .header {
-        display: none;
-    }
-
     .hamburger-btn {
         display: flex;
     }
@@ -177,24 +97,22 @@ body {
 }
 
 @media (min-width: 769px) {
+    .hamburger-btn {
+        display: flex;
+    }
 
-    .hamburger-btn,
-    .mobile-menu {
-        display: none;
+    .hamburger-btn.visible {
+        opacity: 1;
     }
 }
+
 
 .main-content {
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 50px;
     padding: 20px;
 }
 
-.page-title h1 {
-    margin-bottom: 10px;
-    color: white;
-}
 
 .albums-grid {
     display: grid;
@@ -204,12 +122,9 @@ body {
 
 .album-card {
     display: flex;
-    background: var(--glass-bg);
-    border: var(--glass-border);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .album-image {
@@ -229,12 +144,10 @@ body {
 }
 
 .album-info h3 {
-    color: white;
     margin-bottom: 15px;
 }
 
 .album-info p {
-    color: var(--color-hueso);
     margin-bottom: 20px;
 }
 
@@ -247,14 +160,13 @@ body {
 }
 
 .meta-item {
-    color: var(--color-hueso);
+    color: var(--color-azul-oscuro);
     display: flex;
     align-items: center;
     gap: 5px;
     font-size: var(--font-size-small);
 }
 
-/* Modal de galería */
 .modal {
     display: none;
     position: fixed;
@@ -262,7 +174,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.75);
     z-index: 2000;
     backdrop-filter: blur(5px);
 }
@@ -276,17 +188,11 @@ body {
 }
 
 .modal-header {
-    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
-}
-
-.modal-title {
-    font-size: 1.5rem;
-    font-weight: 600;
 }
 
 .close-btn {
@@ -297,11 +203,6 @@ body {
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-.close-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
 }
 
 .gallery-container {
@@ -318,26 +219,18 @@ body {
     max-height: 80vh;
     object-fit: contain;
     border-radius: 10px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.2);
+    background: none;
     border: none;
     color: white;
     font-size: 2rem;
-    padding: 15px 20px;
     cursor: pointer;
-    border-radius: 10px;
     transition: all 0.3s ease;
-}
-
-.nav-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-50%) scale(1.1);
 }
 
 .prev-btn {
@@ -350,10 +243,10 @@ body {
 
 .gallery-counter {
     position: absolute;
-    bottom: 30px;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 1);
     color: white;
     padding: 10px 20px;
     border-radius: 20px;

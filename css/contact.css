@@ -1,81 +1,6 @@
-body {
-    background: var(--color-azul-oscuro);
-}
-
-.header {
-    position: fixed;
-    top: .8%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 15px;
-    max-width: 1200px;
-    padding: 5px 10px;
-    z-index: 1000;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.logo-header img {
-    width: auto;
-    height: 60px;
-    padding-right: 10px;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: black;
-    transition: all 0.3s ease;
-    padding: 8px 12px;
-    border-radius: 8px;
-}
-
-.nav-links a:hover {
-    color: var(--color-azul-oscuro);
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-}
-
-.social-separator {
-    width: 1px;
-    height: 30px;
-    background: rgba(0, 0, 0, 0.3);
-    margin: 0 15px;
-}
-
-.social-links {
-    display: flex;
-    gap: 10px;
-}
-
-.social-links a {
-    color: black;
-    font-size: 20px;
-    padding: 5px;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--color-azul-oscuro);
-    transform: translateY(-2px);
-}
-
 .hamburger-btn {
     display: none;
-    background: white;
+    background: var(--color-azul-oscuro);
     border: none;
     width: 50px;
     height: 50px;
@@ -96,7 +21,7 @@ body {
 .hamburger-btn span {
     width: 20px;
     height: 2px;
-    background: black;
+    background: white;
     transition: all 0.3s ease;
 }
 
@@ -163,10 +88,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    .header {
-        display: none;
-    }
-
     .hamburger-btn {
         display: flex;
     }
@@ -177,10 +98,12 @@ body {
 }
 
 @media (min-width: 769px) {
+    .hamburger-btn {
+        display: flex;
+    }
 
-    .hamburger-btn,
-    .mobile-menu {
-        display: none;
+    .hamburger-btn.visible {
+        opacity: 1;
     }
 }
 
@@ -205,9 +128,8 @@ body {
 .triangle-right {
     width: 100%;
     height: 300px;
-    background: linear-gradient(135deg, #3498db, #2980b9);
     clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%);
-    background-image: url('../imgs/recidencias/foto-\(8\).webp');
+    background-image: url('../imgs/residencias/ab/residencia_ab_5.webp');
     background-size: cover;
     position: relative;
 }
@@ -224,23 +146,21 @@ body {
 }
 
 .contact-column h3 {
-    color: white;
     margin-bottom: 20px;
 }
 
 .contact-column p {
-    color: white;
     text-decoration: underline;
 }
 
 .contact-column a {
-    color: var(--color-hueso);
+    color: black;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .contact-column a:hover {
-    color: var(--color-dorado-opaco);
+    color: var(--color-azul-oscuro);
 }
 
 .contact-bottom {
@@ -269,21 +189,18 @@ body {
 .triangle-left {
     width: 250px;
     height: 300px;
-    background: linear-gradient(45deg, #e74c3c, #c0392b);
     clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
-    background-image: url('../imgs/recidencias/foto-\(4\).webp');
+    background-image: url('../imgs/residencias/ab/residencia_ab_8.webp');
     background-size: cover;
 }
 
 .address-info h3 {
     font-size: 20px;
-    color: white;
     margin-bottom: 15px;
 }
 
 .address-info p {
     font-size: 16px;
-    color: var(--color-hueso);
     margin-bottom: 8px;
 }
 

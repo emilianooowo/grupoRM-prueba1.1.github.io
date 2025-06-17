@@ -83,6 +83,22 @@ function animateElement(element, delay = 0) {
     }, delay);
 }
 
+function animateMissionAndValues() {
+    const missionContent = document.querySelector('.mission-vision-content');
+    const missionImage = document.querySelector('.mission-vision-image');
+    const valuesSection = document.querySelector('.values-section');
+
+    if (missionContent) {
+        observer.observe(missionContent);
+    }
+    if (missionImage) {
+        observer.observe(missionImage);
+    }
+    if (valuesSection) {
+        observer.observe(valuesSection);
+    }
+}
+
 // Observer para elementos generales
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -128,6 +144,28 @@ const observer = new IntersectionObserver((entries) => {
                 }
             }
 
+            if (target.classList.contains('mission-vision-content')) {
+                animateElement(target);
+            }
+
+            // Animar imagen de misión
+            if (target.classList.contains('mission-vision-image')) {
+                animateElement(target);
+            }
+
+            // Animar sección de valores
+            if (target.classList.contains('values-section')) {
+                const title = target.querySelector('h1');
+                const circles = target.querySelectorAll('.value-circle');
+
+                if (title) {
+                    animateElement(title, 0);
+                }
+
+                circles.forEach((circle, index) => {
+                    animateElement(circle, (index + 1) * 100); // 100ms entre cada círculo
+                });
+            }
             // Dejar de observar el elemento una vez animado
             observer.unobserve(target);
         }
@@ -179,6 +217,8 @@ function initScrollAnimations() {
     if (connectingLine) {
         lineObserver.observe(connectingLine);
     }
+
+    animateMissionAndValues();
 }
 
 // Función para efectos adicionales en hover (simplificado)
@@ -242,16 +282,17 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('IntersectionObserver no soportado. Aplicando animaciones directamente.');
 
         // Aplicar todas las clases de animación inmediatamente
-        const elementsToAnimate = document.querySelectorAll('.title, .service-image, .service-content, .connecting-line, .contact-button-section, .residencia-item');
+        const elementsToAnimate = document.querySelectorAll('.title, .service-image, .service-content, .connecting-line, .contact-button-section, .residencia-item, .mission-vision-content, .mission-vision-image, .values-section h1, .value-circle');
         elementsToAnimate.forEach(el => {
             el.classList.add('animate');
         });
+
     }
 });
 
 // Opcional: Función para reiniciar animaciones (útil para testing)
 function resetAnimations() {
-    const animatedElements = document.querySelectorAll('.animate');
+    const animatedElements = document.querySelectorAll('.animate, .mission-vision-content, .mission-vision-image, .values-section h1, .value-circle');
     animatedElements.forEach(el => {
         el.classList.remove('animate');
     });
