@@ -1,6 +1,7 @@
 body {
     background: var(--color-azul-oscuro);
 }
+
 .header {
     position: fixed;
     top: .8%;
@@ -15,7 +16,6 @@ body {
     padding: 5px 10px;
     z-index: 1000;
 }
-
 
 .header-content {
     display: flex;
@@ -146,12 +146,6 @@ body {
 
 .mobile-menu a:hover {
     color: var(--color-azul-oscuro);
-}
-
-.mobile-social-separator {
-    height: 1px;
-    background: #ddd;
-    margin: 20px 0;
 }
 
 .mobile-social-links {

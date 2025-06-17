@@ -36,7 +36,6 @@
 
 .nav-links {
     display: flex;
-    gap: 5px;
     align-items: center;
 }
 
@@ -54,7 +53,6 @@
     transform: translateY(-2px);
 }
 
-/* Separador y redes sociales para PC */
 .social-separator {
     width: 1px;
     height: 30px;
@@ -79,7 +77,6 @@
     transform: translateY(-2px);
 }
 
-/* Botón hamburguesa (oculto en PC) */
 .hamburger-btn {
     display: none;
     background: white;
@@ -87,7 +84,6 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     flex-direction: column;
     justify-content: center;
@@ -119,7 +115,6 @@
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Menú móvil */
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -156,12 +151,6 @@
     color: var(--color-azul-oscuro);
 }
 
-.mobile-social-separator {
-    height: 1px;
-    background: #ddd;
-    margin: 20px 0;
-}
-
 .mobile-social-links {
     display: flex;
     gap: 20px;
@@ -171,9 +160,9 @@
 
 .mobile-social-links a {
     color: black;
-    font-size: 24px;
+    font-size: 2rem;
     border: none;
-    padding: 10px;
+    padding: 5px;
 }
 
 @media (max-width: 768px) {
