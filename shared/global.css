@@ -5,7 +5,7 @@
     --font-primary: 'Barlow Condensed', sans-serif;
     --font-secondary: 'Anek Bangla', sans-serif;
 
-    --font-size-h1: 3rem;
+    --font-size-h1: 2.5rem;
     --font-size-h2: 2.25rem;
     --font-size-h3: 1.75rem;
     --font-size-p: 1.05rem;
@@ -55,7 +55,6 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* centramos horizontalmente el contenido */
     margin: 50px auto;
     max-width: 1200px;
     gap: 20px;
