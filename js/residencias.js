@@ -37,12 +37,12 @@ const albumsData = {
         photos: 6,
         coverImage: 'imgs/residencias/ab/residencia_ab_5.webp',
         images: [
-            '../imgs/residencias/ab/residencia_ab_2.webp',
-            '../imgs/residencias/ab/residencia_ab_3.webp',
-            '../imgs/residencias/ab/residencia_ab_4.webp',
-            '../imgs/residencias/ab/residencia_ab_5.webp',
-            '../imgs/residencias/ab/residencia_ab_7.webp',
-            '../imgs/residencias/ab/residencia_ab_8.webp',
+            'imgs/residencias/ab/residencia_ab_2.webp',
+            'imgs/residencias/ab/residencia_ab_3.webp',
+            'imgs/residencias/ab/residencia_ab_4.webp',
+            'imgs/residencias/ab/residencia_ab_5.webp',
+            'imgs/residencias/ab/residencia_ab_7.webp',
+            'imgs/residencias/ab/residencia_ab_8.webp',
         ]
     },
     'torre-comercial-centro': {
