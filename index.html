@@ -12,27 +12,6 @@
 </head>
 
 <body>
-    <header class="header" id="dynamicHeader">
-        <div class="header-content">
-            <div class="logo-header">
-                <img src="shared/logos/logo-header.png" alt="">
-            </div>
-            <nav class="nav-links">
-                <a href="index.html#residencias"><i class="bi bi-buildings"></i> RESIDENCIAS</a>
-                <a href="index.html#servicios"><i class="bi bi-tools"></i> SERVICIOS</a>
-                <a href="index.html#abt-us"><i class="bi bi-people-fill"></i> SOBRE NOSOTROS</a>
-                <a href="contact.html"><i class="bi bi-envelope-fill"></i> CONTACTO</a>
-
-                <div class="social-separator"></div>
-
-                <div class="social-links">
-                    <a href="https://www.instagram.com/gruporm.mx/" target="_blank"><i class="bi bi-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
-                </div>
-            </nav>
-        </div>
-    </header>
-
     <button class="hamburger-btn" id="hamburgerBtn">
         <span></span>
         <span></span>
@@ -55,6 +34,28 @@
         </div>
     </div>
 
+    <header class="header" id="dynamicHeader">
+        <div class="header-content">
+            <div class="logo-header">
+                <img id="logoImg" src="shared/logos/logo-largo.png" alt="">
+                <img id="logoImg" src="shared/logos/logo-largo-blanco.webp" alt="Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#residencias"><i class="bi bi-buildings"></i> RESIDENCIAS</a>
+                <a href="index.html#servicios"><i class="bi bi-tools"></i> SERVICIOS</a>
+                <a href="index.html#abt-us"><i class="bi bi-people-fill"></i> SOBRE NOSOTROS</a>
+                <a href="contact.html"><i class="bi bi-envelope-fill"></i> CONTACTO</a>
+
+                <div class="social-separator"></div>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/gruporm.mx/" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
     <section class="hero">
         <div class="hero-bg">
             <div class="hero-bg-image active"></div>
@@ -65,21 +66,66 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
-            <div class="hero-logo">
-                <img src="shared/logos/logo2.png" alt="">
-            </div>
-
-            <div class="hero-title">Construimos Tus Sueños</div>
+            <h2 class="hero-title">15 años construyendo sueños con precisión y diseño</h2>
 
             <p class="hero-description">
-                Somos una constructora especializada en proyectos residenciales.
-                Transformamos ideas en realidades con diseño innovador, calidad excepcional y
-                compromiso total con nuestros clientes.
+                Especialistas en la construcción de residencias cuidando cada
+                detalle para crear espacios funcionales, estéticos y duraderos.
             </p>
 
-            <a href="contact.html" class="contact-btn">
-                Contáctanos
-            </a>
+
+            <div class="hero-buttons">
+                <a href="index.html#residencias" class="hero-btn">Residencias</a>
+                <a href="contact.html" class="hero-btn">Contacto</a>
+            </div>
+        </div>
+    </section>
+
+    <h1>SOBRE NOSOTROS</h1>
+
+    <section id="abt-us" class="mission-vision">
+        <div class="mission-vision-content">
+            <div class="mission-item">
+                <h2>MISIÓN</h2>
+                <p>En Constructora Grupo RM estamos comprometidos con transformar ideas en espacios que mejoren
+                    la calidad de vida y cumplan las expectativas de nuestros clientes. Cada proyecto lo desarrollamos
+                    con innovación, atención al detalle yadaptándonos a las características del terreno, presupuesto y
+                    necesidades específicas del cliente..</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="vision-item">
+                <h2>VISIÓN</h2>
+                <p> Ser el referente lider en el mercado de desarrollo de proyectos en
+                    la región sur del estado de Chiapas, logrando presencia a nivel
+                    estatall, caracterizados por el “sellos constructivo” vanguardista y
+                    de calidad que ofrecemos.</p>
+            </div>
+        </div>
+
+        <div class="mission-vision-image"><img src="imgs/residencias/ab/residencia_ab_4.webp" alt=""></div>
+    </section>
+
+    <section class="values-section">
+        <h1>OBJETIVOS</h1>
+
+        <div class="values-circles">
+            <div class="value-circle">
+                TENDENCIA
+            </div>
+            <div class="value-circle">
+                INNOVACIÓN
+            </div>
+            <div class="value-circle">
+                ADAPTACIÓN
+            </div>
+            <div class="value-circle">
+                CONFIANZA
+            </div>
+            <div class="value-circle">
+                COMPROMISO
+            </div>
         </div>
     </section>
 
@@ -256,65 +302,78 @@
             <h1 class="title">Residencias</h1>
 
             <div class="residencias-grid">
-                <div class="residencia-item">
-                    <div class="residencia-image">
-                        <img src="imgs/residencias/ab/residencia_ab_2.webp" alt="Residencia 1">
+                <a href="residencias.html">
+                    <div class="residencia-item">
+                        <div class="residencia-image">
+                            <img src="imgs/residencias/ab/residencia_ab_2.webp" alt="Residencia 1">
+                        </div>
+                        <div class="residencia-content">
+                            <h3>Villa Moderna</h3>
+                            <p>Diseño contemporáneo con acabados de lujo y tecnología de vanguardia.</p>
+                        </div>
                     </div>
-                    <div class="residencia-content">
-                        <h3>Villa Moderna</h3>
-                        <p>Diseño contemporáneo con acabados de lujo y tecnología de vanguardia.</p>
-                    </div>
-                </div>
+                </a>
 
-                <div class="residencia-item">
-                    <div class="residencia-image">
-                        <img src="imgs/residencias/ab/residencia_ab_3.webp" alt="Residencia 2">
-                    </div>
-                    <div class="residencia-content">
-                        <h3>Casa Familiar</h3>
-                        <p>Espacios amplios y funcionales perfectos para el crecimiento familiar.</p>
-                    </div>
-                </div>
+                <a href="residencias.html">
 
-                <div class="residencia-item">
-                    <div class="residencia-image">
-                        <img src="imgs/residencias/ab/residencia_ab_4.webp" alt="Residencia 3">
+                    <div class="residencia-item">
+                        <div class="residencia-image">
+                            <img src="imgs/residencias/ab/residencia_ab_3.webp" alt="Residencia 2">
+                        </div>
+                        <div class="residencia-content">
+                            <h3>Casa Familiar</h3>
+                            <p>Espacios amplios y funcionales perfectos para el crecimiento familiar.</p>
+                        </div>
                     </div>
-                    <div class="residencia-content">
-                        <h3>Departamento Premium</h3>
-                        <p>Elegancia urbana con vistas panorámicas y comodidades exclusivas.</p>
-                    </div>
-                </div>
+                </a>
 
-                <div class="residencia-item">
-                    <div class="residencia-image">
-                        <img src="imgs/residencias/ab/residencia_ab_5.webp" alt="Residencia 4">
+                <a href="residencias.html">
+                    <div class="residencia-item">
+                        <div class="residencia-image">
+                            <img src="imgs/residencias/ab/residencia_ab_4.webp" alt="Residencia 3">
+                        </div>
+                        <div class="residencia-content">
+                            <h3>Departamento Premium</h3>
+                            <p>Elegancia urbana con vistas panorámicas y comodidades exclusivas.</p>
+                        </div>
                     </div>
-                    <div class="residencia-content">
-                        <h3>Casa Ecológica</h3>
-                        <p>Construcción sustentable con materiales ecológicos y eficiencia energética.</p>
-                    </div>
-                </div>
+                </a>
 
-                <div class="residencia-item">
-                    <div class="residencia-image">
-                        <img src="imgs/residencias/ab/residencia_ab_7.webp" alt="Residencia 5">
+                <a href="residencias.html">
+                    <div class="residencia-item">
+                        <div class="residencia-image">
+                            <img src="imgs/residencias/ab/residencia_ab_5.webp" alt="Residencia 4">
+                        </div>
+                        <div class="residencia-content">
+                            <h3>Casa Ecológica</h3>
+                            <p>Construcción sustentable con materiales ecológicos y eficiencia energética.</p>
+                        </div>
                     </div>
-                    <div class="residencia-content">
-                        <h3>Loft Industrial</h3>
-                        <p>Estilo industrial moderno con espacios abiertos y detalles únicos.</p>
-                    </div>
-                </div>
+                </a>
 
-                <div class="residencia-item">
-                    <div class="residencia-image">
-                        <img src="imgs/residencias/ab/residencia_ab_8.webp" alt="Residencia 6">
+                <a href="residencias.html">
+                    <div class="residencia-item">
+                        <div class="residencia-image">
+                            <img src="imgs/residencias/ab/residencia_ab_7.webp" alt="Residencia 5">
+                        </div>
+                        <div class="residencia-content">
+                            <h3>Loft Industrial</h3>
+                            <p>Estilo industrial moderno con espacios abiertos y detalles únicos.</p>
+                        </div>
                     </div>
-                    <div class="residencia-content">
-                        <h3>Casa Minimalista</h3>
-                        <p>Diseño limpio y funcional que maximiza cada espacio disponible.</p>
+                </a>
+
+                <a href="residencias.html">
+                    <div class="residencia-item">
+                        <div class="residencia-image">
+                            <img src="imgs/residencias/ab/residencia_ab_8.webp" alt="Residencia 6">
+                        </div>
+                        <div class="residencia-content">
+                            <h3>Casa Minimalista</h3>
+                            <p>Diseño limpio y funcional que maximiza cada espacio disponible.</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <div class="contact-button-section">
@@ -323,54 +382,6 @@
                         <span>Más información</span>
                     </button>
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <h1>SOBRE NOSOTROS</h1>
-
-    <section id="abt-us" class="mission-vision">
-        <div class="mission-vision-content">
-            <div class="mission-item">
-                <h2>MISIÓN</h2>
-                <p>En Constructora Grupo RM estamos comprometidos con transformar ideas en espacios que mejoren
-                    la calidad de vida y cumplan las expectativas de nuestros clientes. Cada proyecto lo desarrollamos
-                    con innovación, atención al detalle yadaptándonos a las características del terreno, presupuesto y
-                    necesidades específicas del cliente..</p>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="vision-item">
-                <h2>VISIÓN</h2>
-                <p> Ser el referente lider en el mercado de desarrollo de proyectos en
-                    la región sur del estado de Chiapas, logrando presencia a nivel
-                    estatall, caracterizados por el “sellos constructivo” vanguardista y
-                    de calidad que ofrecemos.</p>
-            </div>
-        </div>
-
-        <div class="mission-vision-image"><img src="imgs/residencias/ab/residencia_ab_4.webp" alt=""></div>
-    </section>
-
-    <section class="values-section">
-        <h1>Objetivos</h1>
-
-        <div class="values-circles">
-            <div class="value-circle">
-                TENDENCIA
-            </div>
-            <div class="value-circle">
-                INNOVACIÓN
-            </div>
-            <div class="value-circle">
-                ADAPTACIÓN
-            </div>
-            <div class="value-circle">
-                CONFIANZA
-            </div>
-            <div class="value-circle">
-                COMPROMISO
             </div>
         </div>
     </section>
@@ -403,6 +414,11 @@
             </div>
         </div>
     </footer>
+    
+    <button id="backToTop" class="back-to-top" title="Regresar arriba">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     <script src="js/index.js"></script>
 </body>
 

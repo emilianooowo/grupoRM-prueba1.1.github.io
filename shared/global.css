@@ -81,10 +81,13 @@ h3 {
 }
 
 p {
-    margin: 0 0 1rem 0;
     font-family: var(--font-secondary);
-    font-size: var(--font-size-p);
+    font-size: var(--font-size-small);
     color: var(--color-azul-oscuro);
+}
+
+a {
+    text-decoration: none;
 }
 
 .button-glass {

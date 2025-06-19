@@ -1,3 +1,94 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.logo-header img {
+    width: auto;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 0;
+    color: black;
+}
+
+.social-separator {
+    width: 1px;
+    height: 30px;
+    background: black;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: black;
+    font-size: 18px;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-2px);
+}
+
+@media (min-width: 769px) {
+    .header-content {
+        display: flex;
+    }
+
+    .hamburger-btn {
+        display: none !important;
+    }
+
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        display: none;
+    }
+
+    .hamburger-btn {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
 .contact-section {
     margin-top: 100px;
 }

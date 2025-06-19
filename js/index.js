@@ -1,40 +1,5 @@
-const dynamicHeader = document.getElementById('dynamicHeader');
 const hamburgerBtn = document.getElementById('hamburgerBtn');
 const mobileMenu = document.getElementById('mobileMenu');
-const scrollThreshold = 600;
-let isScrolling = false;
-let scrollTimer = null;
-
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (window.innerWidth > 768) {
-        if (scrollTop > scrollThreshold) {
-            dynamicHeader.classList.add('visible');
-        } else {
-            dynamicHeader.classList.remove('visible');
-            dynamicHeader.classList.remove('scrolling');
-            return;
-        }
-    } else {
-        if (scrollTop > scrollThreshold) {
-            hamburgerBtn.classList.add('visible');
-        } else {
-            hamburgerBtn.classList.remove('visible');
-        }
-    }
-
-    if (!isScrolling) {
-        dynamicHeader.classList.add('scrolling');
-        isScrolling = true;
-    }
-
-    clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(() => {
-        dynamicHeader.classList.remove('scrolling');
-        isScrolling = false;
-    }, 150);
-});
 
 hamburgerBtn.addEventListener('click', () => {
     hamburgerBtn.classList.toggle('active');
@@ -62,6 +27,70 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const header = document.getElementById('dynamicHeader');
+    const logoImg = document.getElementById('logoImg');
+
+    const logoBlanco = 'shared/logos/logo-largo.png';
+    const logoNegro = 'shared/logos/logo-largo-negro.webp';
+
+    let ticking = false;
+
+    function updateHeader() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > 650) {
+            header.classList.add('scrolled');
+            logoImg.src = logoNegro;
+        } else {
+            header.classList.remove('scrolled');
+            logoImg.src = logoBlanco;
+        }
+
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateHeader);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
+    updateHeader();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 700) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
+
+const heroImages = document.querySelectorAll('.hero-bg-image');
+let currentImageIndex = 0;
+
+function rotateImages() {
+    heroImages[currentImageIndex].classList.remove('active');
+    currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+    heroImages[currentImageIndex].classList.add('active');
+}
+
+setInterval(rotateImages, 5000);
 
 const observerOptions = {
     root: null,
@@ -214,37 +243,3 @@ window.scrollAnimations = {
     reset: resetAnimations,
     addEffects: addEnhancedEffects
 };
-
-class HeroCarousel {
-    constructor() {
-        this.images = document.querySelectorAll('.hero-bg-image');
-        this.currentIndex = 0;
-        this.intervalTime = 6000;
-        this.init();
-    }
-
-    init() {
-        this.startCarousel();
-    }
-
-    showImage(index) {
-        this.images.forEach(img => img.classList.remove('active'));
-
-        this.images[index].classList.add('active');
-    }
-
-    nextImage() {
-        this.currentIndex = (this.currentIndex + 1) % this.images.length;
-        this.showImage(this.currentIndex);
-    }
-
-    startCarousel() {
-        setInterval(() => {
-            this.nextImage();
-        }, this.intervalTime);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    new HeroCarousel();
-});
