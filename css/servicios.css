@@ -121,148 +121,34 @@
     padding: 0 2rem;
 }
 
-.main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.albums-grid {
-    display: grid;
-    gap: 40px;
-    margin-bottom: 50px;
-}
-
-.album-card {
-    display: flex;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.album-image {
-    width: 40%;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.album-content {
-    width: 60%;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.album-info h3 {
-    margin-bottom: 15px;
-}
-
-.album-info p {
-    margin-bottom: 20px;
-}
-
-.album-meta {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 25px;
-    font-size: 0.9rem;
-    color: #888;
-}
-
-.meta-item {
-    color: var(--color-azul-oscuro);
+.servicio {
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-size: var(--font-size-small);
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.75);
-    z-index: 2000;
-    backdrop-filter: blur(5px);
-}
-
-.modal-content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.modal-header {
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-}
-
-.close-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 5px 10px;
+    margin: 2rem 0;
+    background: white;
     border-radius: 5px;
+    overflow: hidden;
 }
 
-.gallery-container {
-    flex: 1;
+.servicio-imagen {
+    flex: 0 0 400px;
+    height: 300px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    position: relative;
-}
-
-.gallery-image {
-    max-width: 90%;
-    max-height: 80vh;
-    object-fit: contain;
-    border-radius: 10px;
-}
-
-.nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
+    font-size: 4rem;
     color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.prev-btn {
-    left: 30px;
+.servicio-contenido {
+    flex: 1;
+    padding: 3rem;
 }
 
-.next-btn {
-    right: 30px;
-}
-
-.gallery-counter {
-    position: absolute;
-    bottom: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 1);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 1rem;
+.servicio-titulo {
+    color: var(--color-azul-oscuro);
+    margin-bottom: 1.5rem;
 }
 
 @media (max-width: 768px) {
@@ -277,46 +163,39 @@
         gap: 15px;
     }
 
-    .encabezado{
+    .encabezado {
         padding: 1.5rem;
     }
 
-    .nav-links {
-        gap: 15px;
-    }
-
-    .album-card {
+    .servicio {
         flex-direction: column;
-        padding: 5px;
+        margin: 2rem 0;
     }
 
-    .album-image {
+    .servicio-imagen {
+        flex: none;
         width: 100%;
-        height: 250px;
+        height: 200px;
+        font-size: 3rem;
     }
 
-    .album-content {
-        width: 100%;
-        padding: 25px;
+    .servicio-contenido {
+        padding: 2rem;
     }
 
-    .page-title h1 {
+    .servicio-titulo {
+        font-size: 1.5rem;
+    }
+
+    .servicio-descripcion {
+        font-size: 1rem;
+    }
+
+    .header h1 {
         font-size: 2rem;
     }
-
-    .nav-btn {
-        font-size: 1.5rem;
-        padding: 10px 15px;
-    }
-
-    .prev-btn {
-        left: 15px;
-    }
-
-    .next-btn {
-        right: 15px;
-    }
 }
+
 
 .footer {
     background: var(--color-azul-oscuro);

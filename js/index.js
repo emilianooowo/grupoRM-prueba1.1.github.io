@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateHeader() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (scrollTop > 650) {
+        if (scrollTop > 400) {
             header.classList.add('scrolled');
             logoImg.src = logoNegro;
         } else {
@@ -129,18 +129,8 @@ const observer = new IntersectionObserver((entries) => {
                 animateElement(target);
             }
 
-            if (target.classList.contains('service-item')) {
-                const image = target.querySelector('.service-image');
-                const content = target.querySelector('.service-content');
-                const connectingLine = target.querySelector('.connecting-line');
-
-                if (image) {
-                    animateElement(image, 0);
-                }
-
-                if (content) {
-                    animateElement(content, 200);
-                }
+            if (target.classList.contains('servicios-grid')) {
+                animateElement(target);
             }
 
             if (target.classList.contains('mission-vision-content')) {
@@ -163,6 +153,7 @@ const observer = new IntersectionObserver((entries) => {
                     animateElement(circle, (index + 1) * 100);
                 });
             }
+
             observer.unobserve(target);
         }
     });
@@ -175,40 +166,14 @@ function initScrollAnimations() {
         observer.observe(title);
     });
 
-    const residencias = document.querySelectorAll('.residencia-item');
-    residencias.forEach(residencia => {
-        observer.observe(residencia);
-    });
-
-    const serviceItems = document.querySelectorAll('.service-item');
-    serviceItems.forEach((item, index) => {
-        observer.observe(item);
-    });
+    const serviciosGrid = document.querySelector('.servicios-grid');
+    if (serviciosGrid) {
+        observer.observe(serviciosGrid);
+    }
 
     animateMissionAndValues();
 }
 
-function staggeredAnimations() {
-    const serviceItems = document.querySelectorAll('.service-item');
-
-    serviceItems.forEach((item, index) => {
-        const delay = index * 150;
-        item.style.animationDelay = `${delay}ms`;
-    });
-}
-
-function respectMotionPreferences() {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-    if (prefersReducedMotion.matches) {
-        document.documentElement.style.setProperty('--animation-duration', '0.3s');
-
-        const complexAnimations = document.querySelectorAll('.image-wrapper');
-        complexAnimations.forEach(el => {
-            el.style.animation = 'none';
-        });
-    }
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     if ('IntersectionObserver' in window) {
@@ -219,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.warn('IntersectionObserver no soportado. Aplicando animaciones directamente.');
 
-        const elementsToAnimate = document.querySelectorAll('.title, .service-image, .service-content, .connecting-line, .contact-button-section, .residencia-item, .mission-vision-content, .mission-vision-image, .values-section h1, .value-circle');
+        const elementsToAnimate = document.querySelectorAll('.title, .contact-button-section, .residencia-item, .mission-vision-content, .mission-vision-image, .values-section h1, .value-circle');
         elementsToAnimate.forEach(el => {
             el.classList.add('animate');
         });
@@ -243,3 +208,4 @@ window.scrollAnimations = {
     reset: resetAnimations,
     addEffects: addEnhancedEffects
 };
+

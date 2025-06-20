@@ -14,3 +14,18 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
         document.body.style.overflow = '';
     });
 });
+
+window.addEventListener('load', function () {
+    if (window.location.hash) {
+        setTimeout(function () {
+            const element = document.querySelector(window.location.hash);
+            if (element) {
+                const offsetTop = element.offsetTop - (window.innerHeight / 2) + (element.offsetHeight / 2);
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }, 100);
+    }
+});

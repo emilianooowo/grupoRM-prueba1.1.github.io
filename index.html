@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="shared/logos/logo-icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="shared/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
@@ -20,10 +21,10 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-content">
-            <a href="index.html#residencias"><i class="bi bi-buildings"></i> RESIDENCIAS</a>
-            <a href="index.html#servicios"><i class="bi bi-tools"></i> SERVICIOS</a>
-            <a href="index.html#"><i class="bi bi-people-fill"></i> SOBRE NOSOTROS</a>
-            <a href="contact.html"><i class="bi bi-envelope-fill"></i> CONTACTO</a>
+                <a href="residencias.html"><i class="bi bi-buildings"></i> RESIDENCIAS</a>
+                <a href="servicios.html"><i class="bi bi-tools"></i> SERVICIOS</a>
+                <a href="index.html#abt-us"><i class="bi bi-people-fill"></i> SOBRE NOSOTROS</a>
+                <a href="contact.html"><i class="bi bi-envelope-fill"></i> CONTACTO</a>
 
             <div class="mobile-social-separator"></div>
 
@@ -41,8 +42,8 @@
                 <img id="logoImg" src="shared/logos/logo-largo-blanco.webp" alt="Logo">
             </div>
             <nav class="nav-links">
-                <a href="index.html#residencias"><i class="bi bi-buildings"></i> RESIDENCIAS</a>
-                <a href="index.html#servicios"><i class="bi bi-tools"></i> SERVICIOS</a>
+                <a href="residencias.html"><i class="bi bi-buildings"></i> RESIDENCIAS</a>
+                <a href="servicios.html"><i class="bi bi-tools"></i> SERVICIOS</a>
                 <a href="index.html#abt-us"><i class="bi bi-people-fill"></i> SOBRE NOSOTROS</a>
                 <a href="contact.html"><i class="bi bi-envelope-fill"></i> CONTACTO</a>
 
@@ -110,7 +111,7 @@
     </section>
 
     <section class="values-section">
-        <h1>OBJETIVOS</h1>
+        <h1 class="title">OBJETIVOS</h1>
 
         <div class="values-circles">
             <div class="value-circle">
@@ -131,163 +132,54 @@
         </div>
     </section>
 
-    <section id="servicios" class="servicios-lista">
-        <h1 class="title">Servicios Arquitectónicos</h1>
+    <section class="servicios-section" id="servicios">
+        <h1 class="title">Nuestros Servicios</h1>
 
-        <div class="services-chain">
-            <div class="connecting-line"></div>
+        <div class="servicios-grid">
+            <a href="servicios.html#diseno-construccion-residencial" class="servicio-card">
+                <div class="servicio-icon"><i class="fas fa-home"></i></div>
+                <h3 class="servicio-title">Diseño y construcción de vivienda residencial y de interés social</h3>
+            </a>
 
-            <div class="service-item">
-                <div class="service-image">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop"
-                            alt="Diseño residencial">
-                    </div>
-                </div>
-                <div class="service-content">
-                    <div class="service-description">
-                        <h3>Diseño y construcción de vivienda residencial y de interés social</h3>
-                        <p>Creamos espacios habitacionales que combinan funcionalidad, estética y sustentabilidad. Desde
-                            viviendas de interés social hasta residencias de lujo, cada proyecto refleja las necesidades
-                            específicas de nuestros clientes con soluciones arquitectónicas innovadoras.</p>
-                    </div>
-                </div>
-            </div>
+            <a href="servicios.html#gestion-integral-obra" class="servicio-card">
+                <div class="servicio-icon"><i class="fas fa-cogs"></i></div>
+                <h3 class="servicio-title">Gestión integral de obra</h3>
+            </a>
 
-            <div class="service-item">
-                <div class="service-image">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop"
-                            alt="Gestión de obra">
-                    </div>
-                </div>
-                <div class="service-content">
-                    <div class="service-description">
-                        <h3>Gestión integral de obra</h3>
-                        <p>Coordinamos todos los aspectos de la construcción desde el inicio hasta la entrega. Nuestro
-                            equipo especializado supervisa calidad, tiempos y costos, garantizando que cada proyecto se
-                            ejecute con los más altos estándares profesionales.</p>
-                    </div>
-                </div>
-            </div>
+            <a href="servicios.html#proyecto-ejecutivo" class="servicio-card">
+                <div class="servicio-icon"><i class="fas fa-clipboard-list"></i></div>
+                <h3 class="servicio-title">Proyecto ejecutivo</h3>
+            </a>
 
-            <div class="service-item">
-                <div class="service-image">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop"
-                            alt="Proyecto ejecutivo">
-                    </div>
-                </div>
-                <div class="service-content">
-                    <div class="service-description">
-                        <h3>Proyecto ejecutivo</h3>
-                        <p>Desarrollamos la documentación técnica completa necesaria para la construcción. Planos
-                            detallados, especificaciones técnicas y memorias de cálculo que aseguran la viabilidad y
-                            calidad de cada proyecto arquitectónico.</p>
-                    </div>
-                </div>
-            </div>
+            <a href="servicios.html#presupuesto-supervision" class="servicio-card">
+                <div class="servicio-icon"><i class="fas fa-coins"></i></div>
+                <h3 class="servicio-title">Presupuesto y supervisión de obra</h3>
+            </a>
 
-            <div class="service-item">
-                <div class="service-image">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop"
-                            alt="Presupuesto">
-                    </div>
-                </div>
-                <div class="service-content">
-                    <div class="service-description">
-                        <h3>Presupuesto y supervisión de obra</h3>
-                        <p>Elaboramos presupuestos detallados y realistas, acompañados de supervisión continua durante
-                            la ejecución. Controlamos costos, verificamos calidad y aseguramos el cumplimiento de
-                            especificaciones técnicas.</p>
-                    </div>
-                </div>
-            </div>
+            <a href="servicios.html#levantamiento-arquitectonico" class="servicio-card">
+                <div class="servicio-icon"><i class="fas fa-drafting-compass"></i></div>
+                <h3 class="servicio-title">Levantamiento arquitectónico</h3>
+            </a>
 
-            <div class="service-item">
-                <div class="service-image">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop"
-                            alt="Levantamiento">
-                    </div>
-                </div>
-                <div class="service-content">
-                    <div class="service-description">
-                        <h3>Levantamiento arquitectónico</h3>
-                        <p>Realizamos mediciones precisas y documentación detallada de estructuras existentes.
-                            Utilizamos tecnología avanzada para crear registros exactos que sirven como base para
-                            remodelaciones y ampliaciones.</p>
-                    </div>
-                </div>
-            </div>
+            <a href="servicios.html#digitalizacion-planos" class="servicio-card">
+                <div class="servicio-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3 class="servicio-title">Digitalización de planos</h3>
+            </a>
 
-            <div class="service-item">
-                <div class="service-image">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop"
-                            alt="Digitalización">
-                    </div>
-                </div>
-                <div class="service-content">
-                    <div class="service-description">
-                        <h3>Digitalización de planos</h3>
-                        <p>Convertimos planos físicos en archivos digitales de alta calidad. Modernizamos documentación
-                            arquitectónica para facilitar modificaciones, archivo y distribución de proyectos.</p>
-                    </div>
-                </div>
-            </div>
+            <a href="servicios.html#conceptualizacion-diseno-3d" class="servicio-card">
+                <div class="servicio-icon"><i class="fas fa-cube"></i></div>
+                <h3 class="servicio-title">Conceptualización arquitectónica y diseño 3D</h3>
+            </a>
 
-            <div class="service-item">
-                <div class="service-image">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=600&h=400&fit=crop"
-                            alt="Conceptualización">
-                    </div>
-                </div>
-                <div class="service-content">
-                    <div class="service-description">
-                        <h3>Conceptualización arquitectónica y diseño 3D</h3>
-                        <p>Transformamos ideas en conceptos arquitectónicos tangibles. Utilizamos modelado 3D y
-                            visualización avanzada para que los clientes puedan experimentar sus espacios antes de la
-                            construcción.</p>
-                    </div>
-                </div>
-            </div>
+            <a href="servicios.html#remodelacion" class="servicio-card">
+                <div class="servicio-icon"><i class="fas fa-hammer"></i></div>
+                <h3 class="servicio-title">Remodelación</h3>
+            </a>
 
-            <div class="service-item">
-                <div class="service-image">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop"
-                            alt="Trámites">
-                    </div>
-                </div>
-                <div class="service-content">
-                    <div class="service-description">
-                        <h3>Gestión de trámites</h3>
-                        <p>Nos encargamos de todos los permisos y trámites necesarios ante las autoridades competentes.
-                            Facilitamos el proceso burocrático para que los clientes puedan enfocarse en sus proyectos.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-item">
-                <div class="service-image">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=400&fit=crop"
-                            alt="Remodelación">
-                    </div>
-                </div>
-                <div class="service-content">
-                    <div class="service-description">
-                        <h3>Remodelación</h3>
-                        <p>Renovamos y adaptamos espacios existentes a nuevas necesidades. Combinamos respeto por la
-                            estructura original con innovación contemporánea para crear ambientes funcionales y
-                            estéticamente superiores.</p>
-                    </div>
-                </div>
-            </div>
+            <a href="servicios.html#gestion-tramites" class="servicio-card">
+                <div class="servicio-icon"><i class="fas fa-file-alt"></i></div>
+                <h3 class="servicio-title">Gestión de trámites</h3>
+            </a>
         </div>
     </section>
 
@@ -424,7 +316,13 @@
         <i class="bi bi-arrow-up"></i>
     </button>
 
+    <a href="https://wa.me/529622361377" class="whatsapp-float" target="_blank"
+        aria-label="Chatea con nosotros por WhatsApp">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i>
+    </a>
+
     <script src="js/index.js"></script>
+
 </body>
 
 </html>
