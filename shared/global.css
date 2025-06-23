@@ -65,7 +65,7 @@ h1::after {
     content: '';
     flex: 1;
     height: 1px;
-    background: black;
+    background: white;
 }
 
 h2 {
@@ -105,11 +105,6 @@ a {
     transform: translateY(-2px);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
 
 .hamburger-btn {
     display: none;

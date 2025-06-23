@@ -390,10 +390,34 @@
     transform: translateY(-3px);
 }
 
+.contact-btn.residencias {
+    background: white;
+    color: var(--color-azul-oscuro);
+    border: none;
+    padding: 18px 40px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.residencias-section {
+    padding: 20px;
+    background:
+        linear-gradient(rgba(26, 54, 93, 0.7), rgba(26, 54, 93, 0.7)),
+        url("../imgs/residencias/ab/residencia_ab_5.webp");
+    background-size: cover;
+    background-position: center;
+}
+
 .residencias-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    color: white;
 }
 
 .residencias-grid {
@@ -403,13 +427,13 @@
 }
 
 .residencia-item {
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     overflow: hidden;
 }
 
 .residencia-image {
-    height: 200px;
+    height: 150px;
     overflow: hidden;
     position: relative;
     transition: all .3s ease;
@@ -457,11 +481,15 @@
     .residencia-content h3 {
         font-size: 1.2rem;
     }
+
+    .residencias-section {
+        background-position: top;
+    }
 }
 
 .mission-vision {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 80px auto;
     padding: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -494,10 +522,15 @@
 }
 
 .values-section {
+    padding: 20px;
+    background: rgba(26, 54, 93, 0.7);
+}
+
+.values-content {
     max-width: 1200px;
-    margin: 80px auto;
-    padding: 0 20px;
+    margin: 40px auto;
     text-align: center;
+    color: white;
 }
 
 .values-circles {
@@ -510,16 +543,13 @@
 }
 
 .value-circle {
-    width: 180px;
-    height: 180px;
-    border: 2px solid var(--color-azul-oscuro);
+    width: 200px;
+    height: 200px;
+    border: 1.5px solid white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 .mission-vision-content {
@@ -564,23 +594,23 @@
 }
 
 .value-circle.animate:nth-child(1) {
-    animation-delay: 0.1s;
+    animation-delay: 0.15s;
 }
 
 .value-circle.animate:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.value-circle.animate:nth-child(3) {
     animation-delay: 0.3s;
 }
 
+.value-circle.animate:nth-child(3) {
+    animation-delay: 0.45s;
+}
+
 .value-circle.animate:nth-child(4) {
-    animation-delay: 0.4s;
+    animation-delay: 0.6s;
 }
 
 .value-circle.animate:nth-child(5) {
-    animation-delay: 0.5s;
+    animation-delay: 0.75s;
 }
 
 @keyframes slideInLeft {
@@ -649,10 +679,289 @@
     }
 }
 
-.footer {
+.proceso-section {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.proceso-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Columna izquierda - Preguntas */
+.preguntas-column {
+    padding: 60px 40px 60px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.preguntas-wrapper {
+    transform: translateY(0);
+    transition: transform 0.6s ease-out;
+}
+
+.pregunta-item {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0.3;
+    transition: opacity 0.6s ease-out;
+    padding-bottom: 40px;
+}
+
+.pregunta-item.active {
+    opacity: 1;
+}
+
+.pregunta-titulo {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-h2);
+    font-weight: 600;
+    color: var(--color-azul-oscuro);
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.pregunta-respuesta {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-p);
+    color: var(--color-azul-oscuro);
+    line-height: 1.8;
+    max-width: 500px;
+}
+
+/* Columna derecha - Imagen */
+.imagen-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0 60px 40px;
+}
+
+.imagen-container {
+    width: 100%;
+    max-width: 450px;
+    height: 600px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    border-radius: 8px;
+    overflow: hidden;
+    /* <-- Muy importante para que el recorte sea limpio */
+}
+
+.imagen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.progress-indicator {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ddd;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.progress-dot.active {
     background: var(--color-azul-oscuro);
+}
+
+.progress-dot:hover {
+    background: #666;
+}
+
+@media (max-width: 768px) {
+    .proceso-container {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .imagen-column {
+        display: none;
+    }
+
+    .preguntas-column {
+        padding: 40px 20px;
+    }
+
+    .progress-indicator {
+        right: 20px;
+    }
+
+    .pregunta-titulo {
+        font-size: 2rem;
+    }
+}
+
+.background-wrapper {
+    background: url("../imgs/residencias/ab/residencia_ab_2.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.form-section {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.form-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 480px;
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.form-header {
+    padding: 2.5rem 2rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.form-title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.form-content {
+    padding: 2rem;
+}
+
+.form-wrapper {
+    width: 100%;
+}
+
+.form-field {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 400;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: #fafafa;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #34495e;
+    background: white;
+}
+
+.form-textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 0.9rem;
+    background: #34495e;
     color: white;
-    margin-top: 100px;
+    border: none;
+    border-radius: 1px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.form-submit:hover {
+    background: #2c3e50;
+}
+
+.form-submit:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.form-message {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1px;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.form-message--success {
+    background: #d5f4e6;
+    color: #27ae60;
+    border: 1px solid #27ae60;
+}
+
+.form-message--error {
+    background: #fdeaea;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        margin: 1rem;
+        border-radius: 0;
+    }
+
+    .form-header {
+        padding: 2rem 1.5rem 1rem;
+    }
+
+    .form-content {
+        padding: 1.5rem;
+    }
+}
+
+footer {
+    padding: 40px 20px;
+    background: transparent;
+    color: white;
 }
 
 .footer-content {

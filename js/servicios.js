@@ -29,3 +29,26 @@ window.addEventListener('load', function () {
         }, 100);
     }
 });
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+// Observar todos los servicios
+document.querySelectorAll('.servicio').forEach(servicio => {
+    observer.observe(servicio);
+});
+
+// Efecto parallax suave en el fondo
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5;
+    document.body.style.backgroundPosition = `center ${rate}px`;
+});
