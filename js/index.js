@@ -4,7 +4,7 @@ const totalQuestions = 5;
 let canScroll = true;
 let isInSection = false;
 let scrollAccumulator = 0;
-const scrollThreshold = 200; // Umbral para cambiar de pregunta
+const scrollThreshold = 200;
 let isTransitioning = false;
 
 const section = document.getElementById('procesoSection');
@@ -12,7 +12,6 @@ const wrapper = document.getElementById('preguntasWrapper');
 const items = document.querySelectorAll('.pregunta-item');
 const dots = document.querySelectorAll('.progress-dot');
 
-// Actualiza las preguntas visibles
 function updateActiveQuestion(index) {
     items.forEach((item, i) => {
         item.classList.toggle('active', i === index);
@@ -26,13 +25,11 @@ function updateActiveQuestion(index) {
     wrapper.style.transform = `translateY(${translateY}px)`;
 }
 
-// Función para verificar si estamos en el section
 function checkIfInSection() {
     const rect = section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    // Estamos en el section si el top está entre -10% y 10% de la ventana
-    return rect.top <= windowHeight * 0.1 && rect.bottom >= windowHeight * 0.9;
+    return rect.top <= windowHeight * 0.1 && rect.bottom >= windowHeight * 0.99;
 }
 
 // Salir del section suavemente
@@ -223,6 +220,56 @@ window.addEventListener('wheel', () => {
     scrollTimeout = setTimeout(() => {
         scrollAccumulator = 0;
     }, 150);
+});
+
+// Soporte para scroll táctil en móviles
+let touchStartY = 0;
+let touchEndY = 0;
+
+section.addEventListener('touchstart', (e) => {
+    if (!isInSection) return;
+    touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+section.addEventListener('touchmove', (e) => {
+    if (!isInSection) return;
+    touchEndY = e.touches[0].clientY;
+}, { passive: true });
+
+section.addEventListener('touchend', () => {
+    if (!isInSection || !canScroll || isTransitioning) return;
+
+    const deltaY = touchStartY - touchEndY;
+
+    if (Math.abs(deltaY) > 70) { // Umbral para detectar gesto
+        canScroll = false;
+
+        if (deltaY > 0) {
+            // Desplazamiento hacia arriba (scroll hacia abajo)
+            if (currentIndex < totalQuestions - 1) {
+                currentIndex++;
+                updateActiveQuestion(currentIndex);
+            } else {
+                exitSection('down');
+            }
+        } else {
+            // Desplazamiento hacia abajo (scroll hacia arriba)
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateActiveQuestion(currentIndex);
+            } else {
+                exitSection('up');
+            }
+        }
+
+        setTimeout(() => {
+            canScroll = true;
+        }, 800);
+    }
+
+    // Resetear valores táctiles
+    touchStartY = 0;
+    touchEndY = 0;
 });
 
 // Inicializar
