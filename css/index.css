@@ -1,8 +1,3 @@
-h1.residencias::before,
-h1.residencias::after {
-    background: white;
-}
-
 .header {
     position: fixed;
     top: 0;
@@ -58,14 +53,38 @@ h1.residencias::after {
     display: flex;
     align-items: center;
     gap: 30px;
+    font-weight: 600;
 }
 
 .nav-links a {
     text-decoration: none;
-    letter-spacing: 0.5px;
     transition: all 0.3s ease;
     position: relative;
     padding: 8px 0;
+    color: white;
+}
+
+.nav-links a::after,
+.social-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.social-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-links a:hover,
+.social-links a:hover {
     color: white;
 }
 
@@ -74,7 +93,7 @@ h1.residencias::after {
 }
 
 .social-separator {
-    width: 1px;
+    width: 2px;
     height: 30px;
     background: white;
     transition: all 0.3s ease;
@@ -98,10 +117,6 @@ h1.residencias::after {
 
 .header.scrolled .social-links a {
     color: black;
-}
-
-.social-links a:hover {
-    transform: translateY(-2px);
 }
 
 @media (min-width: 769px) {
@@ -134,12 +149,12 @@ h1.residencias::after {
 
 .hero {
     position: relative;
-    height: 80vh;
+    height: 85vh;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(26, 54, 93, 0.7);
+    background: rgba(26, 54, 93, 0.6);
 }
 
 .hero-bg {
@@ -170,11 +185,11 @@ h1.residencias::after {
 }
 
 .hero-bg-image:nth-child(1) {
-    background-image: url('../imgs/residencias/ab/residencia_ab_3.webp');
+    background-image: url('../imgs/residencias/cont/residencia_cont_5.webp');
 }
 
 .hero-bg-image:nth-child(2) {
-    background-image: url('../imgs/residencias/ab/residencia_ab_7.webp');
+    background-image: url('../imgs/residencias/sen/residencia_sen_5.webp');
 }
 
 .hero-bg-image:nth-child(3) {
@@ -189,13 +204,15 @@ h1.residencias::after {
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 30px;
 }
 
 .hero-description {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
     color: white;
+    font-family: var(--font-secondary);
 }
 
 .hero-buttons {
@@ -292,10 +309,6 @@ h1.residencias::after {
     }
 }
 
-.servicios-section {
-    padding: 90px;
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -369,6 +382,7 @@ h1.residencias::after {
     transition: all 0.3s ease;
     text-decoration: none;
     margin: 0 auto;
+    font-family: var(--font-primary);
 }
 
 .contact-btn:hover {
@@ -394,9 +408,13 @@ h1.residencias::after {
     gap: 1rem;
 }
 
-
 .section-title {
     flex: 1 1 60%;
+}
+
+.section-title h1::before,
+.section-title h1::after {
+    height: 1.5px;
 }
 
 .cta-button {
@@ -423,8 +441,9 @@ h1.residencias::after {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    height: 70vh;
-    min-height: 500px;
+    height: 50vh;
+    min-height: 550px;
+    gap: 3px
 }
 
 .proyecto-card {
@@ -441,13 +460,11 @@ h1.residencias::after {
 
 .proyecto-card:nth-child(1) {
     grid-column: 1 / 3;
-    /* Ocupa dos columnas */
     grid-row: 1 / 2;
 }
 
 .proyecto-card:nth-child(2) {
     grid-column: 3 / 5;
-    /* Otras dos columnas */
     grid-row: 1 / 2;
 }
 
@@ -458,7 +475,6 @@ h1.residencias::after {
 
 .proyecto-card:nth-child(4) {
     grid-column: 2 / 5;
-    /* Ocupa tres columnas */
     grid-row: 2 / 3;
 }
 
@@ -483,7 +499,7 @@ h1.residencias::after {
     background: linear-gradient(to bottom,
             transparent 0%,
             transparent 50%,
-            rgba(0, 0, 0, 0.8) 100%);
+            rgba(0, 0, 0, .5) 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
     display: flex;
@@ -632,22 +648,18 @@ h1.residencias::after {
 
 .pregunta-titulo {
     font-family: var(--font-primary);
-    font-size: var(--font-size-h2);
-    font-weight: 600;
+    font-size: 3.5rem;
     color: var(--color-azul-oscuro);
     margin-bottom: 30px;
-    line-height: 1.3;
 }
 
 .pregunta-respuesta {
     font-family: var(--font-secondary);
-    font-size: var(--font-size-p);
     color: var(--color-azul-oscuro);
-    line-height: 1.8;
+    font-size: 1.2rem;
     max-width: 500px;
 }
 
-/* Columna derecha - Imagen */
 .imagen-column {
     display: flex;
     align-items: center;
@@ -659,14 +671,12 @@ h1.residencias::after {
     width: 100%;
     max-width: 450px;
     height: 600px;
-    border: 1px solid #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #fafafa;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    /* <-- Muy importante para que el recorte sea limpio */
 }
 
 .imagen-container img {
@@ -742,7 +752,7 @@ h1.residencias::after {
     width: 100%;
     height: 300px;
     clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%);
-    background-image: url('../imgs/residencias/loft/residencia_loft_4.webp');
+    background-image: url('../imgs/residencias/ab/residencia_ab_2.webp');
     background-size: cover;
     position: relative;
 }
@@ -1048,8 +1058,8 @@ footer {
 .footer-social {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    align-items: flex-end;
+    gap: 20px;
+    align-items: end;
 }
 
 .footer-social a {
@@ -1067,7 +1077,7 @@ footer {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
     padding: 30px 0;
 }
 

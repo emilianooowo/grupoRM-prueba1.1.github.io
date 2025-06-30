@@ -11,6 +11,14 @@ const wrapper = document.getElementById('preguntasWrapper');
 const items = document.querySelectorAll('.pregunta-item');
 const dots = document.querySelectorAll('.progress-dot');
 
+const imagenes = [
+    "imgs/residencias/sen/residencia_sen_4.webp",
+    "imgs/residencias/ab/residencia_ab_4.webp",
+    "imgs/residencias/ab/residencia_ab_8.webp",
+    "imgs/residencias/cont/residencia_cont_9.webp",
+    "imgs/residencias/loft/residencia_loft_4.webp",
+];
+
 function updateActiveQuestion(index) {
     items.forEach((item, i) => {
         item.classList.toggle('active', i === index);
@@ -22,7 +30,12 @@ function updateActiveQuestion(index) {
 
     const translateY = -index * (window.innerHeight - 120);
     wrapper.style.transform = `translateY(${translateY}px)`;
+
+    // Cambiar imagen
+    const imagenElement = document.querySelector(".imagen-container img");
+    imagenElement.src = imagenes[index];
 }
+
 
 function checkIfInSection() {
     const rect = section.getBoundingClientRect();
