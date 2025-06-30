@@ -17,10 +17,7 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
 
 const albumsData = {
     'residencial-los-pinos': {
-        title: 'Residencial Terranova',
-        description: 'Complejo residencial de lujo con 45 viviendas, áreas verdes y amenidades exclusivas. Diseño moderno con acabados de primera calidad.',
-        location: 'Zona Norte',
-        year: '2024',
+        title: 'Residencia de lujo',
         photos: 6,
         coverImage: 'imgs/residencias/ab/residencia_ab_5.webp',
         images: [
@@ -33,33 +30,51 @@ const albumsData = {
         ]
     },
     'torre-comercial-centro': {
-        title: 'Torre Comercial Centro',
-        description: 'Moderno edificio comercial de 20 pisos con oficinas ejecutivas y locales comerciales en planta baja. Ubicación estratégica en el centro de la ciudad.',
-        location: 'Centro',
-        year: '2023',
-        photos: 12,
-        coverImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Casa SEN',
+        photos: 8,
+        coverImage: 'imgs/residencias/sen/residencia_sen_4.webp',
         images: [
-            'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1565182999561-18d7dc61c393?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1577495508048-b635879837f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
+            'imgs/residencias/sen/residencia_sen_1.webp',
+            'imgs/residencias/sen/residencia_sen_2.webp',
+            'imgs/residencias/sen/residencia_sen_3.webp',
+            'imgs/residencias/sen/residencia_sen_4.webp',
+            'imgs/residencias/sen/residencia_sen_5.webp',
+            'imgs/residencias/sen/residencia_sen_6.webp',
+            'imgs/residencias/sen/residencia_sen_7.webp',
+            'imgs/residencias/sen/residencia_sen_8.webp',
         ]
     },
     'complejo-industrial-norte': {
-        title: 'Complejo Industrial Norte',
-        description: 'Desarrollo industrial con naves especializadas para manufactura y logística. Infraestructura de primer nivel con tecnología de punta.',
-        location: 'Zona Industrial',
-        year: '2024',
-        photos: 18,
-        coverImage: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Casa contenedor',
+        photos: 7,
+        coverImage: 'imgs/residencias/cont/residencia_cont_1.webp',
         images: [
-            'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1565630278560-e6e79b44e4bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
+            'imgs/residencias/cont/residencia_cont_1.webp',
+            'imgs/residencias/cont/residencia_cont_2.webp',
+            'imgs/residencias/cont/residencia_cont_3.webp',
+            'imgs/residencias/cont/residencia_cont_4.webp',
+            'imgs/residencias/cont/residencia_cont_5.webp',
+            'imgs/residencias/cont/residencia_cont_6.webp',
+            'imgs/residencias/cont/residencia_cont_7.webp'
+        ]
+    },
+    'loft': {
+        title: 'Loft industrial',
+        photos: 12,
+        coverImage: 'imgs/residencias/loft/residencia_loft_1.webp',
+        images: [
+            'imgs/residencias/loft/residencia_loft_1.webp',
+            'imgs/residencias/loft/residencia_loft_2.webp',
+            'imgs/residencias/loft/residencia_loft_3.webp',
+            'imgs/residencias/loft/residencia_loft_4.webp',
+            'imgs/residencias/loft/residencia_loft_5.webp',
+            'imgs/residencias/loft/residencia_loft_6.webp',
+            'imgs/residencias/loft/residencia_loft_7.webp',
+            'imgs/residencias/loft/residencia_loft_8.webp',
+            'imgs/residencias/loft/residencia_loft_9.webp',
+            'imgs/residencias/loft/residencia_loft_10.webp',
+            'imgs/residencias/loft/residencia_loft_11.webp',
+            'imgs/residencias/loft/residencia_loft_12.webp'
         ]
     }
 };
@@ -80,10 +95,7 @@ function loadAlbums() {
                     <div class="album-content">
                         <div class="album-info">
                             <h3>${album.title}</h3>
-                            <p>${album.description}</p>
                             <div class="album-meta">
-                                <div class="meta-item"><i class="bi bi-geo-alt-fill"></i> ${album.location}</div>
-                                <div class="meta-item"><i class="bi bi-calendar-fill"></i> ${album.year}</div>
                                 <div class="meta-item"><i class="bi bi-camera-fill"></i> ${album.photos} fotos</div>
                             </div>
                         </div>

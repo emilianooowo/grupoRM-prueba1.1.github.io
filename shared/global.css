@@ -4,7 +4,7 @@
     --font-primary: 'Barlow Condensed', sans-serif;
     --font-secondary: 'Anek Bangla', sans-serif;
 
-    --font-size-h1: 2rem;
+    --font-size-h1: 2.5rem;
     --font-size-h2: 1.8rem;
     --font-size-h3: 1.65rem;
     --font-size-p: 1.05rem;
@@ -65,12 +65,12 @@ h1::after {
     content: '';
     flex: 1;
     height: 1px;
-    background: white;
+    background: var(--color-azul-oscuro);
 }
 
 h2 {
     font-size: var(--font-size-h2);
-    font-weight: 600;
+    font-weight: 300;
 }
 
 h3 {
@@ -91,20 +91,21 @@ a {
 .button-glass {
     background: var(--color-azul-oscuro);
     color: white;
-    border: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
     border-radius: 10px;
-    font-size: .95rem;
+    font-size: 1.2rem;
     cursor: pointer;
-    width: fit-content;
-    gap: 12px;
     transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: var(--font-primary);
 }
 
 .button-glass:hover {
-    transform: translateY(-2px);
+    background: transparent;
+    border: 2px solid var(--color-azul-oscuro);
+    color: var(--color-azul-oscuro);
 }
-
 
 .hamburger-btn {
     display: none;
@@ -132,8 +133,13 @@ a {
     transition: all 0.3s ease;
 }
 
+.hamburger-btn.active {
+    background: white;
+}
+
 .hamburger-btn.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(3px, 5px);
+    background-color: var(--color-azul-oscuro);
 }
 
 .hamburger-btn.active span:nth-child(2) {
@@ -141,7 +147,9 @@ a {
 }
 
 .hamburger-btn.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+    transform: rotate(-45deg) translate(3px, -6px);
+    background-color: var(--color-azul-oscuro);
+
 }
 
 .mobile-menu {
@@ -149,8 +157,8 @@ a {
     top: 0;
     left: 0;
     width: fit-content;
-    height: 100vh;
-    background: white;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, white 10%, var(--color-azul-oscuro));
     z-index: 1000;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
@@ -172,7 +180,6 @@ a {
     text-decoration: none;
     font-size: 18px;
     padding: 15px 0;
-    border-bottom: 1px solid #eee;
     transition: color 0.3s ease;
 }
 

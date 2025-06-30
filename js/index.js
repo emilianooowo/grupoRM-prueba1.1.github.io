@@ -1,4 +1,3 @@
-
 let currentIndex = 0;
 const totalQuestions = 5;
 let canScroll = true;
@@ -358,6 +357,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const grid = document.getElementById('proyectosGrid');
+
+    if (!grid) return; // Asegura que el elemento exista
+
+    window.addEventListener('scroll', function () {
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 100) {
+            grid.classList.add('scrolled');
+        } else {
+            grid.classList.remove('scrolled');
+        }
+    });
+});
+
+
 const heroImages = document.querySelectorAll('.hero-bg-image');
 let currentImageIndex = 0;
 
@@ -375,116 +391,6 @@ const observerOptions = {
     threshold: 0.3
 };
 
-function animateElement(element, delay = 0) {
-    setTimeout(() => {
-        element.classList.add('animate');
-    }, delay);
-}
-
-function animateMissionAndValues() {
-    const missionContent = document.querySelector('.mission-vision-content');
-    const missionImage = document.querySelector('.mission-vision-image');
-    const valuesSection = document.querySelector('.values-section');
-
-    if (missionContent) {
-        observer.observe(missionContent);
-    }
-    if (missionImage) {
-        observer.observe(missionImage);
-    }
-    if (valuesSection) {
-        observer.observe(valuesSection);
-    }
-}
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            const target = entry.target;
-
-            if (target.classList.contains('title')) {
-                animateElement(target);
-            }
-
-            if (target.classList.contains('servicios-grid')) {
-                animateElement(target);
-            }
-
-            if (target.classList.contains('mission-vision-content')) {
-                animateElement(target);
-            }
-
-            if (target.classList.contains('mission-vision-image')) {
-                animateElement(target);
-            }
-
-            if (target.classList.contains('values-section')) {
-                const title = target.querySelector('h1');
-                const circles = target.querySelectorAll('.value-circle');
-
-                if (title) {
-                    animateElement(title, 0);
-                }
-
-                circles.forEach((circle, index) => {
-                    animateElement(circle, (index + 1) * 100);
-                });
-            }
-
-            observer.unobserve(target);
-        }
-    });
-}, observerOptions);
-
-
-function initScrollAnimations() {
-    const titles = document.querySelectorAll('.title');
-    titles.forEach(title => {
-        observer.observe(title);
-    });
-
-    const serviciosGrid = document.querySelector('.servicios-grid');
-    if (serviciosGrid) {
-        observer.observe(serviciosGrid);
-    }
-
-    animateMissionAndValues();
-}
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    if ('IntersectionObserver' in window) {
-        initScrollAnimations();
-        addEnhancedEffects();
-        staggeredAnimations();
-        respectMotionPreferences();
-    } else {
-        console.warn('IntersectionObserver no soportado. Aplicando animaciones directamente.');
-
-        const elementsToAnimate = document.querySelectorAll('.title, .contact-button-section, .residencia-item, .mission-vision-content, .mission-vision-image, .values-section h1, .value-circle');
-        elementsToAnimate.forEach(el => {
-            el.classList.add('animate');
-        });
-
-    }
-});
-
-function resetAnimations() {
-    const animatedElements = document.querySelectorAll('.animate, .mission-vision-content, .mission-vision-image, .values-section h1, .value-circle');
-    animatedElements.forEach(el => {
-        el.classList.remove('animate');
-    });
-
-    setTimeout(() => {
-        initScrollAnimations();
-    }, 200);
-}
-
-window.scrollAnimations = {
-    init: initScrollAnimations,
-    reset: resetAnimations,
-    addEffects: addEnhancedEffects
-};
 
 const form = document.getElementById('contactForm');
 const submitBtn = document.getElementById('formSubmit');
