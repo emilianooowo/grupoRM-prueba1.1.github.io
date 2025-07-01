@@ -29,7 +29,7 @@
 
 .logo-header img {
     width: auto;
-    height: 55px;
+    height: 70px;
     max-width: 100%;
     transition: all 0.3s ease;
     display: block;
@@ -44,8 +44,8 @@
 .logo-header img::before {
     content: '';
     display: block;
-    width: 150px;
-    height: 100px;
+    width: auto;
+    height: 120px;
     background: transparent;
 }
 
@@ -54,6 +54,7 @@
     align-items: center;
     gap: 30px;
     font-weight: 600;
+    font-size: 1.3rem;
 }
 
 .nav-links a {
@@ -210,7 +211,7 @@
 
 .hero-description {
     margin-bottom: 30px;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     color: white;
     font-family: var(--font-secondary);
 }
@@ -228,7 +229,7 @@
     padding: 15px 0;
     position: relative;
     transition: all 0.3s ease;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .hero-btn::after {
@@ -334,7 +335,7 @@
 }
 
 .icon-container {
-    width: 80px;
+    width: auto;
     height: 80px;
     margin: 0 auto 25px;
     display: flex;
@@ -342,12 +343,11 @@
     justify-content: center;
 }
 
-.icon-container svg {
+.icon-container img {
     width: auto;
     height: 120px;
-    stroke: var(--color-azul-oscuro);
-    fill: none;
-    stroke-width: 1.05;
+    display: block;
+    filter: invert(12%) sepia(90%) saturate(870%) hue-rotate(178deg) brightness(96%) contrast(98%);
 }
 
 .servicio-card h2 {
@@ -750,8 +750,8 @@
 
 .triangle-right {
     width: 100%;
-    height: 300px;
-    clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%);
+    height: 380px;
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
     background-image: url('../imgs/residencias/ab/residencia_ab_2.webp');
     background-size: cover;
     position: relative;
@@ -769,11 +769,19 @@
 }
 
 .contact-column h3 {
-    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-azul-oscuro);
+    width: 50%;
+    margin: 0 auto;
 }
 
 .contact-column p {
-    text-decoration: underline;
+    font-size: 1.15rem;
+    text-decoration: none;
+    margin-bottom: 25px;
+}
+
+.contact-column p.social-media {
+    margin-bottom: 0;
 }
 
 .contact-column a {
@@ -805,13 +813,14 @@
 .address-section {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 30px;
+    gap: 10px;
     align-items: center;
+    font-family: var(--font-secondary);
 }
 
 .triangle-left {
-    width: 250px;
-    height: 300px;
+    width: 350px;
+    height: 380px;
     clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
     background-image: url('../imgs/residencias/sen/residencia_sen_1.webp');
     background-size: cover;
@@ -913,7 +922,7 @@
 }
 
 .form-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--color-azul-oscuro);
     margin: 0;
 }
@@ -933,7 +942,7 @@
 .form-label {
     display: block;
     margin-bottom: 0.4rem;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 }
 
 .form-input,
