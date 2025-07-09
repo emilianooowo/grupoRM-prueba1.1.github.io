@@ -29,7 +29,7 @@
 
 .logo-header img {
     width: auto;
-    height: 70px;
+    height: 60px;
     max-width: 100%;
     transition: all 0.3s ease;
     display: block;
@@ -902,18 +902,13 @@
 
 .form-section {
     position: relative;
-    padding: 60px 20px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
-    z-index: 1;
-}
-
-
-.form-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem 1rem;
+    background: linear-gradient(to bottom, rgba(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
 }
 
 .form-header {
@@ -989,43 +984,36 @@
     color: var(--color-azul-oscuro);
 }
 
-.form-submit:disabled {
-    background: #bdc3c7;
-    cursor: not-allowed;
-}
-
-.form-message {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 1px;
-    font-size: 0.9rem;
-    display: none;
-}
-
-.form-message--success {
-    background: #d5f4e6;
-    color: #27ae60;
-    border: 1px solid #27ae60;
-}
-
-.form-message--error {
-    background: #fdeaea;
-    color: #e74c3c;
-    border: 1px solid #e74c3c;
-}
-
-@media (max-width: 600px) {
-    .form-container {
-        margin: 1rem;
-        border-radius: 0;
+@media (max-width: 768px) {
+    .form-section {
+        padding: 2rem 1rem;
     }
 
     .form-header {
-        padding: 2rem 1.5rem 1rem;
+        padding: 2rem 1rem 1rem;
+    }
+
+    .form-title {
+        font-size: 1.6rem;
     }
 
     .form-content {
-        padding: 1.5rem;
+        padding: 1rem;
+    }
+
+    .form-label {
+        font-size: 1.2rem;
+    }
+
+    .form-input,
+    .form-textarea {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .form-submit {
+        font-size: 1rem;
+        padding: 12px;
     }
 }
 

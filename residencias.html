@@ -19,7 +19,7 @@
                 </div>
             </a>
             <nav class="nav-links">
-                <a href="residencias.html">RESIDENCIAS</a>
+                <a href="index.html">INICIO</a>
                 <a href="index.html#servicios"> SERVICIOS</a>
                 <a href="index.html#contacto"> CONTACTO</a>
 
@@ -62,22 +62,20 @@
     </div>
 
     <main class="main-content">
-
         <div class="albums-grid" id="albumsGrid">
         </div>
     </main>
 
-    <div class="modal" id="galleryModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title" id="modalTitle">Proyecto</div>
-                <button class="close-btn" onclick="closeModal()">&times;</button>
+    <div class="gallery-view" id="galleryView">
+        <div class="gallery-header">
+            <div class="gallery-title" id="galleryTitle">Proyecto</div>
+            <button class="close-gallery" onclick="closeGallery()">&times;</button>
+        </div>
+        <div class="gallery-container">
+            <div class="thumbnails-sidebar" id="thumbnailsSidebar">
             </div>
-            <div class="gallery-container">
-                <img class="gallery-image" id="galleryImage" src="" alt="">
-                <button class="nav-btn prev-btn" onclick="prevImage()">‹</button>
-                <button class="nav-btn next-btn" onclick="nextImage()">›</button>
-                <div class="gallery-counter" id="galleryCounter">1 / 10</div>
+            <div class="main-image-area">
+                <img class="main-image" id="mainImage" src="" alt="">
             </div>
         </div>
     </div>

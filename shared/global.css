@@ -87,19 +87,6 @@ a {
     text-decoration: none;
 }
 
-.button-glass {
-    background: var(--color-azul-oscuro);
-    color: white;
-    padding: 10px 20px;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    font-family: var(--font-primary);
-}
-
 .button-glass:hover {
     background: transparent;
     border: 2px solid var(--color-azul-oscuro);

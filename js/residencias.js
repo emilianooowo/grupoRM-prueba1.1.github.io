@@ -81,6 +81,8 @@ const albumsData = {
 
 let currentAlbum = '';
 let currentImageIndex = 0;
+let startX = 0;
+let startY = 0;
 
 function loadAlbums() {
     const grid = document.getElementById('albumsGrid');
@@ -90,16 +92,17 @@ function loadAlbums() {
 
         const albumCard = document.createElement('div');
         albumCard.className = 'album-card';
+        albumCard.onclick = () => openGallery(albumKey);
         albumCard.innerHTML = `
-                    <div class="album-image" style="background-image: url('${album.coverImage}')"></div>
+                    <div class="album-image" style="background-image: url('${album.coverImage}')">
+                        <div class="album-overlay">
+                        </div>
+                    </div>
                     <div class="album-content">
                         <div class="album-info">
                             <h3>${album.title}</h3>
-                            <div class="album-meta">
-                                <div class="meta-item"><i class="bi bi-camera-fill"></i> ${album.photos} fotos</div>
-                            </div>
                         </div>
-                        <button class="button-glass" onclick="openAlbum('${albumKey}')">Ver Galería</button>
+                        <button class="button-glass">Ver Galería</button>
                     </div>
                 `;
 
@@ -107,55 +110,132 @@ function loadAlbums() {
     });
 }
 
-function openAlbum(albumKey) {
+function openGallery(albumKey) {
     currentAlbum = albumKey;
     currentImageIndex = 0;
 
     const album = albumsData[albumKey];
-    document.getElementById('modalTitle').textContent = album.title;
-    document.getElementById('galleryModal').style.display = 'block';
-    document.body.style.overflow = 'hidden';
+    document.getElementById('galleryTitle').textContent = album.title;
 
-    showCurrentImage();
+    document.querySelector('.main-content').style.display = 'none';
+    document.getElementById('galleryView').style.display = 'block';
+    document.body.classList.add('gallery-open');
+
+    loadThumbnails();
+    showMainImage();
 }
 
-function showCurrentImage() {
+function loadThumbnails() {
+    const sidebar = document.getElementById('thumbnailsSidebar');
     const album = albumsData[currentAlbum];
-    const image = document.getElementById('galleryImage');
-    const counter = document.getElementById('galleryCounter');
 
-    image.src = album.images[currentImageIndex];
-    counter.textContent = `${currentImageIndex + 1} / ${album.images.length}`;
+    sidebar.innerHTML = '';
+
+    album.images.forEach((imageSrc, index) => {
+        const thumbnail = document.createElement('div');
+        thumbnail.className = 'thumbnail-item';
+        thumbnail.style.backgroundImage = `url('${imageSrc}')`;
+        thumbnail.onclick = () => selectImage(index);
+
+        if (index === currentImageIndex) {
+            thumbnail.classList.add('active');
+        }
+
+        sidebar.appendChild(thumbnail);
+    });
+}
+
+function selectImage(index) {
+    currentImageIndex = index;
+    showMainImage();
+    updateActiveThumbnail();
+}
+
+function showMainImage() {
+    const album = albumsData[currentAlbum];
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = album.images[currentImageIndex];
+}
+
+function updateActiveThumbnail() {
+    const thumbnails = document.querySelectorAll('.thumbnail-item');
+    thumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentImageIndex);
+    });
+}
+
+function nextImage() {
+    const album = albumsData[currentAlbum];
+    currentImageIndex = (currentImageIndex + 1) % album.images.length;
+    showMainImage();
+    updateActiveThumbnail();
 }
 
 function prevImage() {
     const album = albumsData[currentAlbum];
     currentImageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : album.images.length - 1;
-    showCurrentImage();
+    showMainImage();
+    updateActiveThumbnail();
 }
 
-function nextImage() {
-    const album = albumsData[currentAlbum];
-    currentImageIndex = currentImageIndex < album.images.length - 1 ? currentImageIndex + 1 : 0;
-    showCurrentImage();
-}
-
-function closeModal() {
-    document.getElementById('galleryModal').style.display = 'none';
-    document.body.style.overflow = 'auto';
+function closeGallery() {
+    document.getElementById('galleryView').style.display = 'none';
+    document.querySelector('.main-content').style.display = 'block';
+    document.body.classList.remove('gallery-open');
 }
 
 document.addEventListener('keydown', function (e) {
-    if (document.getElementById('galleryModal').style.display === 'block') {
+    if (document.getElementById('galleryView').style.display === 'block') {
         if (e.key === 'ArrowLeft') prevImage();
         if (e.key === 'ArrowRight') nextImage();
-        if (e.key === 'Escape') closeModal();
+        if (e.key === 'Escape') closeGallery();
     }
 });
 
-document.getElementById('galleryModal').addEventListener('click', function (e) {
-    if (e.target === this) {
-        closeModal();
+const mainImageArea = document.querySelector('.main-image-area');
+
+mainImageArea.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+});
+
+mainImageArea.addEventListener('touchmove', function (e) {
+    e.preventDefault();
+});
+
+mainImageArea.addEventListener('touchend', function (e) {
+    const endX = e.changedTouches[0].clientX;
+    const endY = e.changedTouches[0].clientY;
+    const deltaX = endX - startX;
+    const deltaY = endY - startY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+        if (deltaX > 0) {
+            prevImage();
+        } else {
+            nextImage();
+        }
+    }
+});
+
+const thumbnailsSidebar = document.getElementById('thumbnailsSidebar');
+let isScrolling = false;
+
+thumbnailsSidebar.addEventListener('touchstart', function (e) {
+    isScrolling = false;
+});
+
+thumbnailsSidebar.addEventListener('touchmove', function (e) {
+    isScrolling = true;
+});
+
+thumbnailsSidebar.addEventListener('touchend', function (e) {
+    if (!isScrolling) {
+        const target = e.target.closest('.thumbnail-item');
+        if (target) {
+            const index = Array.from(thumbnailsSidebar.children).indexOf(target);
+            selectImage(index);
+        }
     }
 });
 

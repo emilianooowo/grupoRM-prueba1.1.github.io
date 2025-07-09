@@ -31,7 +31,6 @@ function updateActiveQuestion(index) {
     const translateY = -index * (window.innerHeight - 120);
     wrapper.style.transform = `translateY(${translateY}px)`;
 
-    // Cambiar imagen
     const imagenElement = document.querySelector(".imagen-container img");
     imagenElement.src = imagenes[index];
 }
@@ -44,7 +43,6 @@ function checkIfInSection() {
     return rect.top <= windowHeight * 0.1 && rect.bottom >= windowHeight * 0.99;
 }
 
-// Salir del section suavemente
 function exitSection(direction) {
     if (isTransitioning) return;
 
@@ -54,13 +52,11 @@ function exitSection(direction) {
 
     setTimeout(() => {
         if (direction === 'down') {
-            // Ir al siguiente contenido
             window.scrollBy({
                 top: window.innerHeight * 0.5,
                 behavior: 'smooth'
             });
         } else {
-            // Ir al contenido anterior
             window.scrollBy({
                 top: -window.innerHeight * 0.5,
                 behavior: 'smooth'
@@ -73,7 +69,6 @@ function exitSection(direction) {
     }, 100);
 }
 
-// Controla el scroll con acumulador para reducir sensibilidad
 function handleScroll(e) {
     if (isTransitioning) {
         e.preventDefault();
@@ -84,12 +79,10 @@ function handleScroll(e) {
     isInSection = checkIfInSection();
 
     if (isInSection) {
-        // Dentro del section - bloquear scroll normal
         e.preventDefault();
 
         if (!canScroll) return;
 
-        // Acumular scroll para reducir sensibilidad
         scrollAccumulator += Math.abs(e.deltaY);
 
         if (scrollAccumulator >= scrollThreshold) {
@@ -99,12 +92,10 @@ function handleScroll(e) {
             const direction = e.deltaY > 0 ? 1 : -1;
 
             if (direction > 0) {
-                // Scroll hacia abajo
                 if (currentIndex < totalQuestions - 1) {
                     currentIndex++;
                     updateActiveQuestion(currentIndex);
                 } else {
-                    // Ya estamos en la última pregunta, salir suavemente
                     exitSection('down');
                 }
             } else {
@@ -113,7 +104,6 @@ function handleScroll(e) {
                     currentIndex--;
                     updateActiveQuestion(currentIndex);
                 } else {
-                    // Ya estamos en la primera pregunta, salir suavemente
                     exitSection('up');
                 }
             }
@@ -123,12 +113,10 @@ function handleScroll(e) {
             }, 800);
         }
     } else if (wasInSection && !isInSection) {
-        // Saliendo del section
         document.body.style.overflow = '';
     }
 }
 
-// Manejo de teclas de flecha
 function handleKeydown(e) {
     if (!isInSection || !canScroll || isTransitioning) return;
 
@@ -165,16 +153,13 @@ function handleKeydown(e) {
     }
 }
 
-// Observer para detectar cuando entramos al section
 const procesoObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting && entry.intersectionRatio > 0.8) {
-            // Entrando al section
             document.body.style.overflow = 'hidden';
             isInSection = true;
             scrollAccumulator = 0;
 
-            // Centrar el section en la ventana suavemente
             const rect = section.getBoundingClientRect();
             if (Math.abs(rect.top) > 8) {
                 window.scrollTo({
@@ -183,7 +168,6 @@ const procesoObserver = new IntersectionObserver(entries => {
                 });
             }
 
-            // Resetear a la primera pregunta si es necesario
             if (currentIndex !== 0) {
                 currentIndex = 0;
                 updateActiveQuestion(currentIndex);
@@ -191,10 +175,9 @@ const procesoObserver = new IntersectionObserver(entries => {
         }
     });
 }, {
-    threshold: [0.8]
+    threshold: [0.6]
 });
 
-// Manejo de clicks en los dots
 dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
         if (isInSection && canScroll && !isTransitioning) {
@@ -206,7 +189,6 @@ dots.forEach((dot, index) => {
 
 procesoObserver.observe(section);
 
-// Event listeners
 window.addEventListener('wheel', handleScroll, { passive: false });
 window.addEventListener('keydown', handleKeydown);
 
@@ -214,18 +196,15 @@ window.addEventListener('resize', () => {
     updateActiveQuestion(currentIndex);
 });
 
-// Detectar cuando se sale del section por scroll normal
 window.addEventListener('scroll', () => {
     if (!isInSection && !isTransitioning) {
         const rect = section.getBoundingClientRect();
-        // Si el section no está visible, asegurar que el scroll esté desbloqueado
         if (rect.bottom < 0 || rect.top > window.innerHeight) {
             document.body.style.overflow = '';
         }
     }
 });
 
-// Limpiar el acumulador si no hay scroll por un tiempo
 let scrollTimeout;
 window.addEventListener('wheel', () => {
     clearTimeout(scrollTimeout);
@@ -234,7 +213,6 @@ window.addEventListener('wheel', () => {
     }, 150);
 });
 
-// Soporte para scroll táctil en móviles
 let touchStartY = 0;
 let touchEndY = 0;
 
@@ -253,11 +231,10 @@ section.addEventListener('touchend', () => {
 
     const deltaY = touchStartY - touchEndY;
 
-    if (Math.abs(deltaY) > 70) { // Umbral para detectar gesto
+    if (Math.abs(deltaY) > 70) {
         canScroll = false;
 
         if (deltaY > 0) {
-            // Desplazamiento hacia arriba (scroll hacia abajo)
             if (currentIndex < totalQuestions - 1) {
                 currentIndex++;
                 updateActiveQuestion(currentIndex);
@@ -265,7 +242,6 @@ section.addEventListener('touchend', () => {
                 exitSection('down');
             }
         } else {
-            // Desplazamiento hacia abajo (scroll hacia arriba)
             if (currentIndex > 0) {
                 currentIndex--;
                 updateActiveQuestion(currentIndex);
@@ -279,12 +255,10 @@ section.addEventListener('touchend', () => {
         }, 800);
     }
 
-    // Resetear valores táctiles
     touchStartY = 0;
     touchEndY = 0;
 });
 
-// Inicializar
 updateActiveQuestion(0);
 
 const hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -373,7 +347,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const grid = document.getElementById('proyectosGrid');
 
-    if (!grid) return; // Asegura que el elemento exista
+    if (!grid) return;
 
     window.addEventListener('scroll', function () {
         const scrollPosition = window.scrollY;
@@ -403,46 +377,6 @@ const observerOptions = {
     rootMargin: '-100px 0px -100px 0px',
     threshold: 0.3
 };
-
-
-const form = document.getElementById('contactForm');
-const submitBtn = document.getElementById('formSubmit');
-const successMsg = document.getElementById('formSuccess');
-const errorMsg = document.getElementById('formError');
-
-form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Enviando...';
-
-    successMsg.style.display = 'none';
-    errorMsg.style.display = 'none';
-
-    try {
-        const formData = new FormData(form);
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            successMsg.style.display = 'block';
-            form.reset();
-        } else {
-            throw new Error('Error en envío');
-        }
-
-    } catch (error) {
-        errorMsg.style.display = 'block';
-    } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Enviar solicitud';
-    }
-});
 
 window.onbeforeunload = () => {
     for (const form of document.getElementsByTagName('form')) {
