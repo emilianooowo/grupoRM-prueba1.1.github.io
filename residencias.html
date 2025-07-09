@@ -4,115 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo RM › Residencias</title>
+    <title>Grupo RM › Proyectos</title>
     <link rel="shortcut icon" href="shared/logos/logo-icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/residencias.css">
     <link rel="stylesheet" href="shared/global.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
-    <header class="header">
-        <div class="header-content">
-            <a href="index.html">
-                <div class="logo-header">
-                    <img id="logoImg" src="shared/logos/logo-largo.png" alt="">
-                </div>
-            </a>
-            <nav class="nav-links">
-                <a href="index.html">INICIO</a>
-                <a href="index.html#servicios"> SERVICIOS</a>
-                <a href="index.html#contacto"> CONTACTO</a>
-
-                <div class="social-separator"></div>
-
-                <div class="social-links">
-                    <a href="https://www.instagram.com/gruporm.mx/" target="_blank"><i class="bi bi-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <button class="hamburger-btn" id="hamburgerBtn">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-content">
+<header class="header">
+    <div class="header-content">
+        <a href="index.html">
+            <div class="logo-header">
+                <img id="logoImg" src="shared/logos/logo-largo.png" alt="">
+            </div>
+        </a>
+        <nav class="nav-links">
             <a href="index.html">INICIO</a>
-            <a href="index.html#servicios">SERVICIOS</a>
+            <a href="index.html#servicios"> SERVICIOS</a>
             <a href="index.html#contacto"> CONTACTO</a>
 
-            <div class="mobile-social-separator"></div>
+            <div class="social-separator"></div>
 
-            <div class="mobile-social-links">
+            <div class="social-links">
                 <a href="https://www.instagram.com/gruporm.mx/" target="_blank"><i class="bi bi-instagram"></i></a>
                 <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
             </div>
+        </nav>
+    </div>
+</header>
+
+<button class="hamburger-btn" id="hamburgerBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-content">
+        <a href="index.html">INICIO</a>
+        <a href="index.html#servicios">SERVICIOS</a>
+        <a href="index.html#contacto"> CONTACTO</a>
+
+        <div class="mobile-social-separator"></div>
+
+        <div class="mobile-social-links">
+            <a href="https://www.instagram.com/gruporm.mx/" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+        </div>
+    </div>
+</div>
+
+<section class="hero">
+    <div class="overlay">
+        <h1 class="hero-title">PROYECTOS</h1>
+    </div>
+</section>
+
+<main class="main-content">
+    <div class="albums-grid" id="albumsGrid">
+    </div>
+</main>
+
+<div class="gallery-view" id="galleryView">
+    <div class="gallery-header">
+        <div class="gallery-title" id="galleryTitle">Proyecto</div>
+        <button class="close-gallery" onclick="closeGallery()">&times;</button>
+    </div>
+    <div class="gallery-container">
+        <div class="thumbnails-sidebar" id="thumbnailsSidebar">
+        </div>
+        <div class="main-image-area">
+            <img class="main-image" id="mainImage" src="" alt="">
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <div class="footer-logo">
+                <img src="shared/logos/logo-largo.png" alt="">
+            </div>
+            <div class="footer-contact">
+                <p><i class="bi bi-envelope-fill"></i> contacto@tuempresa.com</p>
+                <p>
+                    <i class="bi bi-telephone-fill"></i>
+                    <a href="tel:+529621234567">+52 962 123 4567</a>
+                </p>
+                <p><i class="bi bi-geo-alt-fill"></i> Tapachula, Chiapas, México</p>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i> Facebook</a>
+                <a href="#" aria-label="Instagram"><i class=" bi bi-instagram"></i> Instagram</a>
+                <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></span> WhatsApp</a>
+            </div>
         </div>
     </div>
 
-    <div class="encabezado">
-        <div class="container">
-            <h1>GALERÍA DE PROYECTOS</h1>
-            <p>Soluciones integrales en construcción y arquitectura</p>
+    <div class="footer-bottom">
+        <div class="footer-legal">
+            <p>&copy; 2025 Constructora Grupo RM. Todos los derechos reservados.</p>
         </div>
     </div>
+</footer>
 
-    <main class="main-content">
-        <div class="albums-grid" id="albumsGrid">
-        </div>
-    </main>
-
-    <div class="gallery-view" id="galleryView">
-        <div class="gallery-header">
-            <div class="gallery-title" id="galleryTitle">Proyecto</div>
-            <button class="close-gallery" onclick="closeGallery()">&times;</button>
-        </div>
-        <div class="gallery-container">
-            <div class="thumbnails-sidebar" id="thumbnailsSidebar">
-            </div>
-            <div class="main-image-area">
-                <img class="main-image" id="mainImage" src="" alt="">
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="footer-logo">
-                    <img src="shared/logos/logo-largo.png" alt="">
-                </div>
-                <div class="footer-contact">
-                    <p><i class="bi bi-envelope-fill"></i> contacto@tuempresa.com</p>
-                    <p>
-                        <i class="bi bi-telephone-fill"></i>
-                        <a href="tel:+529621234567">+52 962 123 4567</a>
-                    </p>
-                    <p><i class="bi bi-geo-alt-fill"></i> Tapachula, Chiapas, México</p>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i> Facebook</a>
-                    <a href="#" aria-label="Instagram"><i class=" bi bi-instagram"></i> Instagram</a>
-                    <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></span> WhatsApp</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="footer-legal">
-                <p>&copy; 2025 Constructora Grupo RM. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/residencias.js"></script>
+<script src="js/residencias.js"></script>
 </body>
 
 </html>

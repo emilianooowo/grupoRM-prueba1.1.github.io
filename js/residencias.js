@@ -27,12 +27,14 @@ const albumsData = {
             'imgs/residencias/ab/residencia_ab_5.webp',
             'imgs/residencias/ab/residencia_ab_7.webp',
             'imgs/residencias/ab/residencia_ab_8.webp',
+            'imgs/residencias/ab/residencia_ab_9.webp',
+            'imgs/residencias/ab/residencia_ab_10.webp'
         ]
     },
     'torre-comercial-centro': {
         title: 'Casa SEN',
         photos: 8,
-        coverImage: 'imgs/residencias/sen/residencia_sen_4.webp',
+        coverImage: 'imgs/residencias/sen/residencia_sen_5.webp',
         images: [
             'imgs/residencias/sen/residencia_sen_1.webp',
             'imgs/residencias/sen/residencia_sen_2.webp',
@@ -47,7 +49,7 @@ const albumsData = {
     'complejo-industrial-norte': {
         title: 'Casa contenedor',
         photos: 7,
-        coverImage: 'imgs/residencias/cont/residencia_cont_1.webp',
+        coverImage: 'imgs/residencias/cont/residencia_cont_9.webp',
         images: [
             'imgs/residencias/cont/residencia_cont_1.webp',
             'imgs/residencias/cont/residencia_cont_2.webp',
@@ -55,7 +57,9 @@ const albumsData = {
             'imgs/residencias/cont/residencia_cont_4.webp',
             'imgs/residencias/cont/residencia_cont_5.webp',
             'imgs/residencias/cont/residencia_cont_6.webp',
-            'imgs/residencias/cont/residencia_cont_7.webp'
+            'imgs/residencias/cont/residencia_cont_7.webp',
+            'imgs/residencias/cont/residencia_cont_8.webp',
+            'imgs/residencias/cont/residencia_cont_9.webp'
         ]
     },
     'loft': {
@@ -68,7 +72,6 @@ const albumsData = {
             'imgs/residencias/loft/residencia_loft_3.webp',
             'imgs/residencias/loft/residencia_loft_4.webp',
             'imgs/residencias/loft/residencia_loft_5.webp',
-            'imgs/residencias/loft/residencia_loft_6.webp',
             'imgs/residencias/loft/residencia_loft_7.webp',
             'imgs/residencias/loft/residencia_loft_8.webp',
             'imgs/residencias/loft/residencia_loft_9.webp',
@@ -94,18 +97,15 @@ function loadAlbums() {
         albumCard.className = 'album-card';
         albumCard.onclick = () => openGallery(albumKey);
         albumCard.innerHTML = `
-                    <div class="album-image" style="background-image: url('${album.coverImage}')">
-                        <div class="album-overlay">
-                        </div>
-                    </div>
-                    <div class="album-content">
-                        <div class="album-info">
-                            <h3>${album.title}</h3>
-                        </div>
+            <div class="album-image" style="background-image: url('${album.coverImage}')">
+                <div class="album-overlay">
+                    <div>
+                        <h3>${album.title}</h3>
                         <button class="button-glass">Ver Galería</button>
                     </div>
-                `;
-
+                </div>
+            </div>
+        `;
         grid.appendChild(albumCard);
     });
 }

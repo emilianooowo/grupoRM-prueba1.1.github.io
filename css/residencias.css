@@ -1,16 +1,20 @@
+body {
+    background: var(--color-azul-oscuro);
+}
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 15px 0;
+    padding: 15px 10px;
     transition: all 0.3s ease;
-    background: var(--color-azul-oscuro);
+    background: transparent;
 }
 
 .header-content {
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -25,7 +29,7 @@
 
 .logo-header img {
     width: auto;
-    height: 55px;
+    height: 65px;
     max-width: 100%;
     transition: all 0.3s ease;
     display: block;
@@ -36,7 +40,6 @@
     display: flex;
     align-items: center;
     gap: 30px;
-    font-weight: 600;
 }
 
 .nav-links a {
@@ -118,84 +121,99 @@
     }
 }
 
-.encabezado {
-    color: var(--color-azul-oscuro);
-    text-align: center;
-    padding: 4rem 0;
-    margin-bottom: 40px;
+.hero {
+    position: relative;
+    height: 40vh;
 }
 
-.encabezado h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20rem;
 }
 
-
-.encabezado p {
-    font-size: 1.2rem;
-    color: var(--color-azul-oscuro);
-}
-
-.container {
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.hero-title {
+    font-size: 4rem;
+    margin: 0;
+    color: white;
+    font-family: var(--font-primary);
 }
 
 .albums-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-bottom: 50px;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .album-card {
-    border-radius: 15px;
-    overflow: hidden;
+    height: 550px;
     cursor: pointer;
+    overflow: hidden;
+    border: none;
+    border-radius: 0;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.album-card:hover {
+    transform: scale(1.03);
+    z-index: 10;
 }
 
 .album-image {
     width: 100%;
-    height: 250px;
+    height: 100%;
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
+.album-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
 .album-overlay {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    top: 0;
+    z-index: 2;
     display: flex;
     align-items: flex-end;
-    padding: 20px;
+    padding: 30px;
+    pointer-events: none;
+}
+
+.overlay-content {
     color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: auto;
 }
 
-.album-content {
-    padding: 25px;
-}
-
-.album-info h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: var(--color-azul-oscuro);
+.album-overlay h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: white;
 }
 
 .button-glass {
     background: linear-gradient(135deg, var(--color-azul-oscuro) 0%, #34495e 100%);
     color: white;
-    border: 2px solid transparent;
+    border: none;
     padding: 10px 10px;
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -213,7 +231,9 @@
     width: 100%;
     height: 100%;
     z-index: 99999;
-    background: white;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
 body.gallery-open {
@@ -221,7 +241,6 @@ body.gallery-open {
 }
 
 .gallery-header {
-    background: var(--color-azul-oscuro);
     color: white;
     padding: 20px;
     display: flex;
@@ -255,11 +274,9 @@ body.gallery-open {
 
 .thumbnails-sidebar {
     width: 300px;
-    background: #f8f9fa;
     border-right: 1px solid #dee2e6;
     overflow-y: auto;
     padding: 20px;
-    background: var(--color-azul-oscuro);
 }
 
 .thumbnail-item {
@@ -289,7 +306,6 @@ body.gallery-open {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: var(--color-azul-oscuro);
 }
 
 .main-image {
@@ -299,15 +315,6 @@ body.gallery-open {
 }
 
 @media (max-width: 768px) {
-    .albums-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .album-image {
-        height: 200px;
-    }
-
     .gallery-container {
         flex-direction: column;
         height: auto;
@@ -336,32 +343,61 @@ body.gallery-open {
     }
 }
 
-@media (max-width: 480px) {
-    .main-content {
-        padding: 10px;
+@media screen and (max-width: 1024px) {
+    .hero-title {
+        font-size: 3.5rem;
     }
 
     .albums-grid {
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 20vh;
     }
 
-    .album-content {
-        padding: 20px;
+    .hero-title {
+        font-size: 2.5rem;
+        text-align: right;
     }
 
-    .gallery-header {
-        padding: 15px;
+    .overlay {
+        padding-right: 1.5rem;
     }
 
-    .gallery-title {
+    .albums-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .album-card {
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .album-card {
+        height: 350px;
+    }
+
+    .album-overlay h3 {
         font-size: 1.2rem;
+    }
+
+    .button-glass {
+        font-size: 0.9rem;
+        padding: 8px;
     }
 }
 
 .footer {
     background: var(--color-azul-oscuro);
     color: white;
-    margin-top: 100px;
 }
 
 .footer-content {
