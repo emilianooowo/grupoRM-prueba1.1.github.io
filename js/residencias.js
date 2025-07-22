@@ -19,65 +19,65 @@ const albumsData = {
     'residencial-los-pinos': {
         title: 'Residencia de lujo',
         photos: 6,
-        coverImage: 'imgs/residencias/ab/residencia_ab_5.webp',
+        coverImage: 'assets/imgs/residencias/ab/residencia_ab_5.webp',
         images: [
-            'imgs/residencias/ab/residencia_ab_2.webp',
-            'imgs/residencias/ab/residencia_ab_3.webp',
-            'imgs/residencias/ab/residencia_ab_4.webp',
-            'imgs/residencias/ab/residencia_ab_5.webp',
-            'imgs/residencias/ab/residencia_ab_7.webp',
-            'imgs/residencias/ab/residencia_ab_8.webp',
-            'imgs/residencias/ab/residencia_ab_9.webp',
-            'imgs/residencias/ab/residencia_ab_10.webp'
+            'assets/imgs/residencias/ab/residencia_ab_2.webp',
+            'assets/imgs/residencias/ab/residencia_ab_3.webp',
+            'assets/imgs/residencias/ab/residencia_ab_4.webp',
+            'assets/imgs/residencias/ab/residencia_ab_5.webp',
+            'assets/imgs/residencias/ab/residencia_ab_7.webp',
+            'assets/imgs/residencias/ab/residencia_ab_8.webp',
+            'assets/imgs/residencias/ab/residencia_ab_9.webp',
+            'assets/imgs/residencias/ab/residencia_ab_10.webp'
         ]
     },
     'torre-comercial-centro': {
         title: 'Casa SEN',
         photos: 8,
-        coverImage: 'imgs/residencias/sen/residencia_sen_5.webp',
+        coverImage: 'assets/imgs/residencias/sen/residencia_sen_5.webp',
         images: [
-            'imgs/residencias/sen/residencia_sen_1.webp',
-            'imgs/residencias/sen/residencia_sen_2.webp',
-            'imgs/residencias/sen/residencia_sen_3.webp',
-            'imgs/residencias/sen/residencia_sen_4.webp',
-            'imgs/residencias/sen/residencia_sen_5.webp',
-            'imgs/residencias/sen/residencia_sen_6.webp',
-            'imgs/residencias/sen/residencia_sen_7.webp',
-            'imgs/residencias/sen/residencia_sen_8.webp',
+            'assets/imgs/residencias/sen/residencia_sen_1.webp',
+            'assets/imgs/residencias/sen/residencia_sen_2.webp',
+            'assets/imgs/residencias/sen/residencia_sen_3.webp',
+            'assets/imgs/residencias/sen/residencia_sen_4.webp',
+            'assets/imgs/residencias/sen/residencia_sen_5.webp',
+            'assets/imgs/residencias/sen/residencia_sen_6.webp',
+            'assets/imgs/residencias/sen/residencia_sen_7.webp',
+            'assets/imgs/residencias/sen/residencia_sen_8.webp',
         ]
     },
     'complejo-industrial-norte': {
         title: 'Casa contenedor',
         photos: 7,
-        coverImage: 'imgs/residencias/cont/residencia_cont_9.webp',
+        coverImage: 'assets/imgs/residencias/cont/residencia_cont_9.webp',
         images: [
-            'imgs/residencias/cont/residencia_cont_1.webp',
-            'imgs/residencias/cont/residencia_cont_2.webp',
-            'imgs/residencias/cont/residencia_cont_3.webp',
-            'imgs/residencias/cont/residencia_cont_4.webp',
-            'imgs/residencias/cont/residencia_cont_5.webp',
-            'imgs/residencias/cont/residencia_cont_6.webp',
-            'imgs/residencias/cont/residencia_cont_7.webp',
-            'imgs/residencias/cont/residencia_cont_8.webp',
-            'imgs/residencias/cont/residencia_cont_9.webp'
+            'assets/imgs/residencias/cont/residencia_cont_1.webp',
+            'assets/imgs/residencias/cont/residencia_cont_2.webp',
+            'assets/imgs/residencias/cont/residencia_cont_3.webp',
+            'assets/imgs/residencias/cont/residencia_cont_4.webp',
+            'assets/imgs/residencias/cont/residencia_cont_5.webp',
+            'assets/imgs/residencias/cont/residencia_cont_6.webp',
+            'assets/imgs/residencias/cont/residencia_cont_7.webp',
+            'assets/imgs/residencias/cont/residencia_cont_8.webp',
+            'assets/imgs/residencias/cont/residencia_cont_9.webp'
         ]
     },
     'loft': {
         title: 'Loft industrial',
         photos: 12,
-        coverImage: 'imgs/residencias/loft/residencia_loft_1.webp',
+        coverImage: 'assets/imgs/residencias/loft/residencia_loft_1.webp',
         images: [
-            'imgs/residencias/loft/residencia_loft_1.webp',
-            'imgs/residencias/loft/residencia_loft_2.webp',
-            'imgs/residencias/loft/residencia_loft_3.webp',
-            'imgs/residencias/loft/residencia_loft_4.webp',
-            'imgs/residencias/loft/residencia_loft_5.webp',
-            'imgs/residencias/loft/residencia_loft_7.webp',
-            'imgs/residencias/loft/residencia_loft_8.webp',
-            'imgs/residencias/loft/residencia_loft_9.webp',
-            'imgs/residencias/loft/residencia_loft_10.webp',
-            'imgs/residencias/loft/residencia_loft_11.webp',
-            'imgs/residencias/loft/residencia_loft_12.webp'
+            'assets/imgs/residencias/loft/residencia_loft_1.webp',
+            'assets/imgs/residencias/loft/residencia_loft_2.webp',
+            'assets/imgs/residencias/loft/residencia_loft_3.webp',
+            'assets/imgs/residencias/loft/residencia_loft_4.webp',
+            'assets/imgs/residencias/loft/residencia_loft_5.webp',
+            'assets/imgs/residencias/loft/residencia_loft_7.webp',
+            'assets/imgs/residencias/loft/residencia_loft_8.webp',
+            'assets/imgs/residencias/loft/residencia_loft_9.webp',
+            'assets/imgs/residencias/loft/residencia_loft_10.webp',
+            'assets/imgs/residencias/loft/residencia_loft_11.webp',
+            'assets/imgs/residencias/loft/residencia_loft_12.webp'
         ]
     }
 };

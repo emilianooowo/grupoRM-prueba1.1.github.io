@@ -19,13 +19,13 @@
 
 @font-face {
     font-family: 'Barlow Condensed';
-    src: url('./fonts/barlow-condensed.regular.ttf') format('truetype');
+    src: url('fonts/barlow-condensed.regular.ttf') format('truetype');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Barlow Condensed';
-    src: url('./fonts/AnekBangla-Bold.ttf') format('truetype');
+    src: url('fonts/AnekBangla-Bold.ttf') format('truetype');
     font-weight: 700;
 }
 
@@ -35,6 +35,7 @@ body {
     font-family: var(--font-primary);
     font-size: var(--font-size-p);
     line-height: 1.6;
+    text-transform: uppercase;
     overscroll-behavior: none;
 }
 
@@ -50,21 +51,6 @@ h6 {
 h1 {
     font-size: var(--font-size-h1);
     font-weight: 300;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 50px auto;
-    max-width: 1200px;
-    gap: 20px;
-    white-space: nowrap;
-}
-
-h1::before,
-h1::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--color-azul-oscuro);
 }
 
 h2 {
@@ -205,4 +191,72 @@ a {
     .hamburger-btn.visible {
         opacity: 1;
     }
+}
+
+.footer {
+    padding: 40px 20px 0;
+    background: var(--color-azul-oscuro);
+    color: #fff;
+    font-family: var(--font-primary);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+}
+
+.footer-logo-section {
+    flex: 1 1 10px;
+}
+
+.footer-logo-section img {
+    height: 80px;
+    width: auto;
+}
+
+.footer-columns {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 40px;
+}
+
+.footer-column h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.footer-column p,
+.footer-column a {
+    font-size: 1.04rem;
+    font-family: var(--font-primary);
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #6c63ff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-legal p {
+    color: rgba(255, 255, 255);
+    font-family: var(--font-primary);
+    margin: 0;
 }

@@ -1,5 +1,5 @@
 let currentIndex = 0;
-const totalQuestions = 5;
+const totalQuestions = 7;
 let canScroll = true;
 let isInSection = false;
 let scrollAccumulator = 0;
@@ -12,11 +12,13 @@ const items = document.querySelectorAll('.pregunta-item');
 const dots = document.querySelectorAll('.progress-dot');
 
 const imagenes = [
-    "imgs/residencias/sen/residencia_sen_4.webp",
-    "imgs/residencias/ab/residencia_ab_4.webp",
-    "imgs/residencias/ab/residencia_ab_8.webp",
-    "imgs/residencias/cont/residencia_cont_9.webp",
-    "imgs/residencias/loft/residencia_loft_4.webp",
+    "assets/imgs/residencias/sen/residencia_sen_4.webp",
+    "assets/imgs/residencias/ab/residencia_ab_4.webp",
+    "assets/imgs/residencias/ab/residencia_ab_8.webp",
+    "assets/imgs/residencias/cont/residencia_cont_9.webp",
+    "assets/imgs/residencias/loft/residencia_loft_3.webp",
+    "assets/imgs/residencias/sen/residencia_sen_2.webp",
+    "assets/imgs/residencias/ab/residencia_ab_9.webp"
 ];
 
 function updateActiveQuestion(index) {
@@ -99,7 +101,6 @@ function handleScroll(e) {
                     exitSection('down');
                 }
             } else {
-                // Scroll hacia arriba
                 if (currentIndex > 0) {
                     currentIndex--;
                     updateActiveQuestion(currentIndex);
@@ -292,40 +293,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const header = document.getElementById('dynamicHeader');
-    const logoImg = document.getElementById('logoImg');
-
-    const logoBlanco = 'shared/logos/logo-largo.png';
-    const logoNegro = 'shared/logos/logo-largo-negro.webp';
-
-    let ticking = false;
-
-    function updateHeader() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > 400) {
-            header.classList.add('scrolled');
-            logoImg.src = logoNegro;
-        } else {
-            header.classList.remove('scrolled');
-            logoImg.src = logoBlanco;
-        }
-
-        ticking = false;
-    }
-
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(updateHeader);
-            ticking = true;
-        }
-    }
-
-    window.addEventListener('scroll', requestTick);
-    updateHeader();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
     const backToTopBtn = document.getElementById('backToTop');
 
     window.addEventListener('scroll', function () {
@@ -359,27 +326,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-
-const heroImages = document.querySelectorAll('.hero-bg-image');
-let currentImageIndex = 0;
-
-function rotateImages() {
-    heroImages[currentImageIndex].classList.remove('active');
-    currentImageIndex = (currentImageIndex + 1) % heroImages.length;
-    heroImages[currentImageIndex].classList.add('active');
-}
-
-setInterval(rotateImages, 5000);
-
-const observerOptions = {
-    root: null,
-    rootMargin: '-100px 0px -100px 0px',
-    threshold: 0.3
-};
-
-window.onbeforeunload = () => {
-    for (const form of document.getElementsByTagName('form')) {
-        form.reset();
-    }
-}
