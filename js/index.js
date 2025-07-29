@@ -1,267 +1,3 @@
-let currentIndex = 0;
-const totalQuestions = 7;
-let canScroll = true;
-let isInSection = false;
-let scrollAccumulator = 0;
-const scrollThreshold = 200;
-let isTransitioning = false;
-
-const section = document.getElementById('procesoSection');
-const wrapper = document.getElementById('preguntasWrapper');
-const items = document.querySelectorAll('.pregunta-item');
-const dots = document.querySelectorAll('.progress-dot');
-
-const imagenes = [
-    "assets/imgs/residencias/sen/residencia_sen_4.webp",
-    "assets/imgs/residencias/ab/residencia_ab_4.webp",
-    "assets/imgs/residencias/ab/residencia_ab_8.webp",
-    "assets/imgs/residencias/cont/residencia_cont_9.webp",
-    "assets/imgs/residencias/loft/residencia_loft_3.webp",
-    "assets/imgs/residencias/sen/residencia_sen_2.webp",
-    "assets/imgs/residencias/ab/residencia_ab_9.webp"
-];
-
-function updateActiveQuestion(index) {
-    items.forEach((item, i) => {
-        item.classList.toggle('active', i === index);
-    });
-
-    dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-    });
-
-    const translateY = -index * (window.innerHeight - 120);
-    wrapper.style.transform = `translateY(${translateY}px)`;
-
-    const imagenElement = document.querySelector(".imagen-container img");
-    imagenElement.src = imagenes[index];
-}
-
-
-function checkIfInSection() {
-    const rect = section.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    return rect.top <= windowHeight * 0.1 && rect.bottom >= windowHeight * 0.99;
-}
-
-function exitSection(direction) {
-    if (isTransitioning) return;
-
-    isTransitioning = true;
-    isInSection = false;
-    document.body.style.overflow = '';
-
-    setTimeout(() => {
-        if (direction === 'down') {
-            window.scrollBy({
-                top: window.innerHeight * 0.5,
-                behavior: 'smooth'
-            });
-        } else {
-            window.scrollBy({
-                top: -window.innerHeight * 0.5,
-                behavior: 'smooth'
-            });
-        }
-
-        setTimeout(() => {
-            isTransitioning = false;
-        }, 800);
-    }, 100);
-}
-
-function handleScroll(e) {
-    if (isTransitioning) {
-        e.preventDefault();
-        return;
-    }
-
-    const wasInSection = isInSection;
-    isInSection = checkIfInSection();
-
-    if (isInSection) {
-        e.preventDefault();
-
-        if (!canScroll) return;
-
-        scrollAccumulator += Math.abs(e.deltaY);
-
-        if (scrollAccumulator >= scrollThreshold) {
-            canScroll = false;
-            scrollAccumulator = 0;
-
-            const direction = e.deltaY > 0 ? 1 : -1;
-
-            if (direction > 0) {
-                if (currentIndex < totalQuestions - 1) {
-                    currentIndex++;
-                    updateActiveQuestion(currentIndex);
-                } else {
-                    exitSection('down');
-                }
-            } else {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateActiveQuestion(currentIndex);
-                } else {
-                    exitSection('up');
-                }
-            }
-
-            setTimeout(() => {
-                canScroll = true;
-            }, 800);
-        }
-    } else if (wasInSection && !isInSection) {
-        document.body.style.overflow = '';
-    }
-}
-
-function handleKeydown(e) {
-    if (!isInSection || !canScroll || isTransitioning) return;
-
-    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-        e.preventDefault();
-        canScroll = false;
-
-        if (currentIndex < totalQuestions - 1) {
-            currentIndex++;
-            updateActiveQuestion(currentIndex);
-        } else {
-            exitSection('down');
-        }
-
-        setTimeout(() => {
-            canScroll = true;
-        }, 800);
-    }
-
-    if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-        e.preventDefault();
-        canScroll = false;
-
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateActiveQuestion(currentIndex);
-        } else {
-            exitSection('up');
-        }
-
-        setTimeout(() => {
-            canScroll = true;
-        }, 800);
-    }
-}
-
-const procesoObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.8) {
-            document.body.style.overflow = 'hidden';
-            isInSection = true;
-            scrollAccumulator = 0;
-
-            const rect = section.getBoundingClientRect();
-            if (Math.abs(rect.top) > 8) {
-                window.scrollTo({
-                    top: window.scrollY + rect.top,
-                    behavior: 'smooth'
-                });
-            }
-
-            if (currentIndex !== 0) {
-                currentIndex = 0;
-                updateActiveQuestion(currentIndex);
-            }
-        }
-    });
-}, {
-    threshold: [0.6]
-});
-
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        if (isInSection && canScroll && !isTransitioning) {
-            currentIndex = index;
-            updateActiveQuestion(currentIndex);
-        }
-    });
-});
-
-procesoObserver.observe(section);
-
-window.addEventListener('wheel', handleScroll, { passive: false });
-window.addEventListener('keydown', handleKeydown);
-
-window.addEventListener('resize', () => {
-    updateActiveQuestion(currentIndex);
-});
-
-window.addEventListener('scroll', () => {
-    if (!isInSection && !isTransitioning) {
-        const rect = section.getBoundingClientRect();
-        if (rect.bottom < 0 || rect.top > window.innerHeight) {
-            document.body.style.overflow = '';
-        }
-    }
-});
-
-let scrollTimeout;
-window.addEventListener('wheel', () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-        scrollAccumulator = 0;
-    }, 150);
-});
-
-let touchStartY = 0;
-let touchEndY = 0;
-
-section.addEventListener('touchstart', (e) => {
-    if (!isInSection) return;
-    touchStartY = e.touches[0].clientY;
-}, { passive: true });
-
-section.addEventListener('touchmove', (e) => {
-    if (!isInSection) return;
-    touchEndY = e.touches[0].clientY;
-}, { passive: true });
-
-section.addEventListener('touchend', () => {
-    if (!isInSection || !canScroll || isTransitioning) return;
-
-    const deltaY = touchStartY - touchEndY;
-
-    if (Math.abs(deltaY) > 70) {
-        canScroll = false;
-
-        if (deltaY > 0) {
-            if (currentIndex < totalQuestions - 1) {
-                currentIndex++;
-                updateActiveQuestion(currentIndex);
-            } else {
-                exitSection('down');
-            }
-        } else {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateActiveQuestion(currentIndex);
-            } else {
-                exitSection('up');
-            }
-        }
-
-        setTimeout(() => {
-            canScroll = true;
-        }, 800);
-    }
-
-    touchStartY = 0;
-    touchEndY = 0;
-});
-
-updateActiveQuestion(0);
-
 const hamburgerBtn = document.getElementById('hamburgerBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 
@@ -279,18 +15,11 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
     });
 });
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+window.onbeforeunload = () => {
+    for (const form of document.getElementsByTagName('form')) {
+        form.reset();
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     const backToTopBtn = document.getElementById('backToTop');
@@ -311,18 +40,111 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const grid = document.getElementById('proyectosGrid');
+function handleScroll() {
+    const header = document.getElementById('header');
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (!grid) return;
+    if (scrollTop > 500) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+}
 
-    window.addEventListener('scroll', function () {
-        const scrollPosition = window.scrollY;
+window.addEventListener('scroll', handleScroll);
 
-        if (scrollPosition > 100) {
-            grid.classList.add('scrolled');
-        } else {
-            grid.classList.remove('scrolled');
-        }
+document.addEventListener('DOMContentLoaded', handleScroll);
+
+document.querySelectorAll('.border-effect').forEach(el => {
+    const lines = ['bottom', 'right', 'top', 'left'];
+    lines.forEach(dir => {
+        const span = document.createElement('span');
+        span.classList.add(`line-${dir}`);
+        el.appendChild(span);
+    });
+
+    el.addEventListener('mouseenter', () => {
+        const [bottom, right, top, left] = el.querySelectorAll('span');
+        bottom.style.width = '100%';
+
+        setTimeout(() => {
+            right.style.height = '100%';
+        }, 100);
+
+        setTimeout(() => {
+            top.style.width = '100%';
+        }, 200);
+
+        setTimeout(() => {
+            left.style.height = '100%';
+        }, 300);
+    });
+
+    el.addEventListener('mouseleave', () => {
+        const [bottom, right, top, left] = el.querySelectorAll('span');
+        bottom.style.width = '0%';
+        right.style.height = '0%';
+        top.style.width = '0%';
+        left.style.height = '0%';
+    });
+});
+
+const heroImages = [
+    'assets/imgs/residencias/ab/residencia_ab_5.webp',
+    'assets/imgs/residencias/sen/residencia_sen_7.webp',
+    'assets/imgs/residencias/ab/residencia_ab_10.webp',
+    'assets/imgs/residencias/cont/residencia_cont_3.webp'
+];
+
+let currentImageIndex = 0;
+let heroBackgrounds = [];
+
+function initHeroBackgrounds() {
+    const heroSection = document.querySelector('.hero');
+
+    for (let i = 0; i < heroImages.length; i++) {
+        const bg = document.createElement('div');
+        bg.className = 'hero-bg';
+        bg.style.backgroundImage = `url(${heroImages[i]})`;
+        heroSection.appendChild(bg);
+        heroBackgrounds.push(bg);
+    }
+
+    heroBackgrounds[0].classList.add('active');
+}
+
+function changeHeroImage() {
+    const current = heroBackgrounds[currentImageIndex];
+    const nextIndex = (currentImageIndex + 1) % heroImages.length;
+    const next = heroBackgrounds[nextIndex];
+
+    current.classList.remove('active');
+    current.classList.add('next');
+
+    setTimeout(() => {
+        next.classList.add('active');
+        next.classList.remove('next');
+    }, 100);
+
+    setTimeout(() => {
+        current.classList.remove('next');
+    }, 2000);
+
+    currentImageIndex = nextIndex;
+}
+
+initHeroBackgrounds();
+setInterval(changeHeroImage, 5000);
+const faqCards = document.querySelectorAll('.faq-card');
+
+faqCards.forEach(card => {
+    card.addEventListener('click', () => {
+        faqCards.forEach(otherCard => {
+            if (otherCard !== card && otherCard.classList.contains('active')) {
+                otherCard.classList.remove('active');
+            }
+        });
+
+        card.classList.toggle('active');
     });
 });

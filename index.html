@@ -21,7 +21,7 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-content">
-            <a href="residencias.html">RESIDENCIAS</a>
+            <a href="proyectos.html">PROYECTOS</a>
             <a href="index.html#servicios"> SERVICIOS</a>
             <a href="contacto.html"> CONTACTO</a>
 
@@ -34,322 +34,226 @@
         </div>
     </div>
 
-    <header class="header">
+    <header class="header" id="header">
         <div class="header-content">
-            <a href="index.html">
-                <div class="logo-header">
-                    <img id="logoImg" src="assets/logos/logo-largo.png" alt="">
-                </div>
-            </a>
-            <nav class="nav-links">
-                <a href="residencias.html">RESIDENCIAS</a>
-                <a href="index.html#servicios">SERVICIOS</a>
-                <a href="contacto.html">CONTACTO</a>
-
-                <div class="social-separator"></div>
-
-                <div class="social-links">
-                    <a href="https://www.instagram.com/gruporm.mx/" target="_blank"><i class="bi bi-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
-                </div>
+            <div class="logo">
+                <img src="assets/logos/logo-largo.png" alt="Logo" class="logo-white">
+                <img src="assets/logos/logo-largo-negro.webp" alt="Logo" class="logo-black">
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html#servicios"><span class="border-effect">Servicios</span></a></li>
+                    <li><a href="proyectos.html"><span class="border-effect">Proyectos</span></a></li>
+                    <li><a href="contacto.html"><span class="border-effect">Contacto</span></a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-left-grid">
-                <div class="hero-main-content">
-                    <h1 class="hero-title">Transformamos Ideas en Realidad</h1>
-                    <p class="hero-text">Creamos soluciones digitales innovadoras que impulsan tu negocio hacia el
-                        futuro. Nuestro equipo de expertos está listo para hacer crecer tu empresa.</p>
-                    <div class="hero-buttons">
-                        <a href="contacto.html" class="hero-btn-primary">Comenzar Proyecto</a>
-                        <a href="residencias.html" class="hero-btn-secondary">Ver Portfolio</a>
-                    </div>
+    <section class="hero" id="inicio">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-overlay"></div>
+        <h1 class="hero-title">Construimos Tus Sueños</h1>
+        <p class="hero-description">Somos una constructora con más de 15 años de experiencia creando espacios únicos y
+            funcionales que transforman la manera de vivir.</p>
+        <div class="hero-buttons">
+            <a href="proyectos.html" class="btn">Ver Proyectos</a>
+            <a href="contacto.html" class="btn btn-animated">Contacto</a>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <h1 class="services-title">NUESTROS SERVICIOS</h1>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="assets/imgs/proyectos/cont/residencia_cont_2.webp" alt="">
                 </div>
-                <div class="hero-bottom-images">
-                    <div class="hero-image-small">
-                        <img src="assets/imgs/residencias/sen/residencia_sen_4.webp"
-                            alt="Equipo trabajando">
-                    </div>
-                    <div class="hero-image-small">
-                        <img src="assets/imgs/residencias/ab/residencia_ab_5.webp" alt="Tecnología">
-                    </div>
+                <div class="service-icon-circle">
+                    <img src="assets/imgs/inicio/digger.svg" alt="">
                 </div>
+                <h3>Proyecto Arquitectónico</h3>
+                <p class="service-description">Diseño integral de espacios habitacionales o comerciales, desde concepto
+                    hasta anteproyecto.</p>
             </div>
-            <div class="hero-main-image">
-                <img src="assets/imgs/residencias/cont/residencia_cont_4.webp" alt="Hero principal">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="assets/imgs/inicio/planos.jpg" alt="">
+                </div>
+                <div class="service-icon-circle">
+                    <img src="assets/imgs/inicio/development.svg" alt="">
+                </div>
+                <h3>Proyecto Ejecutivo</h3>
+                <p class="service-description">Elaboración de planos técnicos y detalles constructivos listos para
+                    ejecución en obra.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="assets/imgs/inicio/contrato.jpg" alt="">
+                </div>
+                <div class="service-icon-circle">
+                    <img src="assets/imgs/inicio/house.svg" alt="">
+                </div>
+                <h3>Presupuesto y Contrato de Obra</h3>
+                <p class="service-description">Cálculo de costos, materiales y mano de obra con formalización legal del
+                    proceso constructivo.</p>
             </div>
         </div>
     </section>
 
-    <section class="about-section">
-        <div class="about-container">
-            <div class="about-image-container">
-                <div class="about-image">
-                    <img src="assets/imgs/residencias/ab/residencia_ab_8.webp" alt="Sobre nosotros">
-                </div>
-            </div>
-            <div class="about-content-box">
-                <h1 class="about-title">Sobre Nosotros</h1>
-                <p class="about-text">Somos una empresa líder en desarrollo digital con más de 10 años de experiencia.
-                    Nos especializamos en crear soluciones tecnológicas que transforman la manera en que las empresas
-                    operan y crecen en el mundo digital.</p>
-                <div class="about-achievements">
-                    <div class="about-achievement-item">
-                        <div class="about-achievement-number">+15 años</div>
-                        <div class="about-achievement-text">de experiencia construyendo para familias de Tapachula</div>
+    <section class="contact" id="contacto">
+        <div class="contact-container">
+            <!-- Columna izquierda - Formulario (sin cambios) -->
+            <div class="contact-form-section">
+                <h1 class="contact-title">CONTÁCTANOS</h1>
+                <p class="contact-subtitle">Hablemos sobre tu próximo proyecto</p>
+                <form class="contact-form" action="https://formspree.io/f/myzpjaoj" method="POST">
+                    <input type="hidden" name="_subject" value="Nuevo mensaje del sitio web">
+
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button class="btn-form" type="submit">Enviar</button>
+                </form>
+            </div>
+
+            <div class="contact-info-section">
+                <h1 class="info-title">Transformemos tus ideas en realidad</h1>
+                
+                <ul class="info-list">
+                    <li>Consulta inicial gratuita</li>
+                    <li>Propuesta personalizada en 48 horas</li>
+                    <li>Equipo de arquitectos especializados</li>
+                    <li>Seguimiento completo del proyecto</li>
+                    <li>Garantía de calidad y cumplimiento</li>
+                </ul>
+
+                <a href="contacto.html" class="cta-button">
+                    Ver más información de contacto
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq-overlay"></div>
+        <div class="faq-content">
+            <div class="faq-header">
+                <h1 class="faq-title">PREGUNTAS FRECUENTES</h1>
+                <p class="faq-description">
+                    Resolvemos las dudas más comunes sobre nuestros proyectos arquitectónicos.
+                    Desde el diseño inicial hasta la entrega final, aquí encontrarás información
+                    valiosa para entender mejor nuestro proceso de trabajo.
+                </p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">¿Cuánto tiempo toma desarrollar un proyecto arquitectónico? <i
+                            class="bi bi-plus faq-toggle"></i></div>
+                    <div class="faq-answer">Depende del tipo de proyecto. Uno residencial toma de 3 a 6 meses.
+                        Comerciales o industriales pueden requerir de 6 a 12 meses.</div>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-question">¿Cómo se estructura el costo de un proyecto? <i
+                            class="bi bi-plus faq-toggle"></i></div>
+                    <div class="faq-answer">Se calcula por porcentaje del costo de obra (4–8%) o por metro cuadrado.
+                        Incluye todas las etapas y se paga según el avance..</div>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-question">¿Qué documentos incluye el proyecto ejecutivo? <i
+                            class="bi bi-plus faq-toggle"></i></div>
+                    <div class="faq-answer">Planos arquitectónicos, estructurales, instalaciones, detalles,
+                        especificaciones, renders, presupuesto y memoria descriptiva.</div>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-question">¿Ofrecen supervisión y dirección de obra? <i
+                            class="bi bi-plus faq-toggle"></i></div>
+                    <div class="faq-answer">Sí. Aseguramos que la obra se ejecute conforme al proyecto con visitas,
+                        control de calidad y asesoría técnica continua.</div>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-question">¿Qué tipos de proyectos desarrollan <i class="bi bi-plus faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">Residenciales, comerciales e institucionales. Adaptamos cada
+                        uno al cliente y sus necesidades.</div>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-question">¿Incluyen diseño de interiores y paisajismo? <i
+                            class="bi bi-plus faq-toggle"></i></div>
+                    <div class="faq-answer">Sí. Ofrecemos interiores y paisajismo como servicios adicionales, integrados
+                        al concepto del proyecto.</div>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-question">¿Aplican criterios de arquitectura sustentable? <i
+                            class="bi bi-plus faq-toggle"></i></div>
+                    <div class="faq-answer">Sí. Usamos diseño bioclimático, materiales sostenibles, captación pluvial y
+                        sistemas de eficiencia energética.
+
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-question">¿Se encargan de trámites y permisos? <i class="bi bi-plus faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">Sí. Gestionamos todos los permisos y licencias necesarias ante autoridades,
+                        hasta obtener la habitabilidad.
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-question">¿Cómo iniciamos un proyecto juntos? <i class="bi bi-plus faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">Comenzamos con una consulta gratuita. Luego hacemos visita al sitio,
+                        levantamiento y propuesta. Tras aprobarla, firmamos contrato y comenzamos.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="services-section" id="servicios">
-        <div class="services-container">
-            <h1 class="services-main-title">Nuestros Servicios</h1>
-            <div class="services-grid">
-                <div class="service-item">
-                    <div class="service-icon"><img src="assets/imgs/development.svg" alt=""></div>
-                    <h3 class="service-title">Diseño Web</h3>
-                    <p class="service-text">Creamos diseños web modernos y atractivos que captan la atención de tus
-                        usuarios y mejoran la experiencia de navegación.</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon"><img src="assets/imgs/digger.svg" alt=""></div>
-                    <h3 class="service-title">Desarrollo</h3>
-                    <p class="service-text">Desarrollamos aplicaciones web y móviles robustas utilizando las últimas
-                        tecnologías para garantizar el mejor rendimiento.</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon"><img src="assets/imgs/house.svg" alt=""></div>
-                    <h3 class="service-title">Marketing Digital</h3>
-                    <p class="service-text">Implementamos estrategias de marketing digital efectivas que aumentan tu
-                        visibilidad online y generan más ventas.</p>
-                </div>
-            </div>
+    <footer class="footer">
+        <div class="footer-logo"><img src="assets/logos/logo-header2white.png" alt=""></div>
+        <nav>
+            <ul class="footer-nav">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="footer-social">
+            <a href="https://wa.me/529621458468">
+                <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="https://www.facebook.com/TapgroupRM">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href=https://www.instagram.com/gruporm.mx>
+                <i class="bi bi-instagram"></i>
+            </a>
         </div>
-    </section>
-
-    <section class="proyectos-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-title-2">
-                    PROYECTOS
-                </div>
-                <a href="residencias.html" class="cta-button">VER TODOS</a>
-            </div>
-
-            <div class="proyectos-grid" id="proyectosGrid">
-                <div class="proyecto-card">
-                    <a href="residencias.html">
-                        <img src="assets/imgs/residencias/ab/residencia_ab_10.webp" alt="Proyecto 1"
-                            class="proyecto-imagen">
-                    </a>
-                    <div class="proyecto-overlay">
-                        <h3 class="proyecto-titulo">CASA DE LUJO</h3>
-                        <p class="proyecto-descripcion">COMPLEJO RESIDENCIAL DE LUJO
-                        </p>
-                    </div>
-                </div>
-
-                <div class="proyecto-card">
-                    <a href="residencias.html">
-                        <img src="assets/imgs/residencias/sen/residencia_sen_7.webp" alt="Proyecto 2"
-                            class="proyecto-imagen">
-                    </a>
-                    <div class="proyecto-overlay">
-                        <h3 class="proyecto-titulo">CASA SEN</h3>
-                        <p class="proyecto-descripcion">CASA RESIDENCIAL DE LUJO CON ALBERCA Y TERRAZA</p>
-                    </div>
-                </div>
-
-                <div class="proyecto-card">
-                    <a href="residencias.html">
-                        <img src="assets/imgs/residencias/loft/residencia_loft_1.webp" alt="Proyecto 4"
-                            class="proyecto-imagen">
-                    </a>
-                    <div class="proyecto-overlay">
-                        <h3 class="proyecto-titulo">LOFT INDUSTRIAL</h3>
-                        <p class="proyecto-descripcion">DEPARTAMENTOS TIPO LOFT</p>
-                    </div>
-                </div>
-
-                <div class="proyecto-card">
-                    <a href="residencias.html">
-                        <img src="assets/imgs/residencias/cont/residencia_cont_4.webp" alt="Proyecto 6"
-                            class="proyecto-imagen">
-                        <div class="proyecto-overlay">
-                    </a>
-                    <h3 class="proyecto-titulo">CASA CONTENEDOR</h3>
-                    <p class="proyecto-descripcion">COMPLEJO REALIZADO A BASE DE CONTENEDORES INDUSTRIALES</p>
-                </div>
-            </div>
+        <div class="footer-copyright">
+            © 2025 Constructora Grupo RM. Todos los derechos reservados.
         </div>
-        </div>
-    </section>
-
-    <section class="proceso-section" id="procesoSection">
-        <div class="proceso-container">
-            <div class="preguntas-column">
-                <div class="preguntas-wrapper" id="preguntasWrapper">
-
-                    <div class="pregunta-item active">
-                        <h2 class="pregunta-titulo">¿Cómo inicia un proyecto?</h2>
-                        <p class="pregunta-respuesta">
-                            Todo comienza con una consulta inicial donde analizamos tus necesidades, presupuesto y
-                            visión. A partir de ahí, definimos los alcances y desarrollamos una propuesta preliminar
-                            personalizada.
-                        </p>
-                    </div>
-
-                    <div class="pregunta-item">
-                        <h2 class="pregunta-titulo">¿Qué pasos siguen?</h2>
-                        <p class="pregunta-respuesta">
-                            Una vez aprobada la propuesta, desarrollamos los planos técnicos, gestionamos los permisos
-                            necesarios y organizamos la planificación general del proyecto.
-                        </p>
-                    </div>
-
-                    <div class="pregunta-item">
-                        <h2 class="pregunta-titulo">¿Cómo es la comunicación con el cliente?</h2>
-                        <p class="pregunta-respuesta">
-                            Mantenemos una comunicación constante a través de reportes semanales que incluyen
-                            fotografías, avances técnicos y próximos pasos. Además, estamos disponibles para resolver
-                            cualquier duda durante todo el proceso.
-                        </p>
-                    </div>
-
-                    <div class="pregunta-item">
-                        <h2 class="pregunta-titulo">¿Quién supervisa?</h2>
-                        <p class="pregunta-respuesta">
-                            Cada proyecto cuenta con un arquitecto director y un ingeniero supervisor certificados.
-                            Además, realizamos inspecciones internas diarias y auditorías externas semanales para
-                            asegurar el cumplimiento de estándares técnicos y de calidad.
-                        </p>
-                    </div>
-
-                    <div class="pregunta-item">
-                        <h2 class="pregunta-titulo">¿Cómo garantizan calidad?</h2>
-                        <p class="pregunta-respuesta">
-                            Implementamos un sistema de control de calidad en tres niveles: verificación de materiales,
-                            supervisión de ejecución en sitio y revisión final antes de la entrega. Trabajamos solo con
-                            proveedores y técnicos certificados.
-                        </p>
-                    </div>
-
-                    <div class="pregunta-item">
-                        <h2 class="pregunta-titulo">¿Cuánto tiempo toma un proyecto?</h2>
-                        <p class="pregunta-respuesta">
-                            El tiempo varía según el tipo y complejidad de la obra, pero la mayoría de nuestros
-                            proyectos residenciales se completan entre 4 y 8 meses. Siempre te entregamos un cronograma
-                            detallado.
-                        </p>
-                    </div>
-
-                    <div class="pregunta-item">
-                        <h2 class="pregunta-titulo">¿Cómo se realiza la cotización?</h2>
-                        <p class="pregunta-respuesta">
-                            La primera consulta es gratuita. Luego, preparamos una cotización personalizada con base en
-                            tus requerimientos, ubicación y tipo de construcción. No hay costos ocultos.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="imagen-column">
-                <div class="imagen-container">
-                    <img src="assets/imgs/residencias/sen/residencia_sen_4.webp" alt="">
-                </div>
-            </div>
-
-            <div class="progress-indicator">
-                <div class="progress-dot active" data-index="0"></div>
-                <div class="progress-dot" data-index="1"></div>
-                <div class="progress-dot" data-index="2"></div>
-                <div class="progress-dot" data-index="3"></div>
-                <div class="progress-dot" data-index="4"></div>
-                <div class="progress-dot" data-index="5"></div>
-                <div class="progress-dot" data-index="6"></div>
-            </div>
-        </div>
-    </section>
-
-    <div class="background-wrapper">
-        <section class="form-section">
-            <div class="form-container">
-                <div class="form-header">
-                    <h1 class="form-title">¿TE INTERESA TRABAJAR CON NOSOTROS?</h1>
-                </div>
-
-                <div class="form-content">
-                    <div class="form-wrapper">
-                        <form id="contactForm" action="https://formspree.io/f/mldnyarz" method="POST">
-                            <div class="form-field">
-                                <label class="form-label" for="formName">NOMBRE COMPLETO</label>
-                                <input class="form-input" type="text" id="formName" name="name" required>
-                            </div>
-
-                            <div class="form-field">
-                                <label class="form-label" for="formEmail">EMAIL</label>
-                                <input class="form-input" type="email" id="formEmail" name="email" required>
-                            </div>
-
-                            <div class="form-field">
-                                <label class="form-label" for="formPhone">TELÉFONO</label>
-                                <input class="form-input" type="tel" id="formPhone" name="phone" required>
-                            </div>
-
-                            <div class="form-field">
-                                <label class="form-label" for="formMessage">MENSAJE</label>
-                                <textarea class="form-textarea" id="formMessage" name="message" required></textarea>
-                            </div>
-
-                            <button class="form-submit" type="submit" id="formSubmit">
-                                ENVIAR MENSAJE
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="assets/logos/logo-largo.png" alt="">
-                    </div>
-                    <div class="footer-contact">
-                        <p><i class="bi bi-envelope-fill"></i> constructora.grupo.rm@gmail.com</p>
-                        <p>
-                            <i class="bi bi-telephone-fill"></i>
-                            <a href="tel:+529621458468">+52 962 145 8468</a>
-                        </p>
-                        <p><i class="bi bi-geo-alt-fill"></i> TAPACHULA, CHIAPAS, MÉXICO</p>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i> FACEBOOK</a>
-                        <a href="https://www.instagram.com/gruporm.mx/" aria-label="Instagram"><i
-                                class=" bi bi-instagram"></i> INSTAGRAM</a>
-                        <a href="https://wa.me/529621458468" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></span>
-                            WHATSAPP</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="footer-legal">
-                    <p>&copy; 2025 CONSTRUCTORA GRUPO RM. TODOS LOS DERECHOS RESERVADOS.</p>
-                </div>
-            </div>
-        </footer>
-    </div>
+    </footer>
 
     <button id="backToTop" class="back-to-top" title="Regresar arriba">
         <i class="bi bi-arrow-up"></i>
