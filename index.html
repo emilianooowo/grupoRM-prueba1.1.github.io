@@ -67,7 +67,7 @@
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-image">
-                    <img src="assets/imgs/proyectos/cont/residencia_cont_2.webp" alt="">
+                    <img src="assets/imgs/residencias/cont/residencia_cont_2.webp" alt="">
                 </div>
                 <div class="service-icon-circle">
                     <img src="assets/imgs/inicio/digger.svg" alt="">
@@ -78,7 +78,7 @@
             </div>
             <div class="service-card">
                 <div class="service-image">
-                    <img src="assets/imgs/inicio/planos.jpg" alt="">
+                    <img src="assets/imgs/inicio/planos.webp" alt="">
                 </div>
                 <div class="service-icon-circle">
                     <img src="assets/imgs/inicio/development.svg" alt="">
@@ -89,7 +89,7 @@
             </div>
             <div class="service-card">
                 <div class="service-image">
-                    <img src="assets/imgs/inicio/contrato.jpg" alt="">
+                    <img src="assets/imgs/inicio/contrato.webp" alt="">
                 </div>
                 <div class="service-icon-circle">
                     <img src="assets/imgs/inicio/house.svg" alt="">
@@ -101,47 +101,51 @@
         </div>
     </section>
 
-    <section class="contact" id="contacto">
-        <div class="contact-container">
-            <!-- Columna izquierda - Formulario (sin cambios) -->
-            <div class="contact-form-section">
-                <h1 class="contact-title">CONTÁCTANOS</h1>
-                <p class="contact-subtitle">Hablemos sobre tu próximo proyecto</p>
-                <form class="contact-form" action="https://formspree.io/f/myzpjaoj" method="POST">
-                    <input type="hidden" name="_subject" value="Nuevo mensaje del sitio web">
+    <section class="projects" id="proyectos">
+        <div class="projects-container">
+            <h1 class="projects-title">Diseños que nos definen</h1>
+            <p class="projects-subtitle">Explora más de lo que hacemos y cómo lo hacemos</p>
 
-                    <div class="form-group">
-                        <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="name" required>
+            <div class="project-item" data-project="1">
+                <div class="project-image-container">
+                    <div class="project-image">
+                        <img src="assets/imgs/residencias/loft/residencia_loft_1.webp" alt="">
                     </div>
-
-                    <div class="form-group">
-                        <label for="email">Correo electrónico:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Mensaje:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-
-                    <button class="btn-form" type="submit">Enviar</button>
-                </form>
+                    <a href="proyectos.html" class="project-cta">Ver Proyecto Completo</a>
+                </div>
+                <div class="project-info">
+                    <h2 class="project-title">Lofts Industriales Modernos</h2>
+                    <p class="project-description">
+                        Espacios contemporáneos que fusionan el estilo industrial con el confort moderno.
+                        Amplios departamentos con techos altos, acabados en concreto aparente y grandes
+                        ventanales que maximizan la entrada de luz natural, creando ambientes únicos y sofisticados.
+                    </p>
+                </div>
             </div>
 
-            <div class="contact-info-section">
-                <h1 class="info-title">Transformemos tus ideas en realidad</h1>
-                
-                <ul class="info-list">
-                    <li>Consulta inicial gratuita</li>
-                    <li>Propuesta personalizada en 48 horas</li>
-                    <li>Equipo de arquitectos especializados</li>
-                    <li>Seguimiento completo del proyecto</li>
-                    <li>Garantía de calidad y cumplimiento</li>
-                </ul>
+            <div class="project-item reverse" data-project="2">
+                <div class="project-info">
+                    <h2 class="project-title">Casa Container Residencial</h2>
+                    <p class="project-description">
+                        Innovadora vivienda construida con contenedores industriales reciclados.
+                        Diseño sustentable que combina funcionalidad y estética, aprovechando la estructura
+                        modular para crear espacios amplios y luminosos con un enfoque eco-friendly.
+                    </p>
+                </div>
+                <div class="project-image-container">
+                    <div class="project-image placeholder-image container">
+                        <img src="assets/imgs/residencias/cont/residencia_cont_4.webp" alt="">
+                    </div>
+                    <a href="proyectos.html" class="project-cta">Ver Proyecto Completo</a>
+                </div>
+            </div>
 
-                <a href="contacto.html" class="cta-button">
-                    Ver más información de contacto
+            <div class="all-projects-container">
+                <a href="#" class="all-projects-btn">
+                    Ver Todos los Proyectos
+                    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
                 </a>
             </div>
         </div>
@@ -225,6 +229,31 @@
                     <div class="faq-answer">Comenzamos con una consulta gratuita. Luego hacemos visita al sitio,
                         levantamiento y propuesta. Tras aprobarla, firmamos contrato y comenzamos.</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-container">
+            <div class="contact-info-section">
+                <h1 class="info-title">Transformemos tus ideas en realidad</h1>
+
+                <ul class="info-list">
+                    <li>Consulta inicial gratuita</li>
+                    <li>Propuesta personalizada en 48 horas</li>
+                    <li>Equipo de arquitectos especializados</li>
+                    <li>Seguimiento completo del proyecto</li>
+                    <li>Garantía de calidad y cumplimiento</li>
+                </ul>
+
+                <a href="contacto.html" class="cta-button">
+                    Ver más información de contacto
+                </a>
+            </div>
+
+            <div class="contact-image-section">
+                <img src="assets/imgs/inicio/contactar.webp" alt="Equipo de arquitectos trabajando"
+                    class="contact-image">
             </div>
         </div>
     </section>

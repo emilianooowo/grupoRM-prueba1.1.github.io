@@ -91,7 +91,7 @@ document.querySelectorAll('.border-effect').forEach(el => {
 
 const heroImages = [
     'assets/imgs/residencias/ab/residencia_ab_5.webp',
-    'assets/imgs/residencias/sen/residencia_sen_7.webp',
+    'assets/imgs/residencias/sen/residencia_sen_5.webp',
     'assets/imgs/residencias/ab/residencia_ab_10.webp',
     'assets/imgs/residencias/cont/residencia_cont_3.webp'
 ];
@@ -146,5 +146,35 @@ faqCards.forEach(card => {
         });
 
         card.classList.toggle('active');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(() => {
+        const projectItems = document.querySelectorAll('.project-item');
+        projectItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('animate');
+            }, index * 500);
+        });
+    }, 500);
+
+    const observerOptions = {
+        threshold: 0.6,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const projectItems = document.querySelectorAll('.project-item');
+    projectItems.forEach(item => {
+        observer.observe(item);
     });
 });
